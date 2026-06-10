@@ -9,7 +9,7 @@ import { RelatedCarousel } from "@/components/ui/RelatedCarousel";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { formatCOP } from "@/lib/utils/formatPrice";
 
-export const revalidate = 900;
+export const revalidate = 60;
 
 interface Props {
   params: { handle: string };

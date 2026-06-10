@@ -3,7 +3,7 @@ import { CatalogClient } from "@/components/sections/CatalogClient";
 import { getProducts } from "@/lib/shopify/queries";
 import type { Product } from "@/lib/shopify/types";
 
-export const revalidate = 900;
+export const revalidate = 120;
 
 export const metadata: Metadata = {
   title: "Tienda — Todas las fragancias",
