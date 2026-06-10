@@ -44,10 +44,24 @@ export async function shopifyFetch<T>({
 
   const json = await res.json();
 
-  if (!res.ok || json.errors) {
+  // Si hay errores a nivel de campo (p. ej. un campo que requiere un scope que
+  // el token no tiene) pero Shopify devolvió datos, usamos los datos y solo
+  // registramos el aviso. Solo lanzamos cuando NO hay datos utilizables.
+  if (json.errors) {
+    console.warn(
+      "[Shopify] errores parciales:",
+      json.errors.map((e: { message: string }) => e.message).join(" | "),
+    );
+  }
+
+  if (!res.ok && !json.data) {
     const message =
       json?.errors?.[0]?.message ?? `Shopify request failed (${res.status})`;
     throw new Error(`[Shopify] ${message}`);
+  }
+
+  if (!json.data) {
+    throw new Error(`[Shopify] ${json?.errors?.[0]?.message ?? "Sin datos"}`);
   }
 
   return json.data as T;

@@ -14,6 +14,7 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
     productType
     tags
     availableForSale
+    totalInventory
     priceRange {
       minVariantPrice { amount currencyCode }
       maxVariantPrice { amount currencyCode }
@@ -31,6 +32,7 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
           id
           title
           availableForSale
+          quantityAvailable
           price { amount currencyCode }
           compareAtPrice { amount currencyCode }
           selectedOptions { name value }
