@@ -2,7 +2,9 @@ import type { MetadataRoute } from "next";
 import { CATALOG, COLLECTIONS } from "@/lib/data/catalog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const base = (
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nexkogroup.com"
+  ).replace(/\/+$/, "");
   const now = new Date();
 
   const staticRoutes = ["", "/tienda", "/comparar", "/armar-kit", "/lista", "/cart"].map((path) => ({
