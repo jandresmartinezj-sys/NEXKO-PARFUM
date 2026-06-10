@@ -67,6 +67,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "NEXKO PARFUM",
   },
+  other: { "nexko-build": "inv-v3" },
 };
 
 export default function RootLayout({
