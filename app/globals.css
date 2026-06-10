@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Fondos */
+  --bg-void: #050508;
+  --bg-dark: #0a0a12;
+  --bg-surface: #12121e;
+  /* Oro */
+  --gold-primary: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-glow: #ffe0a0;
+  /* Acentos aromáticos */
+  --rose-scent: #e8a0b0;
+  --oud-deep: #4a2020;
+  --musk-neutral: #c8b8a2;
+  --fresh-aqua: #7ec8c8;
+  --spice-amber: #d4803c;
+  /* UI */
+  --text-primary: #f5f0e8;
+  --text-secondary: #a09080;
+  --border-subtle: rgba(201, 168, 76, 0.2);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-void text-ink-primary font-sans antialiased;
+    background-image: var(--void-radial, none);
+  }
+  ::selection {
+    background: rgba(201, 168, 76, 0.3);
+    color: #fff;
+  }
+  /* Scrollbar dorada */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a12;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#c9a84c, #8a6f2e);
+    border-radius: 9999px;
+  }
+}
+
+@layer components {
+  .text-gold {
+    color: var(--gold-primary);
+  }
+  .gradient-gold {
+    background: linear-gradient(135deg, #e8c97a 0%, #c9a84c 45%, #8a6f2e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glass {
+    background: rgba(18, 18, 30, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border-subtle);
+  }
+  /* Color de borde sutil reutilizable (evita ambigüedad de Tailwind con var en border-[]) */
+  .border-subtle {
+    border-color: var(--border-subtle);
+  }
+  .btn-gold {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 font-medium text-void transition-transform duration-200;
+    background: linear-gradient(135deg, #e8c97a 0%, #c9a84c 50%, #b08d34 100%);
+    box-shadow: 0 0 30px -8px rgba(201, 168, 76, 0.45);
+  }
+  .btn-gold:hover {
+    @apply scale-105;
+  }
+  .btn-outline-gold {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full border px-7 py-3 font-medium transition-colors duration-200;
+    border-color: var(--gold-primary);
+    color: var(--gold-primary);
+  }
+  .btn-outline-gold:hover {
+    background: rgba(201, 168, 76, 0.1);
+  }
+  /* Skeleton shimmer */
+  .skeleton {
+    @apply relative overflow-hidden bg-surface;
+  }
+  .skeleton::after {
+    content: "";
+    @apply absolute inset-0 -translate-x-full animate-shimmer;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 168, 76, 0.12),
+      transparent
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .perspective {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Cursor personalizado: oculta el cursor nativo cuando está activo */
+body.cursor-none,
+body.cursor-none * {
+  cursor: none !important;
+}
