@@ -33,6 +33,7 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
           title
           availableForSale
           quantityAvailable
+          currentlyNotInStock
           price { amount currencyCode }
           compareAtPrice { amount currencyCode }
           selectedOptions { name value }
