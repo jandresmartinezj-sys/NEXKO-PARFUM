@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Playfair_Display,
-  Cormorant_Garamond,
-  Inter,
-  Noto_Naskh_Arabic,
-} from "next/font/google";
+import { playfair, cormorant, inter } from "./fonts";
 import "./globals.css";
 import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
@@ -16,29 +11,6 @@ import { SocialProof } from "@/components/ui/SocialProof";
 import { ScentFinder } from "@/components/sections/ScentFinder";
 import { CartHydrator } from "@/components/providers/CartHydrator";
 import { Analytics } from "@/components/Analytics";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-const naskh = Noto_Naskh_Arabic({
-  subsets: ["arabic"],
-  weight: ["400", "700"],
-  variable: "--font-naskh",
-  display: "swap",
-});
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nexkogroup.com"
@@ -77,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="es-CO"
-      className={`${playfair.variable} ${cormorant.variable} ${inter.variable} ${naskh.variable} h-full`}
+      className={`${playfair.variable} ${cormorant.variable} ${inter.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-void text-ink-primary">
         <CartHydrator />

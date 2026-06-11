@@ -32,7 +32,7 @@ const config: Config = {
         display: ["var(--font-playfair)", "serif"],
         serif: ["var(--font-cormorant)", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        arabic: ["var(--font-naskh)", "serif"],
+        arabic: ["var(--font-cormorant)", "serif"],
       },
       boxShadow: {
         gold: "0 0 30px -8px rgba(201,168,76,0.45)",
