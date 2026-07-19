@@ -8,6 +8,8 @@
 
 type Variant = "atomizer" | "round" | "flared" | "hex" | "cube";
 
+type Anim = "bottle-drift" | "bottle-sway" | "bottle-breathe";
+
 interface BottleCfg {
   className: string;
   w: number;
@@ -16,15 +18,17 @@ interface BottleCfg {
   blur?: number;
   delay: string;
   dur: string;
+  anim: Anim;
+  glint: string;
   variant: Variant;
 }
 
 const BOTTLES: BottleCfg[] = [
-  { className: "left-[5%] top-[26%]", w: 150, rot: -10, op: 0.12, blur: 1, delay: "0s", dur: "12s", variant: "atomizer" },
-  { className: "right-[6%] top-[16%]", w: 118, rot: 9, op: 0.10, delay: "1.6s", dur: "14s", variant: "flared" },
-  { className: "right-[14%] bottom-[12%]", w: 104, rot: -7, op: 0.09, delay: "0.8s", dur: "13s", variant: "round" },
-  { className: "left-[16%] bottom-[10%]", w: 82, rot: 7, op: 0.08, delay: "2.3s", dur: "15s", variant: "hex" },
-  { className: "left-[40%] bottom-[4%]", w: 66, rot: -5, op: 0.06, blur: 1, delay: "1.1s", dur: "16s", variant: "cube" },
+  { className: "left-[5%] top-[26%]", w: 150, rot: -10, op: 0.12, blur: 1, delay: "0s", dur: "11s", anim: "bottle-drift", glint: "6s", variant: "atomizer" },
+  { className: "right-[6%] top-[16%]", w: 118, rot: 9, op: 0.10, delay: "1.6s", dur: "9s", anim: "bottle-sway", glint: "7.5s", variant: "flared" },
+  { className: "right-[14%] bottom-[12%]", w: 104, rot: -7, op: 0.09, delay: "0.8s", dur: "10s", anim: "bottle-breathe", glint: "5.5s", variant: "round" },
+  { className: "left-[16%] bottom-[10%]", w: 82, rot: 7, op: 0.08, delay: "2.3s", dur: "12s", anim: "bottle-drift", glint: "8s", variant: "hex" },
+  { className: "left-[40%] bottom-[4%]", w: 66, rot: -5, op: 0.06, blur: 1, delay: "1.1s", dur: "8.5s", anim: "bottle-sway", glint: "6.5s", variant: "cube" },
 ];
 
 function Shape({ variant }: { variant: Variant }) {
@@ -111,7 +115,10 @@ export function BottleSilhouettes() {
           <svg
             width={b.w}
             viewBox="0 0 80 160"
-            style={{ animation: `bottle-float ${b.dur} ease-in-out ${b.delay} infinite` }}
+            className="bottle-anim"
+            style={{
+              animation: `${b.anim} ${b.dur} ease-in-out ${b.delay} infinite, bottle-glint ${b.glint} ease-in-out ${b.delay} infinite`,
+            }}
           >
             <Shape variant={b.variant} />
           </svg>

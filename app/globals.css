@@ -125,18 +125,51 @@ body.cursor-none * {
   cursor: none !important;
 }
 
-/* Flotación sutil de las siluetas de frascos en el hero */
-@keyframes bottle-float {
+/* Animaciones de las siluetas de frascos en el hero */
+@keyframes bottle-drift {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, -12px) rotate(2deg);
   }
   50% {
-    transform: translateY(-16px);
+    transform: translate(0, -20px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-5px, -10px) rotate(-2deg);
+  }
+}
+@keyframes bottle-sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3.5deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3.5deg);
+  }
+}
+@keyframes bottle-breathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.06);
+  }
+}
+@keyframes bottle-glint {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  [style*="bottle-float"] {
+  .bottle-anim {
     animation: none !important;
   }
 }
