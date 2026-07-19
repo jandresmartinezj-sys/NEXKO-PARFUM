@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useUI } from "@/lib/store/ui";
+import { BottleSilhouettes } from "./BottleSilhouettes";
 
 const headline = "El lujo que hueles.";
 const headline2 = "El precio que mereces.";
@@ -18,6 +19,10 @@ export function HeroSection() {
         <div className="absolute right-[18%] top-[26%] h-64 w-64 rounded-full bg-rose-scent/10 blur-[110px]" />
         <div className="absolute bottom-[20%] left-[16%] h-56 w-56 rounded-full bg-spice-amber/10 blur-[110px]" />
       </div>
+
+      {/* Siluetas de frascos dorados, sutiles */}
+      <BottleSilhouettes />
+
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-void/30 via-transparent to-void" />
 
       {/* Contenido */}
