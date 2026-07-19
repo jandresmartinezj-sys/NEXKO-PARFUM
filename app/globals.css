@@ -132,22 +132,22 @@ body.cursor-none * {
     transform: translate(0, 0) rotate(0deg);
   }
   25% {
-    transform: translate(5px, -12px) rotate(2deg);
+    transform: translate(14px, -26px) rotate(6deg);
   }
   50% {
-    transform: translate(0, -20px) rotate(0deg);
+    transform: translate(0, -42px) rotate(0deg);
   }
   75% {
-    transform: translate(-5px, -10px) rotate(-2deg);
+    transform: translate(-14px, -22px) rotate(-6deg);
   }
 }
 @keyframes bottle-sway {
   0%,
   100% {
-    transform: translateY(0) rotate(-3.5deg);
+    transform: translateY(2px) rotate(-9deg);
   }
   50% {
-    transform: translateY(-14px) rotate(3.5deg);
+    transform: translateY(-30px) rotate(9deg);
   }
 }
 @keyframes bottle-breathe {
@@ -156,13 +156,13 @@ body.cursor-none * {
     transform: translateY(0) scale(1);
   }
   50% {
-    transform: translateY(-10px) scale(1.06);
+    transform: translateY(-24px) scale(1.14);
   }
 }
 @keyframes bottle-glint {
   0%,
   100% {
-    opacity: 0.65;
+    opacity: 0.45;
   }
   50% {
     opacity: 1;

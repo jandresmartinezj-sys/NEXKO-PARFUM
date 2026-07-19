@@ -24,11 +24,11 @@ interface BottleCfg {
 }
 
 const BOTTLES: BottleCfg[] = [
-  { className: "left-[5%] top-[26%]", w: 150, rot: -10, op: 0.12, blur: 1, delay: "0s", dur: "11s", anim: "bottle-drift", glint: "6s", variant: "atomizer" },
-  { className: "right-[6%] top-[16%]", w: 118, rot: 9, op: 0.10, delay: "1.6s", dur: "9s", anim: "bottle-sway", glint: "7.5s", variant: "flared" },
-  { className: "right-[14%] bottom-[12%]", w: 104, rot: -7, op: 0.09, delay: "0.8s", dur: "10s", anim: "bottle-breathe", glint: "5.5s", variant: "round" },
-  { className: "left-[16%] bottom-[10%]", w: 82, rot: 7, op: 0.08, delay: "2.3s", dur: "12s", anim: "bottle-drift", glint: "8s", variant: "hex" },
-  { className: "left-[40%] bottom-[4%]", w: 66, rot: -5, op: 0.06, blur: 1, delay: "1.1s", dur: "8.5s", anim: "bottle-sway", glint: "6.5s", variant: "cube" },
+  { className: "left-[5%] top-[26%]", w: 150, rot: -10, op: 0.13, blur: 1, delay: "0s", dur: "5.5s", anim: "bottle-drift", glint: "3.5s", variant: "atomizer" },
+  { className: "right-[6%] top-[16%]", w: 118, rot: 9, op: 0.11, delay: "0.6s", dur: "4.5s", anim: "bottle-sway", glint: "4s", variant: "flared" },
+  { className: "right-[14%] bottom-[12%]", w: 104, rot: -7, op: 0.10, delay: "0.3s", dur: "5s", anim: "bottle-breathe", glint: "3s", variant: "round" },
+  { className: "left-[16%] bottom-[10%]", w: 82, rot: 7, op: 0.09, delay: "1s", dur: "6s", anim: "bottle-drift", glint: "4.5s", variant: "hex" },
+  { className: "left-[40%] bottom-[4%]", w: 66, rot: -5, op: 0.07, blur: 1, delay: "0.4s", dur: "4s", anim: "bottle-sway", glint: "3.5s", variant: "cube" },
 ];
 
 function Shape({ variant }: { variant: Variant }) {
