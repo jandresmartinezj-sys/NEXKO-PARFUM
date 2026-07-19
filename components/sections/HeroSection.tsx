@@ -1,33 +1,24 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useLowPower } from "@/lib/hooks/useLowPower";
 import { useUI } from "@/lib/store/ui";
-
-const HeroScene = dynamic(() => import("@/components/3d/HeroScene"), {
-  ssr: false,
-  loading: () => null,
-});
 
 const headline = "El lujo que hueles.";
 const headline2 = "El precio que mereces.";
 
 export function HeroSection() {
-  const lowPower = useLowPower();
   const openScentFinder = useUI((s) => s.openScentFinder);
 
   return (
     <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden">
-      {/* Fondo 3D o fallback */}
+      {/* Fondo elegante (sin 3D): degradado + resplandores dorados suaves */}
       <div className="absolute inset-0 bg-void-radial">
-        {!lowPower && <HeroScene />}
-        {lowPower && (
-          <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/20 blur-[100px]" />
-        )}
+        <div className="absolute left-1/2 top-[38%] h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/12 blur-[130px]" />
+        <div className="absolute right-[18%] top-[26%] h-64 w-64 rounded-full bg-rose-scent/10 blur-[110px]" />
+        <div className="absolute bottom-[20%] left-[16%] h-56 w-56 rounded-full bg-spice-amber/10 blur-[110px]" />
       </div>
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-void/40 via-transparent to-void" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-void/30 via-transparent to-void" />
 
       {/* Contenido */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
