@@ -1,8 +1,12 @@
 /**
  * Siluetas de frascos de perfume en tono dorado (como el logotipo NEXKO),
- * sutiles y elegantes, de fondo en el hero. SVG + CSS puro (sin WebGL) con una
- * flotación apenas perceptible. Decorativo (aria-hidden).
+ * sutiles y elegantes, de fondo en el hero. Formas inspiradas en frascos reales
+ * (atomizador tipo Yara, redondo tipo Fakhar, tapón acampanado tipo Amouage,
+ * tapón hexagonal tipo Al Qiam, cubo tipo Miss Dior/Sauvage).
+ * SVG + CSS puro (sin WebGL), con flotación apenas perceptible. Decorativo.
  */
+
+type Variant = "atomizer" | "round" | "flared" | "hex" | "cube";
 
 interface BottleCfg {
   className: string;
@@ -12,36 +16,72 @@ interface BottleCfg {
   blur?: number;
   delay: string;
   dur: string;
-  variant?: "flacon" | "round";
+  variant: Variant;
 }
 
 const BOTTLES: BottleCfg[] = [
-  { className: "left-[5%] top-[30%]", w: 165, rot: -12, op: 0.11, blur: 1, delay: "0s", dur: "12s" },
-  { className: "right-[7%] top-[20%]", w: 120, rot: 11, op: 0.09, delay: "1.6s", dur: "14s", variant: "round" },
-  { className: "right-[15%] bottom-[13%]", w: 95, rot: -7, op: 0.08, delay: "0.8s", dur: "13s" },
-  { className: "left-[17%] bottom-[11%]", w: 78, rot: 8, op: 0.07, delay: "2.3s", dur: "15s", variant: "round" },
-  { className: "left-[39%] bottom-[5%]", w: 62, rot: -5, op: 0.05, blur: 1, delay: "1.1s", dur: "16s" },
+  { className: "left-[5%] top-[26%]", w: 150, rot: -10, op: 0.12, blur: 1, delay: "0s", dur: "12s", variant: "atomizer" },
+  { className: "right-[6%] top-[16%]", w: 118, rot: 9, op: 0.10, delay: "1.6s", dur: "14s", variant: "flared" },
+  { className: "right-[14%] bottom-[12%]", w: 104, rot: -7, op: 0.09, delay: "0.8s", dur: "13s", variant: "round" },
+  { className: "left-[16%] bottom-[10%]", w: 82, rot: 7, op: 0.08, delay: "2.3s", dur: "15s", variant: "hex" },
+  { className: "left-[40%] bottom-[4%]", w: 66, rot: -5, op: 0.06, blur: 1, delay: "1.1s", dur: "16s", variant: "cube" },
 ];
 
-function BottleShape({ variant = "flacon" }: { variant?: "flacon" | "round" }) {
-  if (variant === "round") {
-    return (
-      <g fill="url(#nexkoBottleGold)">
-        <rect x="26" y="4" width="12" height="16" rx="3" />
-        <rect x="29" y="19" width="6" height="7" />
-        <path d="M30 26 H34 L40 34 H24 Z" />
-        <ellipse cx="32" cy="92" rx="24" ry="38" />
-      </g>
-    );
+function Shape({ variant }: { variant: Variant }) {
+  switch (variant) {
+    case "round":
+      return (
+        <g fill="url(#nexkoBottleGold)">
+          <circle cx="40" cy="30" r="12" />
+          <rect x="34" y="40" width="12" height="8" />
+          <circle cx="40" cy="106" r="38" />
+        </g>
+      );
+    case "flared":
+      return (
+        <g fill="url(#nexkoBottleGold)">
+          {/* tapón acampanado (más ancho arriba) */}
+          <rect x="26" y="18" width="28" height="6" rx="1" />
+          <path d="M31 24 L26 24 L32 42 H48 L54 24 L49 24 Z" />
+          <rect x="35" y="42" width="10" height="6" />
+          {/* cuerpo alto */}
+          <path d="M24 48 H56 V140 Q56 150 46 150 H34 Q24 150 24 140 Z" />
+        </g>
+      );
+    case "hex":
+      return (
+        <g fill="url(#nexkoBottleGold)">
+          {/* tapón hexagonal plano */}
+          <path d="M32 18 H48 L54 28 L48 38 H32 L26 28 Z" />
+          <rect x="35" y="38" width="10" height="6" />
+          {/* cuerpo cuadrado redondeado */}
+          <rect x="20" y="44" width="40" height="102" rx="16" />
+        </g>
+      );
+    case "cube":
+      return (
+        <g fill="url(#nexkoBottleGold)">
+          {/* tapón cubo */}
+          <rect x="31" y="16" width="18" height="18" rx="2" />
+          <rect x="35" y="34" width="10" height="6" />
+          {/* cuerpo faceteado */}
+          <path d="M22 40 H58 L54 142 Q53 148 46 148 H34 Q27 148 26 142 Z" />
+        </g>
+      );
+    case "atomizer":
+    default:
+      return (
+        <g fill="url(#nexkoBottleGold)">
+          {/* boquilla + bomba spray */}
+          <rect x="34" y="16" width="12" height="8" rx="2" />
+          <rect x="31" y="24" width="18" height="12" rx="2" />
+          {/* collar */}
+          <rect x="27" y="36" width="26" height="6" />
+          {/* cuerpo cilíndrico */}
+          <rect x="22" y="42" width="36" height="106" rx="15" />
+        </g>
+      );
   }
-  return (
-    <g fill="url(#nexkoBottleGold)">
-      <rect x="25" y="4" width="14" height="18" rx="3" />
-      <rect x="28.5" y="21" width="7" height="8" />
-      <path d="M28 30 H36 L50 46 H14 Z" />
-      <rect x="14" y="44" width="36" height="88" rx="12" />
-    </g>
-  );
 }
 
 export function BottleSilhouettes() {
@@ -70,10 +110,10 @@ export function BottleSilhouettes() {
         >
           <svg
             width={b.w}
-            viewBox="0 0 64 140"
+            viewBox="0 0 80 160"
             style={{ animation: `bottle-float ${b.dur} ease-in-out ${b.delay} infinite` }}
           >
-            <BottleShape variant={b.variant} />
+            <Shape variant={b.variant} />
           </svg>
         </div>
       ))}
