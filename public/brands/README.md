@@ -4,10 +4,12 @@ Suelta aquí un archivo por marca. El componente `components/sections/BrandsMarq
 los detecta solo: **si el archivo existe muestra el logo; si no, muestra el nombre en texto.**
 
 ## Formato
-- **PNG con fondo transparente** o **SVG** (recomendado SVG por nitidez).
+- Sirve **logo negro sobre fondo blanco** (una captura normal) **o PNG/SVG transparente**.
+  El CSS aplica `invert` + `mix-blend-screen`: el fondo blanco se elimina solo y el logo
+  queda blanco. No hace falta recortar nada.
 - Extensiones aceptadas, en orden de prioridad: `.svg`, `.png`, `.webp`, `.jpg`, `.jpeg`
-- El logo se pinta **en blanco automáticamente** (filtro CSS `brightness-0 invert`) para
-  que combine con el fondo oscuro. Por eso da igual si el original es negro o de color.
+- Evita logos **blancos sobre fondo negro** (quedarían invisibles). Si solo tienes uno así,
+  avísame y le pongo una regla aparte.
 - Altura de render: 32px (móvil) / 40px (desktop), ancho automático, máx. 160px.
 
 ## Nombres exactos de archivo

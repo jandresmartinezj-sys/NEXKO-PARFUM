@@ -71,7 +71,7 @@ function Row({ logos }: { logos: Record<string, string | null> }) {
             <img
               src={logos[b] as string}
               alt={b}
-              className="h-8 w-auto max-w-[160px] object-contain opacity-70 brightness-0 invert transition-opacity duration-300 hover:opacity-100 sm:h-10"
+              className="h-8 w-auto max-w-[160px] object-contain opacity-75 invert mix-blend-screen transition-opacity duration-300 hover:opacity-100 sm:h-10"
               loading="lazy"
             />
           ) : (
