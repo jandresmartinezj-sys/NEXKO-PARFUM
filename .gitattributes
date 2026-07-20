@@ -1,0 +1,10 @@
+# Trata las imágenes como binarios: evita que git convierta saltos de línea
+# (CRLF/LF) y corrompa los archivos al clonar (p. ej. en el build de Vercel).
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff2 binary
+*.woff binary
