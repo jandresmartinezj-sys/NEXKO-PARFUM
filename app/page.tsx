@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CategoryGrid } from "@/components/sections/CategoryGrid";
+import { BrandsMarquee } from "@/components/sections/BrandsMarquee";
 import { InspiredBy } from "@/components/sections/InspiredBy";
 import { GiftSection } from "@/components/sections/GiftSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -29,6 +30,8 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
+
+      <BrandsMarquee />
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <SectionHeading
