@@ -47,8 +47,23 @@ const parsed = parseCSV(fs.readFileSync(src, "utf8"));
 const body = parsed.slice(1); // quita cabecera
 
 const esc = (v: string) => `"${String(v).replace(/"/g, '""')}"`;
+// Encabezados del formato actual de Shopify (plantilla product_template.csv).
+// Solo incluimos las columnas que queremos tocar: el resto de campos del
+// producto no se modifican porque su columna no aparece en el archivo.
+// "Option1 name/value" son obligatorias: el importador las exige en cuanto la
+// fila toca variantes. Los productos tienen la opción por defecto de Shopify.
 const out = [
-  ["Handle", "Title", "Image Src", "Image Position", "Image Alt Text"].map(esc).join(","),
+  [
+    "Title",
+    "URL handle",
+    "Option1 name",
+    "Option1 value",
+    "Product image URL",
+    "Image position",
+    "Image alt text",
+  ]
+    .map(esc)
+    .join(","),
 ];
 
 let ok = 0;
@@ -60,7 +75,9 @@ for (const r of body) {
   const v = (usar ?? "").trim().toUpperCase();
   if (v === "SI" || v === "SÍ" || v === "S" || v === "YES" || v === "X") {
     if (!url || !handle) continue;
-    out.push([handle, producto, url, "1", producto].map(esc).join(","));
+    out.push(
+      [producto, handle, "Title", "Default Title", url, "1", producto].map(esc).join(","),
+    );
     ok++;
   } else if (v === "NO" || v === "N") no++;
   else blank++;

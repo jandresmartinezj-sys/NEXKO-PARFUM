@@ -1,3 +1,5 @@
+import raw2026 from "./productos-2026.json";
+
 /**
  * Catálogo semilla de NEXKO PARFUM.
  *
@@ -862,11 +864,14 @@ const EXTRA_RAW: RawItem[] = [
 
 const EXTRA: CatalogItem[] = EXTRA_RAW.map(build);
 
+/** Catálogo 2026 del proveedor (generado desde los PDF con scripts/generar-2026.ts). */
+const EXTRA_2026: CatalogItem[] = (raw2026 as RawItem[]).map(build);
+
 /** Catálogo completo: destacados (con notas reales) + resto, sin duplicar handles. */
 export const CATALOG: CatalogItem[] = (() => {
   const seen = new Set<string>();
   const out: CatalogItem[] = [];
-  for (const item of [...FEATURED, ...EXTRA]) {
+  for (const item of [...FEATURED, ...EXTRA, ...EXTRA_2026]) {
     if (seen.has(item.handle)) continue;
     seen.add(item.handle);
     out.push(item);

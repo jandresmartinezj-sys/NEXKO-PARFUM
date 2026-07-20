@@ -1,0 +1,1727 @@
+[
+  {
+    "categoria": "arabes",
+    "nombre": "YUM YUM 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "SET YUM YUM DE 50 ML C/D UNIDAD",
+    "costo": 95000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ISLAND BLISH 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "LION HEARTH 100 ML",
+    "costo": 78000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MANDARIN SKY ELIXIR 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MANDARIN SKY 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY CANDY 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY HOMME 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY AOUD 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY WILD ONE 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY TRYANT 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY SPECTRA 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY ARTISTO 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY MEGA 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY LIMONI 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ODYSSEY DUBAI CHOCOLATE 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "CLUB DE NUIT INTENSE 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "CLUB THE NUIT UNTOLD 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "CLUB THE NUIT MILESTONE 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "CLUB DE NUIT WOMAN 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "AL HARAMAIN AQUA DUBAI",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "AL HARAMAIN ULTRA VIOLET",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "AMBER OUD GOLD EDITION 120 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "AL HARAMAIN AMBER ROUGE 120 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ARTE DEL UNIVERSO 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "VICTORIA BY LATAFFA 100 ML",
+    "costo": 70000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "SET MINI POR 30 ML - 4 UNIDADES",
+    "costo": 75000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "YARA LATAFFA ELIXIR 100 ML",
+    "costo": 63000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ASAD LATAFFA ELIXIR 100 ML",
+    "costo": 63000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HIS CONFESSION MEN 100 ML",
+    "costo": 80000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HER CONFESSION DAMA 100 ML",
+    "costo": 80000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "KHAMRAH LATAFFA 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "KHAMRAH QAWHA 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "KHAMRAH DUKHAN 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MUSAMAN WHITE INTENSE 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MUSAMAN 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "NOW WOMAN LATAFFA 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "TERIAQ LATAFFA 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HAYA LATTAFA 100 ML",
+    "costo": 90000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ECLAIRE LATAFFA 100 ML",
+    "costo": 89000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MAYAR LATAFFA 100 ML",
+    "costo": 73000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MAYAR NATURAL INTENSE 100 ML",
+    "costo": 73000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "YARA CANDY 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "YARA LATAFFA 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "YARA TOUS 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "YARA MOI 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ASAD LATAFFA 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ASAD BOURBON 100 ML",
+    "costo": 62000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ASAD ZANZIBAR 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "OUD FOR GLORY 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "LATAFFA AMETHYST 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "LATAFFA SUBLIME 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HONOR & GLORY 100ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "NOBLE BLUSH 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "AJWAD LATAFFA 100 ML",
+    "costo": 79000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MAAHIR LATAFFA 100 ML",
+    "costo": 73000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MAAHIR LEGACY 100 ML",
+    "costo": 73000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MAAHIR BLACK 100 ML",
+    "costo": 73000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "FAKHAR BLACK 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "FAKHAR ROSE 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "FAKHAR GOLD EXTRAIT 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "SHAHEEN GOLD 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "SHAHEEN SILVER 100 ML",
+    "costo": 85000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "SENSE LAVERNE GIORGINA",
+    "costo": 145000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "OMBRE NOMADE 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "PACIFIC CHILL 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "LES SABLES ROSES 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "IMAGINATION 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "L`IMMENSITE 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "CALIFORNIA DREAM 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "CITY OF STARS 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ORIENTICA ROUGE 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ORIENTICA ROYAL 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ORIENTICA VELVET 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ORIENTICA AZURE 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ORIENTICA DANIA 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ORIENTICA BLEU 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ORIENTICA OUD SAFFRON 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ORIENTICA NOIR 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA KING 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA NICHE FEMME 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA DOUBLE BLUE 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA CHOCOLATE 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA SCARLET 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA ROSE 100 ML",
+    "costo": 82000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA KING PARFUM 100 ML",
+    "costo": 89000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA VIKING DUBAI 100ML",
+    "costo": 89000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA VIKING KASKMIR 100 ML",
+    "costo": 89000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BHARARA VIKING CAIRO 100 ML",
+    "costo": 89000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "VALENTINO INTENSE 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "VALENTINO BOR IN ROMA 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "VALENTINO UOMO 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "VALENTINO DONNA 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "STRONGER WITH YOU 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "STRONGER INTENSLY 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HAWAS FOR HIM 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HAWAS ICE 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HAWAS FIRE 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HAWAS ELIXIR 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "HAWAS FOR HER 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "AHLI KARPOS 60 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "AHLI VEGA 60 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "AHLI CORVUS 60 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ILMIN KAKUNO 30 ML",
+    "costo": 68000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ILMIN FEMME 30 ML",
+    "costo": 68000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ILMIN IL ROSO 30 ML",
+    "costo": 68000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "9PM AFNAN 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "9PM REBEL 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "9AM DIVE 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "9AM POUR FEMME 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "9PM POUR FEMME 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "PEGASUS MARLY 100 ML",
+    "costo": 63000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "LAYTON ROYAL 100 ML",
+    "costo": 57000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MARLY KALAN 100 ML",
+    "costo": 59000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "DELINA ROYAL 80 ML",
+    "costo": 78000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "XERJOFF-ERBA PURA 100 ML",
+    "costo": 89000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "XERJOFF-NAXOS 100 ML",
+    "costo": 78000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "XERJOFF-ALEXANDRIA II 100 ML",
+    "costo": 78000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BIANCO LATTE 100 ML",
+    "costo": 75000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "OUD FOR GREATNESS 100 ML",
+    "costo": 89000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BOND BLEECKER STREET 100 ML",
+    "costo": 78000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "SANTAL 33 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "ARABIANS TONKA 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "STARRY NIGHT MONTALE 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MONTALE ROSE MUSK 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "BACARAT ROUGE 540 65 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "arabes",
+    "nombre": "MANCERA CEDRAT BOISE 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "NITRO RED BY DUMONT 100 ML",
+    "costo": 62000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "SCANDAL PARFUM MEN 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "SCANDAL MEN JP 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LE MALE LA PARFUM-LATA 120 ML",
+    "costo": 63000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LE MALE ELIXIR ABSOLU 120 ML",
+    "costo": 68000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LE MALE ELIXIR-LATA 120 ML",
+    "costo": 65000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "JEAN PAUL LE BEAU PARFUM 120 ML",
+    "costo": 65000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "JEAN PAUL PARADISE GARDEN 120 ML",
+    "costo": 65000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "JEAN PAUL LE BEAU 120 ML",
+    "costo": 63000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "JEAN PAUL ULTRAMALE 120 ML",
+    "costo": 63000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LE MALE LATA 120 ML",
+    "costo": 63000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "YVEST SAINT LAURENT 100ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "SAUVAGE DIOR 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "SAUVAGE ELIXIR DIOR 60 ML",
+    "costo": 62000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "FAHRENHEIT DIOR 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ONE MILLION GOLD 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ONE MILLION 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ONE MILLION LUCKY 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ONE MILLION PRIVE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ONE MILLION ELIXIR 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ONE MILLION ROYAL 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ONE MILLION PARFUM 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ONE MILLION PARFUM 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "INVICTUS 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "INVICTUS LEGEND 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "INVICTUS INTENSE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "INVICTUS VICTORY ELIXIR 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "INVICTUS VICTORY 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "INVICTUS AQUA 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "INVICTUS PLATINUM 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "PHANTOM 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "PHANTOM INTENSE 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "PHANTOM PARFUM 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "PHANTOM LEGION 100 ML",
+    "costo": 57000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "PURE XS 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BLACK XS 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BLACK XS L’EXCES 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BLACK XS L’APHRODISIAQUE 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "MOSCHINO TOY BOY 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BAD BOY CAROLINA HERRERA 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CH MEN CAROLINA HERRERA",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 MEN NYC CAROLINA HERRERA",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 VIP MEN CAROLINA HERRERA",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 VIP BLACK CAROLINA HERRERA",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 VIP WILD PARTY MEN",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 HEROES MEN 90 ML",
+    "costo": 47000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 VIP RED MEN 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 VIP WINS MEN 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 SEXY MEN 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 MEN AQUA 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "212 VIP BLACK I LOVE NY 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BLEU DE CHANEL 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ALLURE HOMME SPORT 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CLINIQUE HAPPY MEN 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "SWISS ARMY VICTORINOX 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CREED AVENTUS 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CREED SILVER 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CREED MILESIME IMPERIAL 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CREED VETIVER 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CREED SANTAL 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CREED GREEN IRISH TWEET 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BVLGARI AQUA 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BVLGARI MAN IN BLACK 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BVLGARI POUR HOMME 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "DIESEL ONLY THE BRAVE 120 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "DIESEL TATTO 120 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LIGHT BLUE MEN 120 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "DOLCE POUR HOMME 120 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "K DOLCE & GABBANA 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "THE ONE MEN 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BLUE LABEL GIVENCHY 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BOSS BOTTLED 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BOSS TONIC 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BOSS NIGHT 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BOSS UNLIMITED 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "HUGO BY HUGO BOSS 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "HUGO RED 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "HUGO JUST DIFERENT 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "HUGO DARK BLUE 75 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BOSS THE SCENT MEN 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BOSS IN MOTION 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BOSS ORANGE 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ISSEY MIYAKE MEN 125 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ARSENAL GILES CANTUEL 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "NAUTICA VOYAGE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LACOSTE RED 120 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LACOSTE LEROUGE 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LACOSTE BLANC 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LACOSTE LE NOIR 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LACOSTE BLUE 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LACOSTE YELLOW POWER 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LACOSTE LEVERT 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LACOSTE ESSENTIAL 120 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "STARWALKER 75 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "MONT BLANC LEGEND 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "MONT BLANC LEGEND SPIRIT 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "MONT BLANC EMBLEM 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "MONT BLANC EXPLORER 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "360 MEN PERRY ELLIS 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "360 RED MEN PERRY ELLIS 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "BLUE SEDUCTION MEN 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "POLO RED 120 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "POLO BLUE 120 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "POLO BLACK 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "VERSACE EROS 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "VERSACE EROS FLAME 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "VERSACE EROS ENERGY 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "VERSACE FRAICHE 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "VERSACE DYLAN BLUE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "VERSACE POUR HOMME 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ACQUA DI GIO 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ACQUA DI GIO PROFUMO 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ACQUA DI GIO PROFONDO 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ACQUA DI GIO PARFUM 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ARMANI CODE 120 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "CK ONE 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "ETERNITY FOR MEN 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "TOMMY MEN 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "JEAN PASCAL-CAJA 120 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "JEAN PASCAL-CUERO 120 ML",
+    "costo": 72000
+  },
+  {
+    "categoria": "masculinos",
+    "nombre": "LAPIDUS",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL VELVET FATALE 80 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL BLUSH 80 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL LEGUERE 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL SO VERY 80 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL SUPREME 80 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL FANTASTIC PINK 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL GLORIUS GOLD 80 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "GOOD GIRL DAZZLING GARDEN 80 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "212 HEROES WOMAN 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "212 VIP ROSE 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "212 VIP DAMA 80 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "212 WOMAN 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "212 SEXY WOMAN 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "212 VIP RED ROSE 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "212 VIP WINS WOMAN 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "212 VIP WILD PARTY DAMA 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CH WOMAN 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CLOUD 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CLOUD PINK 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "THANK U NEXT 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "THANK U NEXT 2.0 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "SWEET LIKE CANDY 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "MOD VAINILLA 100 ML",
+    "costo": 57000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "R.E.M ARIANA GRANDE 100 ML",
+    "costo": 57000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "ARI ARIANA GRANDE 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "SCANDAL WOMAN 90 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LE BELLE PARFUM 100 ML",
+    "costo": 68000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "JEAN PAUL DIVINE 100 ML",
+    "costo": 68000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LA BELLE FLEUR TERRIBLE 100 ML",
+    "costo": 68000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "MISS DIOR 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "JADORE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "TOY 2 MOSCHINO 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "TOY 2 BUBBLE GUM 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "TOY 2 PERLA 100 ML",
+    "costo": 59000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "SET DE MOSCHINO DE 30 ML",
+    "costo": 83000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "MOSCHINO FUNNY 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "MOSCHINO FRESH 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BVLGARI OMNIA CORAL 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BVLGARI OMNIA AMETHYSTE 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BVLGARI OMNIA CRYSTALLINE 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BVLGARI OMNIA PINK 65 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "SORBETTO ROSSO 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "MIAMI BLOSSOM 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LA VIDA ES BELLA 75 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "TRESOR LANCOME 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "IDOLE LANCOME 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "COCO MADEMOISELLE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CHANEL #5 DE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CHANCE CHANEL 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CHANCE CHANEL TENDRE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CHANCE CHANEL FRAICHE 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "FANTASY 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "FANTASY MIDNIGT 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LIGHT BLUE WOMAN 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "DEVOTION 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "THE ONE WOMAN 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "ANGEL & DEMOND 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BOSS THE SCENT FOR HER 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LACOSTE SPARKLING 90 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LACOSTE ELEGANT 90 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LACOSTE NATURAL 90 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LACOSTE TOUCH OF PINK 90 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "FAME 90 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "LADY MILLION 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "OLYMPEA 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "PURE XS 80 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CAN CAN 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CAN CAN BURLESQUE 100 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "PARIS HILTON 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "HEIRESS 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "DAZZLE 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "MEOW KATY PERRY 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "PURR KATY PERRY 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "ACQUA DI GIOLA 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "SÍ 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CK IN 2 U 100 ML",
+    "costo": 58000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "EUPHORIA 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "360 WOMAN 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "360 CORAL 100 ML",
+    "costo": 48000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "RALPH LAUREN 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BRIGHT CRYSTAL 90 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "YELLOW DIAMOND 90 ML",
+    "costo": 50000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "DYLAN BLUE WOMAN 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "DYLAN PURPLE 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "DYLAN TURQUIOISE 100 ML",
+    "costo": 53000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CREED AVENTUS HER 75 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CREED LOVE IN WHITE 75 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "CREED LOVE IN BLACK 75 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BOMBSHELL 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "ISSEY MIYAKE WOMAN 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "TOMMY GIRL 100 ML",
+    "costo": 45000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BURBERRY HER 100 ML",
+    "costo": 52000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "HALLOWEEN 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "BY DELICIUS DKNY 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "FLOWER BY KENZO 100 ML",
+    "costo": 55000
+  },
+  {
+    "categoria": "femeninos",
+    "nombre": "TOUCH 100 ML",
+    "costo": 48000
+  }
+]
