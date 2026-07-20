@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/lib/store/cart";
 import { formatCOP } from "@/lib/utils/formatPrice";
 
-const FREE_SHIPPING_THRESHOLD = 150000;
+const FREE_SHIPPING_THRESHOLD = 250000;
 const PLACEHOLDER = "https://placehold.co/200x200/0A0A12/C9A84C/png?text=NEXKO";
 
 export function CartDrawer() {
