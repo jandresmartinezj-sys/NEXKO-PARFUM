@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -19,21 +20,15 @@ const NAV = [
 
 function Logo() {
   return (
-    <Link href="/" className="group flex items-center gap-2" aria-label="NEXKO PARFUM inicio">
-      <svg viewBox="0 0 32 40" className="h-8 w-7 fill-none">
-        <path
-          d="M13 6h6l1.5 3v3l2 2v3c0 9-3 18-5.5 18S11 29 11 20v-3l2-2V9l1.5-3z"
-          stroke="url(#g)"
-          strokeWidth="1.4"
-        />
-        <rect x="13" y="2" width="6" height="4" rx="1" stroke="url(#g)" strokeWidth="1.4" />
-        <defs>
-          <linearGradient id="g" x1="0" y1="0" x2="32" y2="40">
-            <stop stopColor="#E8C97A" />
-            <stop offset="1" stopColor="#B08D34" />
-          </linearGradient>
-        </defs>
-      </svg>
+    <Link href="/" className="group flex items-center gap-2.5" aria-label="NEXKO PARFUM inicio">
+      <Image
+        src="/logo-nexko-mark.png"
+        alt=""
+        width={132}
+        height={160}
+        priority
+        className="h-9 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-10"
+      />
       <span className="font-display text-xl tracking-[0.25em] gradient-gold">NEXKO</span>
     </Link>
   );

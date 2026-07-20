@@ -10,7 +10,8 @@
     "seed": "tsx scripts/seed.ts",
     "export:csv": "tsx scripts/export-csv.ts",
     "images:template": "tsx scripts/export-images-template.ts",
-    "logos": "node scripts/normalize-logos.mjs"
+    "logos": "node scripts/normalize-logos.mjs",
+    "logo": "node scripts/build-logo.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",

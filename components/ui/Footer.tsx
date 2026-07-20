@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const BENEFITS = [
   { icon: "✓", text: "Alternativas premium a precios justos" },
@@ -20,12 +21,13 @@ export function Footer() {
     <footer className="border-t border-subtle bg-dark">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex flex-col items-center text-center">
-          <span className="font-display text-4xl tracking-[0.35em] gradient-gold">
-            NEXKO
-          </span>
-          <span className="mt-1 font-arabic text-sm tracking-[0.5em] text-ink-secondary">
-            PARFUM
-          </span>
+          <Image
+            src="/logo-nexko.png"
+            alt="NEXKO PARFUM"
+            width={463}
+            height={516}
+            className="h-32 w-auto sm:h-36"
+          />
         </div>
 
         <div className="mt-12 grid gap-10 md:grid-cols-3">
