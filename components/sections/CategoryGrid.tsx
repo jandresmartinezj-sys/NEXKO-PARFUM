@@ -16,21 +16,21 @@ const CATEGORIES = [
     title: "Masculinos",
     copy: "El hombre moderno",
     gradient: "from-blue-600/30 to-slate-500/20",
-    emoji: "🖤",
+    emoji: "🔱",
   },
   {
     href: "/colecciones/femeninos",
     title: "Femeninos",
     copy: "Tu esencia",
     gradient: "from-rose-scent/30 to-gold/20",
-    emoji: "🌹",
+    emoji: "⚜️",
   },
   {
     href: "/colecciones/body-sprays",
     title: "Body Sprays",
     copy: "Frescura todo el día",
     gradient: "from-fresh-aqua/30 to-blue-400/20",
-    emoji: "🌊",
+    emoji: "🌀",
   },
   {
     href: "/colecciones/sets-regalo",
@@ -57,7 +57,7 @@ export function CategoryGrid() {
             href={cat.href}
             className={`group relative flex h-44 flex-col justify-end overflow-hidden rounded-2xl border border-subtle bg-gradient-to-br ${cat.gradient} p-5 transition-transform hover:scale-[1.02]`}
           >
-            <span className="absolute right-4 top-4 text-3xl opacity-80 transition-transform group-hover:scale-125">
+            <span className="emoji-gold absolute right-4 top-4 text-3xl opacity-90 transition-transform group-hover:scale-125">
               {cat.emoji}
             </span>
             <h3 className="font-serif text-xl text-ink-primary">{cat.title}</h3>

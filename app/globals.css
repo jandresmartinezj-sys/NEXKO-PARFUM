@@ -174,6 +174,13 @@ body.cursor-none * {
   }
 }
 
+/* Emojis en tono dorado NEXKO (los emojis traen su propio color: se
+   desatura y se retiñe con sepia + saturación para llevarlos al oro). */
+.emoji-gold {
+  filter: grayscale(1) sepia(1) saturate(5) hue-rotate(-12deg) brightness(1.08)
+    drop-shadow(0 0 6px rgba(201, 168, 76, 0.35));
+}
+
 /* Cinta infinita de marcas */
 @keyframes marquee {
   from {
