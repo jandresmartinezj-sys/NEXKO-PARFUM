@@ -64,29 +64,60 @@ function reshapeProduct(p: RawProduct | null): Product | null {
 
 /* ─────────────── Queries ─────────────── */
 
+/** La Storefront API devuelve como máximo 250 productos por consulta. */
+const PAGE_MAX = 250;
+
 export async function getProducts(opts?: {
   first?: number;
   query?: string;
   sortKey?: string;
   reverse?: boolean;
 }): Promise<Product[]> {
-  const data = await shopifyFetch<{ products: Edges<RawProduct> }>({
-    query: /* GraphQL */ `
-      query Products($first: Int!, $query: String, $sortKey: ProductSortKeys, $reverse: Boolean) {
-        products(first: $first, query: $query, sortKey: $sortKey, reverse: $reverse) {
-          edges { node { ...ProductFields } }
+  const wanted = opts?.first ?? 100;
+  const nodes: RawProduct[] = [];
+  let cursor: string | null = null;
+
+  // Pagina con cursor hasta reunir `wanted` productos o agotar el catálogo.
+  while (nodes.length < wanted) {
+    const data: {
+      products: Edges<RawProduct> & { pageInfo: { hasNextPage: boolean; endCursor: string } };
+    } = await shopifyFetch({
+      query: /* GraphQL */ `
+        query Products(
+          $first: Int!
+          $after: String
+          $query: String
+          $sortKey: ProductSortKeys
+          $reverse: Boolean
+        ) {
+          products(
+            first: $first
+            after: $after
+            query: $query
+            sortKey: $sortKey
+            reverse: $reverse
+          ) {
+            pageInfo { hasNextPage endCursor }
+            edges { node { ...ProductFields } }
+          }
         }
-      }
-      ${PRODUCT_FRAGMENT}
-    `,
-    variables: {
-      first: opts?.first ?? 100,
-      query: opts?.query,
-      sortKey: opts?.sortKey ?? "BEST_SELLING",
-      reverse: opts?.reverse ?? false,
-    },
-  });
-  return flatten(data.products)
+        ${PRODUCT_FRAGMENT}
+      `,
+      variables: {
+        first: Math.min(PAGE_MAX, wanted - nodes.length),
+        after: cursor,
+        query: opts?.query,
+        sortKey: opts?.sortKey ?? "BEST_SELLING",
+        reverse: opts?.reverse ?? false,
+      },
+    });
+
+    nodes.push(...flatten(data.products));
+    if (!data.products.pageInfo.hasNextPage) break;
+    cursor = data.products.pageInfo.endCursor;
+  }
+
+  return nodes
     .map(reshapeProduct)
     .filter((p): p is Product => p !== null);
 }

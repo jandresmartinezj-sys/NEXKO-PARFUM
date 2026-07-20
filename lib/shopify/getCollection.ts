@@ -23,7 +23,7 @@ export async function getCollectionOrTag(handle: string): Promise<Product[]> {
   const tag = TAG_FOR[handle];
   if (!tag) return [];
   try {
-    return await getProducts({ query: `tag:${tag}`, first: 100 });
+    return await getProducts({ query: `tag:${tag}`, first: 500 });
   } catch (e) {
     console.error(`Fallback tag ${tag}:`, e);
     return [];

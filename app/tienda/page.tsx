@@ -18,7 +18,7 @@ export default async function TiendaPage({
 }) {
   let products: Product[] = [];
   try {
-    products = await getProducts({ first: 250 });
+    products = await getProducts({ first: 1000 });
   } catch (e) {
     console.error("Error cargando catálogo:", e);
   }
