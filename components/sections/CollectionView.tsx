@@ -18,7 +18,7 @@ export function CollectionView({
       <section
         className={`relative overflow-hidden bg-gradient-to-b ${theme.accent} pt-32 pb-16`}
       >
-        <div className="pointer-events-none absolute -right-10 top-10 text-[180px] opacity-10">
+        <div className="emoji-gold pointer-events-none absolute -right-10 top-10 text-[180px] opacity-20">
           {theme.emoji}
         </div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
