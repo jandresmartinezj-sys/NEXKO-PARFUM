@@ -30,8 +30,7 @@ export default function Page() {
           </a>
         </li>
         <li>
-          <strong>Correo:</strong>{" "}
-          <mark>[COMPLETAR: ej. hola@nexkogroup.com]</mark>
+          <strong>Correo:</strong> servicioalcliente@nexkogroup.com
         </li>
         <li>
           <strong>Sitio web:</strong> www.nexkogroup.com
@@ -39,19 +38,17 @@ export default function Page() {
       </ul>
 
       <h2>Horario de atención</h2>
-      <p>
-        <mark>[COMPLETAR: ej. Lunes a sábado, 8:00 a. m. – 6:00 p. m.]</mark>
-      </p>
+      <p>Lunes a sábado, 8:00 a. m. – 6:00 p. m.</p>
 
       <h2>Ubicación</h2>
       <p>
-        Tienda 100% en línea con despachos a toda Colombia.{" "}
-        <mark>[COMPLETAR: ciudad de origen o punto de entrega, si aplica.]</mark>
+        Tienda 100% en línea. Despachamos desde <strong>Montería, Córdoba</strong> hacia toda
+        Colombia.
       </p>
 
       <h2>Datos de la empresa</h2>
       <p>
-        NEXKO PARFUM — <mark>[COMPLETAR: razón social y NIT/C.C.]</mark>. Consulta nuestro{" "}
+        <strong>NEXKO GROUP S.A.S.</strong> — NIT 902.034.652-0. Consulta nuestro{" "}
         <a href="/politicas/aviso-legal">Aviso legal</a>.
       </p>
     </LegalLayout>

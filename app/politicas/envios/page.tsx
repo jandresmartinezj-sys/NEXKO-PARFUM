@@ -17,8 +17,8 @@ export default function Page() {
       <h2>Cobertura</h2>
       <p>
         Enviamos a todas las ciudades y municipios del territorio nacional a través de
-        empresas transportadoras aliadas <mark>[COMPLETAR: ej. Servientrega, Coordinadora,
-        Interrapidísimo]</mark>.
+        empresas transportadoras aliadas —<strong>Servientrega, Coordinadora, Interrapidísimo
+        y Envía</strong>—, seleccionando la más adecuada según la zona de destino.
       </p>
 
       <h2>Tiempos de entrega</h2>
@@ -40,15 +40,16 @@ export default function Page() {
           <strong>$250.000 COP</strong>.
         </li>
         <li>
-          Para compras menores, el costo del envío se calcula según destino y se muestra al
-          finalizar la compra <mark>[COMPLETAR: valor fijo o tarifa por ciudad, ej. $12.000]</mark>.
+          Para compras menores, el costo de envío es de <strong>$19.000 COP</strong> y se
+          muestra al finalizar la compra.
         </li>
       </ul>
 
       <h2>Pago contra entrega</h2>
       <p>
-        <mark>[COMPLETAR: indica si ofreces pago contra entrega y en qué ciudades. Si no,
-        elimina esta sección.]</mark>
+        Ofrecemos <strong>pago contra entrega únicamente en la ciudad de Montería</strong>.
+        Para el resto del país, el pago se realiza de forma anticipada a través de nuestros
+        medios de pago en línea.
       </p>
 
       <h2>Seguimiento del pedido</h2>

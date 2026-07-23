@@ -12,13 +12,15 @@ export default function Page() {
     <LegalLayout title="Aviso legal" updated="Julio de 2026">
       <h2>Identificación del responsable</h2>
       <p>
-        <strong>NEXKO PARFUM</strong>
+        <strong>NEXKO GROUP S.A.S.</strong> — marca <strong>NEXKO PARFUM</strong>
         <br />
-        <mark>[COMPLETAR: razón social / nombre del titular]</mark>
+        NIT: 902.034.652-0
         <br />
-        NIT / C.C.: <mark>[COMPLETAR]</mark>
+        Representante legal: José Andrés Martínez Jiménez (C.C. 1.062.427.484)
         <br />
-        Domicilio: <mark>[COMPLETAR: ciudad, Colombia]</mark>
+        Domicilio: Montería, Córdoba, Colombia
+        <br />
+        Correo: servicioalcliente@nexkogroup.com
         <br />
         Sitio web: www.nexkogroup.com
       </p>
@@ -49,8 +51,8 @@ export default function Page() {
       </p>
       <ul>
         <li>
-          <strong>Responsable:</strong> NEXKO PARFUM. Contacto:{" "}
-          <mark>[COMPLETAR: correo, ej. hola@nexkogroup.com]</mark>.
+          <strong>Responsable:</strong> NEXKO GROUP S.A.S. Contacto:{" "}
+          servicioalcliente@nexkogroup.com.
         </li>
         <li>
           <strong>Finalidad:</strong> gestionar tus pedidos, procesar pagos, coordinar envíos,
