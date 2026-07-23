@@ -27,6 +27,12 @@ const config: Config = {
           primary: "#F5F0E8",
           secondary: "#A09080",
         },
+        cream: {
+          DEFAULT: "#F5F1E8",
+          tile: "#FFFFFF",
+          ink: "#1A160F",
+          muted: "#94804F",
+        },
       },
       fontFamily: {
         display: ["var(--font-playfair)", "serif"],
@@ -37,6 +43,8 @@ const config: Config = {
       boxShadow: {
         gold: "0 0 30px -8px rgba(201,168,76,0.45)",
         "gold-lg": "0 0 60px -12px rgba(201,168,76,0.55)",
+        card: "0 10px 28px -12px rgba(201,168,76,0.40)",
+        "card-hover": "0 18px 42px -12px rgba(201,168,76,0.58)",
       },
       backgroundImage: {
         "gold-gradient":

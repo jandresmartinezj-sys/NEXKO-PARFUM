@@ -5,6 +5,7 @@ interface PriceDisplayProps {
   compareAtPrice?: string | number | null;
   stock?: number | null;
   size?: "sm" | "lg";
+  tone?: "gold" | "ink";
   className?: string;
 }
 
@@ -13,6 +14,7 @@ export function PriceDisplay({
   compareAtPrice,
   stock,
   size = "lg",
+  tone = "gold",
   className = "",
 }: PriceDisplayProps) {
   const priceNum = typeof price === "string" ? parseFloat(price) : price;
@@ -31,7 +33,7 @@ export function PriceDisplay({
     <div className={className}>
       <div className="flex flex-wrap items-baseline gap-2">
         <span
-          className={`font-semibold text-gold ${size === "lg" ? "text-3xl sm:text-4xl" : "text-lg"}`}
+          className={`font-semibold ${tone === "ink" ? "text-cream-ink" : "text-gold"} ${size === "lg" ? "text-3xl sm:text-4xl" : "text-lg"}`}
         >
           {formatCOP(priceNum)}
         </span>

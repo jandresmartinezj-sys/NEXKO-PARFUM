@@ -16,16 +16,16 @@ const PLACEHOLDER = "https://placehold.co/800x800/0A0A12/C9A84C/png?text=NEXKO";
 function badgeFor(product: Product): { label: string; className: string } {
   const tags = product.tags.map((t) => t.toLowerCase());
   if (tags.includes("set"))
-    return { label: "Set", className: "bg-emerald-500/20 text-emerald-300" };
+    return { label: "Set", className: "bg-emerald-600/15 text-emerald-700" };
   if (tags.includes("body-spray"))
-    return { label: "Body Spray", className: "bg-fresh-aqua/20 text-fresh-aqua" };
+    return { label: "Body Spray", className: "bg-teal-600/15 text-teal-700" };
   if (tags.includes("arabe"))
-    return { label: "Árabe", className: "bg-gold/20 text-gold-light" };
+    return { label: "Árabe", className: "bg-gold/25 text-[#8a6f2e]" };
   if (tags.includes("masculino"))
-    return { label: "Masculino", className: "bg-blue-500/20 text-blue-300" };
+    return { label: "Masculino", className: "bg-blue-600/12 text-blue-700" };
   if (tags.includes("femenino"))
-    return { label: "Femenino", className: "bg-rose-scent/20 text-rose-scent" };
-  return { label: "Unisex", className: "bg-violet-500/20 text-violet-300" };
+    return { label: "Femenino", className: "bg-rose-500/15 text-rose-600" };
+  return { label: "Unisex", className: "bg-violet-500/15 text-violet-700" };
 }
 
 export function ProductCard({ product }: { product: Product }) {
@@ -82,18 +82,17 @@ export function ProductCard({ product }: { product: Product }) {
         onMouseLeave={onLeave}
         animate={{ rotateX: tilt.rx, rotateY: tilt.ry }}
         transition={{ type: "spring", stiffness: 200, damping: 18 }}
-        className="preserve-3d group relative flex flex-col overflow-hidden rounded-2xl border border-subtle bg-surface/60"
+        className="preserve-3d group relative flex flex-col overflow-hidden rounded-2xl border border-gold/25 bg-cream shadow-card transition-shadow duration-300 hover:shadow-card-hover"
       >
         <Link href={`/tienda/${product.handle}`} className="block">
-          {/* Imagen sobre pedestal */}
-          <div className="relative aspect-square overflow-hidden bg-void-radial">
-            <div className="absolute left-1/2 top-[62%] h-10 w-3/4 -translate-x-1/2 rounded-[100%] bg-gold/10 blur-xl" />
+          {/* Tile claro para la foto */}
+          <div className="relative m-3 mb-0 aspect-square overflow-hidden rounded-xl bg-cream-tile">
             <Image
               src={image}
               alt={product.featuredImage?.altText ?? product.title}
               fill
               sizes="(max-width:768px) 50vw, 25vw"
-              className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
+              className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
             />
             <span
               className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-semibold ${badge.className}`}
@@ -106,11 +105,11 @@ export function ProductCard({ product }: { product: Product }) {
               data-cursor="pointer"
               aria-label={saved ? "Quitar de favoritos" : "Agregar a favoritos"}
               aria-pressed={saved}
-              className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-void/50 backdrop-blur transition-colors hover:bg-void/70"
+              className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/[0.05] backdrop-blur transition-colors hover:bg-black/[0.12]"
             >
               <motion.svg
                 viewBox="0 0 24 24"
-                className={`h-5 w-5 ${saved ? "fill-rose-scent stroke-rose-scent" : "fill-none stroke-ink-secondary"}`}
+                className={`h-5 w-5 ${saved ? "fill-rose-500 stroke-rose-500" : "fill-none stroke-cream-muted"}`}
                 strokeWidth="1.8"
                 animate={saved ? { scale: [1, 1.35, 1] } : { scale: 1 }}
                 transition={{ duration: 0.3 }}
@@ -133,10 +132,10 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
 
           <div className="px-4 pt-3">
-            <p className="text-[11px] uppercase tracking-wider text-ink-secondary">
+            <p className="text-[11px] uppercase tracking-wider text-cream-muted">
               {product.vendor}
             </p>
-            <h3 className="line-clamp-2 min-h-[2.6rem] font-serif text-lg leading-tight text-ink-primary">
+            <h3 className="line-clamp-2 min-h-[2.6rem] font-serif text-lg leading-tight text-cream-ink">
               {product.title}
             </h3>
           </div>
@@ -148,6 +147,7 @@ export function ProductCard({ product }: { product: Product }) {
             compareAtPrice={variant?.compareAtPrice?.amount}
             stock={stock}
             size="sm"
+            tone="ink"
           />
           <div className="relative">
             <button
