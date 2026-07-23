@@ -103,6 +103,19 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-subtle pt-6 text-center text-xs text-ink-secondary">
+          <nav className="mb-5 flex flex-wrap justify-center gap-x-5 gap-y-2">
+            {[
+              { href: "/politicas/envios", label: "Envíos" },
+              { href: "/politicas/devoluciones", label: "Devoluciones y reembolsos" },
+              { href: "/politicas/terminos", label: "Términos del Servicio" },
+              { href: "/politicas/aviso-legal", label: "Aviso legal" },
+              { href: "/contacto", label: "Contacto" },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="transition-colors hover:text-gold">
+                {l.label}
+              </Link>
+            ))}
+          </nav>
           <p>NEXKO PARFUM — Fragancias de inspiración premium.</p>
           <p className="mt-1">
             Productos de inspiración. No somos distribuidores oficiales de las marcas
