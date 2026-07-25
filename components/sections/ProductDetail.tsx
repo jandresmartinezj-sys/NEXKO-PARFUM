@@ -80,26 +80,27 @@ export function ProductDetail({ product }: { product: Product }) {
     <div className="grid gap-10 lg:grid-cols-2">
       {/* Galería */}
       <div>
-        <div
-          ref={imgWrap}
-          onMouseMove={onZoomMove}
-          onMouseLeave={() => setZoom((z) => ({ ...z, on: false }))}
-          className="relative aspect-square overflow-hidden rounded-3xl border border-subtle bg-void-radial"
-        >
-          <div className="absolute left-1/2 top-[64%] h-12 w-2/3 -translate-x-1/2 rounded-[100%] bg-gold/10 blur-2xl" />
-          <Image
-            src={mainImage}
-            alt={product.title}
-            fill
-            priority
-            sizes="(max-width:1024px) 100vw, 50vw"
-            className="object-contain p-10 transition-transform duration-200"
-            style={
-              zoom.on
-                ? { transform: "scale(1.8)", transformOrigin: `${zoom.x}% ${zoom.y}%` }
-                : undefined
-            }
-          />
+        <div className="rounded-3xl border border-gold/25 bg-cream p-3 shadow-card">
+          <div
+            ref={imgWrap}
+            onMouseMove={onZoomMove}
+            onMouseLeave={() => setZoom((z) => ({ ...z, on: false }))}
+            className="relative aspect-square overflow-hidden rounded-2xl bg-cream-tile"
+          >
+            <Image
+              src={mainImage}
+              alt={product.title}
+              fill
+              priority
+              sizes="(max-width:1024px) 100vw, 50vw"
+              className="object-contain p-8 transition-transform duration-200"
+              style={
+                zoom.on
+                  ? { transform: "scale(1.8)", transformOrigin: `${zoom.x}% ${zoom.y}%` }
+                  : undefined
+              }
+            />
+          </div>
         </div>
         {images.length > 1 && (
           <div className="mt-4 flex gap-3 overflow-x-auto no-scrollbar">
@@ -107,8 +108,8 @@ export function ProductDetail({ product }: { product: Product }) {
               <button
                 key={img.url + i}
                 onClick={() => setActive(i)}
-                className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border bg-surface ${
-                  active === i ? "border-gold" : "border-subtle"
+                className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border bg-cream-tile transition-colors ${
+                  active === i ? "border-gold ring-1 ring-gold" : "border-gold/20 hover:border-gold/50"
                 }`}
               >
                 <Image src={img.url} alt="" fill sizes="80px" className="object-contain p-2" />
@@ -143,7 +144,7 @@ export function ProductDetail({ product }: { product: Product }) {
         {/* Cantidad */}
         <div className="mt-8 flex items-center gap-4">
           <span className="text-sm text-ink-secondary">Cantidad</span>
-          <div className="flex items-center gap-3 rounded-full border border-subtle px-2">
+          <div className="flex items-center gap-3 rounded-full border border-gold/30 bg-surface/40 px-2">
             <button
               onClick={() => setQty((q) => Math.max(1, q - 1))}
               className="px-3 py-2 text-ink-secondary hover:text-gold"
@@ -183,10 +184,20 @@ export function ProductDetail({ product }: { product: Product }) {
         </div>
 
         {/* Garantías */}
-        <div className="mt-8 grid grid-cols-3 gap-3 border-t border-subtle pt-6 text-center text-xs text-ink-secondary">
-          <div>🚚<br />Envío Colombia</div>
-          <div>✅<br />Calidad garantizada</div>
-          <div>💰<br />Mejor precio</div>
+        <div className="mt-8 grid grid-cols-3 gap-3">
+          {[
+            { icon: "🚚", label: "Envío a toda Colombia" },
+            { icon: "✅", label: "Calidad garantizada" },
+            { icon: "💰", label: "Mejor precio" },
+          ].map((g) => (
+            <div
+              key={g.label}
+              className="flex flex-col items-center gap-1.5 rounded-2xl border border-gold/15 bg-surface/50 px-2 py-4 text-center"
+            >
+              <span className="text-2xl">{g.icon}</span>
+              <p className="text-[11px] leading-tight text-ink-secondary">{g.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
