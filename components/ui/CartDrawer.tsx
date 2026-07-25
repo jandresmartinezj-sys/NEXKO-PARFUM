@@ -4,7 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/lib/store/cart";
 import { formatCOP } from "@/lib/utils/formatPrice";
-import { fbTrack } from "@/lib/analytics/pixel";
+import { trackBeginCheckout } from "@/lib/analytics/events";
 
 const FREE_SHIPPING_THRESHOLD = 250000;
 const PLACEHOLDER = "https://placehold.co/200x200/0A0A12/C9A84C/png?text=NEXKO";
@@ -159,12 +159,16 @@ export function CartDrawer() {
                   href={cart?.checkoutUrl ?? "#"}
                   onClick={() => {
                     if (!cart) return;
-                    fbTrack("InitiateCheckout", {
-                      currency: "COP",
-                      value: subtotal,
-                      num_items: cart.totalQuantity,
-                      content_ids: lines.map((l) => l.merchandise.product.handle),
-                    });
+                    trackBeginCheckout(
+                      lines.map((l) => ({
+                        handle: l.merchandise.product.handle,
+                        title: l.merchandise.product.title,
+                        price: Number(l.merchandise.price.amount),
+                        quantity: l.quantity,
+                      })),
+                      subtotal,
+                      cart.totalQuantity,
+                    );
                   }}
                   className="btn-gold w-full"
                   aria-disabled={loading}
