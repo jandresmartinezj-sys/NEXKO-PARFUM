@@ -4,6 +4,7 @@ const LINKS = [
   { href: "/politicas/envios", label: "Envíos" },
   { href: "/politicas/devoluciones", label: "Devoluciones" },
   { href: "/politicas/terminos", label: "Términos" },
+  { href: "/politicas/privacidad", label: "Privacidad" },
   { href: "/politicas/aviso-legal", label: "Aviso legal" },
   { href: "/contacto", label: "Contacto" },
 ];

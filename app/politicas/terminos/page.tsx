@@ -52,8 +52,16 @@ export default function Page() {
       <p>
         Te comprometes a usar el Sitio de forma lícita y a no realizar actividades que afecten
         su funcionamiento, seguridad o la de otros usuarios. La información que suministres debe
-        ser veraz y actualizada.
+        ser veraz y actualizada. En particular, queda prohibido:
       </p>
+      <ul>
+        <li>Suplantar la identidad de otra persona o empresa, o entregar datos falsos.</li>
+        <li>Usar el Sitio con fines fraudulentos o mediante bots o agentes de compra automáticos.</li>
+        <li>Introducir virus, malware o cualquier código que dañe el Sitio o a otros usuarios.</li>
+        <li>Publicar o transmitir contenido ilícito, ofensivo, difamatorio o que infrinja derechos de terceros.</li>
+        <li>Intentar acceder sin autorización a nuestros sistemas o a cuentas de otros usuarios.</li>
+      </ul>
+      <p>Eres el único responsable de tu conducta y de los daños que puedas ocasionar.</p>
 
       <h2>6. Propiedad intelectual</h2>
       <p>
@@ -76,13 +84,36 @@ export default function Page() {
         describe en nuestro <a href="/politicas/aviso-legal">Aviso legal</a>.
       </p>
 
-      <h2>9. Ley aplicable</h2>
+      <h2>9. Enlaces a sitios de terceros</h2>
+      <p>
+        El Sitio puede contener enlaces a páginas de terceros (redes sociales, transportadoras,
+        pasarelas de pago). No controlamos ni respondemos por el contenido, las políticas o las
+        prácticas de esos sitios; te recomendamos revisar sus términos antes de usarlos.
+      </p>
+
+      <h2>10. Promociones y ofertas</h2>
+      <p>
+        Las promociones, descuentos o cupones pueden tener condiciones y vigencias específicas que
+        se informan en cada caso. Nos reservamos el derecho de modificarlas o finalizarlas sin
+        previo aviso. Los productos marcados como “venta final” no admiten cambio ni devolución,
+        salvo por defecto de calidad.
+      </p>
+
+      <h2>11. Modificación y terminación</h2>
+      <p>
+        Podemos actualizar estos Términos, así como suspender, modificar o descontinuar productos,
+        ofertas o el Sitio en cualquier momento y de forma unilateral. La versión vigente es la
+        publicada en esta página. También podemos suspender el acceso de quien incumpla estos
+        Términos.
+      </p>
+
+      <h2>12. Ley aplicable</h2>
       <p>
         Estos términos se rigen por las leyes de la República de Colombia. Cualquier
         controversia se resolverá ante las autoridades competentes del país.
       </p>
 
-      <h2>10. Contacto</h2>
+      <h2>13. Contacto</h2>
       <p>
         Para cualquier consulta, visita nuestra página de{" "}
         <a href="/contacto">contacto</a>.

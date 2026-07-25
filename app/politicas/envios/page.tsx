@@ -14,6 +14,13 @@ export default function Page() {
         A continuación encontrarás las condiciones de nuestros despachos.
       </p>
 
+      <h2>Confirmación del pago</h2>
+      <p>
+        Antes de despachar verificamos el pago de tu pedido. Los pagos con tarjeta o PSE se
+        confirman por lo general el mismo día o en un máximo de <strong>1 día hábil</strong>. Una
+        vez aprobado, recibirás un correo confirmando tu orden y, al despacharla, el número de guía.
+      </p>
+
       <h2>Cobertura</h2>
       <p>
         Enviamos a todas las ciudades y municipios del territorio nacional a través de
@@ -62,11 +69,35 @@ export default function Page() {
         .
       </p>
 
+      <h2>Al recibir tu pedido</h2>
+      <p>
+        El pedido puede ser recibido por cualquier persona mayor de edad presente en la dirección,
+        quien deberá firmar la guía del transportador como comprobante de entrega. Te recomendamos{" "}
+        <strong>revisar el paquete al momento de recibirlo</strong>: si el empaque llega abierto o
+        con daños visibles, déjalo anotado como observación en la guía o, de ser posible, no lo
+        recibas, y contáctanos de inmediato. Este registro es necesario para gestionar cualquier
+        reclamación por daños en el transporte.
+      </p>
+
+      <h2>Modificaciones y cancelaciones</h2>
+      <p>
+        Los cambios de dirección o la cancelación de un pedido solo son posibles{" "}
+        <strong>antes del despacho</strong>. Una vez el pedido sale de nuestra bodega no es posible
+        alterar la dirección ni cancelarlo. Escríbenos lo antes posible si necesitas un cambio.
+      </p>
+
       <h2>Pedidos no entregados</h2>
       <p>
         Si la transportadora no logra entregar tras varios intentos por datos incorrectos o
         ausencia del destinatario, el pedido regresa a nuestra bodega. Nos comunicaremos para
         coordinar un nuevo envío, cuyo costo podrá estar a cargo del cliente.
+      </p>
+
+      <h2>Envíos internacionales</h2>
+      <p>
+        Por ahora despachamos únicamente dentro de <strong>Colombia</strong>. Si te encuentras fuera
+        del país y deseas comprar, escríbenos por WhatsApp para evaluar la disponibilidad, los
+        tiempos y los costos según el destino.
       </p>
     </LegalLayout>
   );

@@ -52,6 +52,24 @@ export default function Page() {
         <li>Reembolso del valor pagado.</li>
       </ul>
 
+      <h2>Producto dañado durante el transporte</h2>
+      <p>
+        Empacamos cada pedido con cuidado. Aun así, si al recibir notas que el paquete llegó abierto
+        o golpeado, <strong>déjalo anotado en la guía del transportador</strong> o no lo recibas, y
+        contáctanos el mismo día. Ese registro es clave: sin la observación de daño en la guía, la
+        transportadora puede rechazar la reclamación. Con las evidencias, gestionamos la reposición o
+        el reembolso.
+      </p>
+
+      <h2>Reversión del pago</h2>
+      <p>
+        Cuando aplique el derecho de retracto, cuando el producto no sea entregado o no corresponda a
+        lo solicitado, podrás solicitar la <strong>reversión del pago</strong> conforme al{" "}
+        <strong>artículo 51 de la Ley 1480 de 2011</strong>. Debes notificarnos dentro de los cinco
+        (5) días hábiles siguientes al hecho; gestionaremos la reversión ante el medio de pago
+        utilizado.
+      </p>
+
       <h2>Cambios</h2>
       <p>
         Aceptamos cambios por otra referencia siempre que el producto cumpla las condiciones de

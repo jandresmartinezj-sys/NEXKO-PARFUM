@@ -108,6 +108,7 @@ export function Footer() {
               { href: "/politicas/envios", label: "Envíos" },
               { href: "/politicas/devoluciones", label: "Devoluciones y reembolsos" },
               { href: "/politicas/terminos", label: "Términos del Servicio" },
+              { href: "/politicas/privacidad", label: "Privacidad" },
               { href: "/politicas/aviso-legal", label: "Aviso legal" },
               { href: "/contacto", label: "Contacto" },
             ].map((l) => (

@@ -68,6 +68,11 @@ export default function Page() {
         </li>
       </ul>
 
+      <p>
+        Consulta el detalle completo (datos recolectados, cookies, terceros, plazos y ejercicio de
+        derechos) en nuestra <a href="/politicas/privacidad">Política de privacidad</a>.
+      </p>
+
       <h2>Cookies</h2>
       <p>
         El sitio puede utilizar cookies y tecnologías similares para mejorar tu experiencia y,
