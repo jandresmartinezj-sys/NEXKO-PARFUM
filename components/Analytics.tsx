@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-4KTK6LXZ1L";
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "1586699729783041";
 
 /**
