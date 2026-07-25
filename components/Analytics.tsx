@@ -1,7 +1,7 @@
 import Script from "next/script";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "1586699729783041";
 
 /**
  * Carga Google Analytics 4 y Meta Pixel solo si sus IDs están definidos en
