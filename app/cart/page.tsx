@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/lib/store/cart";
 import { formatCOP } from "@/lib/utils/formatPrice";
+import { fbTrack } from "@/lib/analytics/pixel";
 
 const PLACEHOLDER = "https://placehold.co/200x200/0A0A12/C9A84C/png?text=NEXKO";
 
@@ -87,7 +88,19 @@ export default function CartPage() {
               <span className="text-ink-secondary">Subtotal</span>
               <span className="font-serif text-2xl text-gold">{formatCOP(subtotal)}</span>
             </div>
-            <a href={cart?.checkoutUrl ?? "#"} className="btn-gold w-full">
+            <a
+              href={cart?.checkoutUrl ?? "#"}
+              onClick={() => {
+                if (!cart) return;
+                fbTrack("InitiateCheckout", {
+                  currency: "COP",
+                  value: subtotal,
+                  num_items: cart.totalQuantity,
+                  content_ids: lines.map((l) => l.merchandise.product.handle),
+                });
+              }}
+              className="btn-gold w-full"
+            >
               Finalizar compra
             </a>
             <p className="mt-3 text-center text-xs text-ink-secondary">

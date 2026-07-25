@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { Product } from "@/lib/shopify/types";
 import { useCart } from "@/lib/store/cart";
 import { PriceDisplay } from "@/components/ui/PriceDisplay";
 import { pricePerMl } from "@/lib/utils/formatPrice";
+import { fbTrack } from "@/lib/analytics/pixel";
 
 const PLACEHOLDER = "https://placehold.co/800x800/0A0A12/C9A84C/png?text=NEXKO";
 
@@ -44,16 +45,50 @@ export function ProductDetail({ product }: { product: Product }) {
     });
   };
 
+  const price = Number(variant?.price.amount ?? product.priceRange.minVariantPrice.amount);
+
+  useEffect(() => {
+    fbTrack("ViewContent", {
+      content_type: "product",
+      content_ids: [product.handle],
+      content_name: product.title,
+      currency: "COP",
+      value: price,
+    });
+    // solo al cambiar de producto
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [product.handle]);
+
+  const addToCartEvent = () =>
+    fbTrack("AddToCart", {
+      content_type: "product",
+      content_ids: [product.handle],
+      content_name: product.title,
+      currency: "COP",
+      value: price * qty,
+      contents: [{ id: product.handle, quantity: qty }],
+    });
+
   const handleAdd = async () => {
     if (!variant) return;
+    addToCartEvent();
     await addItem(variant.id, qty);
   };
 
   const handleBuyNow = async () => {
     if (!variant) return;
+    addToCartEvent();
     await addItem(variant.id, qty);
     const url = useCart.getState().cart?.checkoutUrl;
-    if (url) window.location.href = url;
+    if (url) {
+      fbTrack("InitiateCheckout", {
+        currency: "COP",
+        value: price * qty,
+        num_items: qty,
+        content_ids: [product.handle],
+      });
+      window.location.href = url;
+    }
   };
 
   return (

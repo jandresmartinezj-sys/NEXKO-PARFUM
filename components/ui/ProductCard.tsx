@@ -10,6 +10,7 @@ import { useWishlist } from "@/lib/store/wishlist";
 import { useHydrated } from "@/lib/hooks/useHydrated";
 import { PriceDisplay } from "./PriceDisplay";
 import { SCENT_BY_HANDLE } from "@/lib/data/catalog";
+import { fbTrack } from "@/lib/analytics/pixel";
 
 const PLACEHOLDER = "https://placehold.co/800x800/0A0A12/C9A84C/png?text=NEXKO";
 
@@ -71,6 +72,14 @@ export function ProductCard({ product }: { product: Product }) {
     e.preventDefault();
     if (!variant) return;
     setBurst((b) => b + 1);
+    fbTrack("AddToCart", {
+      content_type: "product",
+      content_ids: [product.handle],
+      content_name: product.title,
+      currency: "COP",
+      value: Number(variant.price.amount),
+      contents: [{ id: product.handle, quantity: 1 }],
+    });
     await addItem(variant.id, 1);
   };
 
