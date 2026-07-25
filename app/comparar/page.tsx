@@ -11,7 +11,7 @@ import {
 } from "@/lib/data/catalog";
 import { formatCOP } from "@/lib/utils/formatPrice";
 
-const PLACEHOLDER = "https://placehold.co/400x400/0A0A12/C9A84C/png?text=NEXKO";
+const PLACEHOLDER = "https://placehold.co/400x400/FFFFFF/C9A84C/png?text=NEXKO";
 const MAX = 3;
 
 const GENDER_LABEL: Record<string, string> = {
@@ -97,7 +97,7 @@ export default function CompararPage() {
                     <path d="M6 6l12 12M18 6L6 18" />
                   </svg>
                 </button>
-                <div className="relative mx-auto mb-2 h-24 w-24 overflow-hidden rounded-xl bg-void-radial">
+                <div className="relative mx-auto mb-2 h-24 w-24 overflow-hidden rounded-xl border border-gold/15 bg-cream-tile">
                   <Image
                     src={PLACEHOLDER}
                     alt={item.title}

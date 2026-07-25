@@ -48,35 +48,35 @@ export default function WishlistPage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-subtle bg-surface/60"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-gold/25 bg-cream shadow-card"
               >
                 <button
                   onClick={() => remove(item.handle)}
                   aria-label="Quitar de favoritos"
-                  className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-void/50 backdrop-blur transition-colors hover:bg-void/70"
+                  className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/[0.05] backdrop-blur transition-colors hover:bg-black/[0.12]"
                 >
-                  <svg viewBox="0 0 24 24" className="h-5 w-5 fill-rose-scent stroke-rose-scent" strokeWidth="1.8">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 fill-rose-500 stroke-rose-500" strokeWidth="1.8">
                     <path d="M12 21s-7.5-4.6-10-9.2C.5 8.6 2 5 5.3 5c2 0 3.3 1.1 4.2 2.3.4.5.9.5 1.3 0C11.7 6.1 13 5 15 5c3.3 0 4.8 3.6 3.3 6.8C19.5 16.4 12 21 12 21z" />
                   </svg>
                 </button>
                 <Link href={`/tienda/${item.handle}`} className="block">
-                  <div className="relative aspect-square overflow-hidden bg-void-radial">
+                  <div className="relative m-3 mb-0 aspect-square overflow-hidden rounded-xl bg-cream-tile">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       sizes="(max-width:768px) 50vw, 25vw"
-                      className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
+                      className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-4">
-                    <p className="text-[11px] uppercase tracking-wider text-ink-secondary">
+                  <div className="px-4 py-3">
+                    <p className="text-[11px] uppercase tracking-wider text-cream-muted">
                       {item.vendor}
                     </p>
-                    <h3 className="line-clamp-2 font-serif text-lg leading-tight text-ink-primary">
+                    <h3 className="line-clamp-2 font-serif text-lg leading-tight text-cream-ink">
                       {item.title}
                     </h3>
-                    <p className="mt-1 font-semibold text-gold">{formatCOP(item.price)}</p>
+                    <p className="mt-1 font-semibold text-cream-ink">{formatCOP(item.price)}</p>
                   </div>
                 </Link>
               </motion.div>

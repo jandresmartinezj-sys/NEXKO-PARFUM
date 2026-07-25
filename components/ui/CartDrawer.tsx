@@ -95,13 +95,13 @@ export function CartDrawer() {
                 <ul className="space-y-4">
                   {lines.map((line) => (
                     <li key={line.id} className="flex gap-3">
-                      <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-surface">
+                      <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-gold/15 bg-cream-tile">
                         <Image
                           src={line.merchandise.product.featuredImage?.url ?? PLACEHOLDER}
                           alt={line.merchandise.product.title}
                           fill
                           sizes="80px"
-                          className="object-cover"
+                          className="object-contain p-1"
                         />
                       </div>
                       <div className="flex flex-1 flex-col">

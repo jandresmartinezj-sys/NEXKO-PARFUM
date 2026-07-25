@@ -43,13 +43,13 @@ function Slot({
       </select>
 
       <div className="flex items-center gap-4">
-        <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-void-radial">
+        <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-gold/15 bg-cream-tile">
           <Image
             src={chosen?.featuredImage?.url ?? PLACEHOLDER}
             alt={chosen?.title ?? label}
             fill
             sizes="96px"
-            className="object-contain p-3"
+            className="object-contain p-2"
           />
         </div>
         <div className="min-w-0">

@@ -33,13 +33,13 @@ export default function CartPage() {
                 key={line.id}
                 className="flex gap-4 rounded-2xl border border-subtle bg-surface/40 p-4"
               >
-                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-surface">
+                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg border border-gold/15 bg-cream-tile">
                   <Image
                     src={line.merchandise.product.featuredImage?.url ?? PLACEHOLDER}
                     alt={line.merchandise.product.title}
                     fill
                     sizes="96px"
-                    className="object-cover"
+                    className="object-contain p-1"
                   />
                 </div>
                 <div className="flex flex-1 flex-col">
