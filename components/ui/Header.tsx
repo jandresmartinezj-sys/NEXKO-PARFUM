@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/lib/store/cart";
 import { useWishlist } from "@/lib/store/wishlist";
 import { useHydrated } from "@/lib/hooks/useHydrated";
+import { SearchOverlay } from "./SearchOverlay";
 
 const NAV = [
   { href: "/tienda", label: "Tienda" },
@@ -31,36 +31,6 @@ function Logo() {
       />
       <span className="font-display text-xl tracking-[0.25em] gradient-gold">NEXKO</span>
     </Link>
-  );
-}
-
-function SearchBox() {
-  const router = useRouter();
-  const [q, setQ] = useState("");
-  return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        router.push(q.trim() ? `/tienda?q=${encodeURIComponent(q.trim())}` : "/tienda");
-      }}
-      className="relative hidden xl:block"
-    >
-      <input
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        type="search"
-        placeholder="Buscar fragancia…"
-        className="w-48 rounded-full border border-subtle bg-surface/50 py-1.5 pl-9 pr-3 text-sm text-ink-primary outline-none placeholder:text-ink-secondary focus:w-56 focus:border-gold"
-      />
-      <svg
-        viewBox="0 0 24 24"
-        className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 fill-none stroke-ink-secondary"
-        strokeWidth="1.8"
-      >
-        <circle cx="11" cy="11" r="7" />
-        <path d="M21 21l-4-4" />
-      </svg>
-    </form>
   );
 }
 
@@ -157,7 +127,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1">
-          <SearchBox />
+          <SearchOverlay />
           <WishlistButton />
           <CartButton />
           <button

@@ -122,6 +122,58 @@ export async function getProducts(opts?: {
     .filter((p): p is Product => p !== null);
 }
 
+export interface SearchHit {
+  handle: string;
+  title: string;
+  vendor: string;
+  image: string | null;
+  price: string;
+}
+
+/** Búsqueda predictiva ligera para el buscador del header. */
+export async function searchProductsLite(term: string, first = 7): Promise<SearchHit[]> {
+  const clean = term.trim().replace(/["\\]/g, "").slice(0, 60);
+  if (!clean) return [];
+  const query = `(title:*${clean}* OR vendor:*${clean}*)`;
+  const data = await shopifyFetch<{
+    products: {
+      edges: {
+        node: {
+          handle: string;
+          title: string;
+          vendor: string;
+          featuredImage: { url: string } | null;
+          priceRange: { minVariantPrice: { amount: string } };
+        };
+      }[];
+    };
+  }>({
+    query: /* GraphQL */ `
+      query Search($first: Int!, $query: String!) {
+        products(first: $first, query: $query, sortKey: RELEVANCE) {
+          edges {
+            node {
+              handle
+              title
+              vendor
+              featuredImage { url }
+              priceRange { minVariantPrice { amount } }
+            }
+          }
+        }
+      }
+    `,
+    variables: { first, query },
+  });
+  return data.products.edges.map((e) => ({
+    handle: e.node.handle,
+    title: e.node.title,
+    vendor: e.node.vendor,
+    image: e.node.featuredImage?.url ?? null,
+    price: e.node.priceRange.minVariantPrice.amount,
+  }));
+}
+
 export async function getProduct(handle: string): Promise<Product | null> {
   const data = await shopifyFetch<{ product: RawProduct | null }>({
     query: /* GraphQL */ `
