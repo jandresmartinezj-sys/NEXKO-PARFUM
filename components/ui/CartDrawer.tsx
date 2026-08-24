@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/lib/store/cart";
 import { formatCOP } from "@/lib/utils/formatPrice";
+import { AddiWidget } from "@/components/ui/AddiWidget";
 import { trackBeginCheckout } from "@/lib/analytics/events";
 
 const FREE_SHIPPING_THRESHOLD = 250000;
@@ -155,6 +156,7 @@ export function CartDrawer() {
                     {formatCOP(subtotal)}
                   </span>
                 </div>
+                <AddiWidget price={subtotal} className="mb-3" />
                 <a
                   href={cart?.checkoutUrl ?? "#"}
                   onClick={() => {
