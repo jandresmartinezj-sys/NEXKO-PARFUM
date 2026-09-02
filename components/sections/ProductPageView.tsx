@@ -21,17 +21,31 @@ export async function buildProductMetadata(handle: string): Promise<Metadata> {
   const product = await getProduct(handle).catch(() => null);
   if (!product) return { title: "Producto no encontrado" };
 
-  const price = formatCOP(product.priceRange.minVariantPrice.amount);
+  const priceLabel = formatCOP(product.priceRange.minVariantPrice.amount);
+  const amount = product.priceRange.minVariantPrice.amount;
+  const currency = product.priceRange.minVariantPrice.currencyCode;
   const image = product.featuredImage?.url;
+  const availability = product.availableForSale ? "instock" : "outofstock";
 
   return {
-    title: `${product.title} — ${price}`,
+    title: `${product.title} — ${priceLabel}`,
     description: product.description?.slice(0, 160) || `${product.title} de ${product.vendor}.`,
     openGraph: {
       title: `${product.title} | NEXKO PARFUM`,
-      description: `${product.vendor} · ${price}`,
+      description: `${product.vendor} · ${priceLabel}`,
       images: image ? [{ url: image }] : undefined,
-      type: "website",
+    },
+    // Meta etiquetas de producto (estilo WooCommerce/Shopify) para que
+    // rastreadores externos —p. ej. el validador de Addi— detecten precio
+    // y disponibilidad sin ejecutar JavaScript.
+    other: {
+      "og:type": "product",
+      "product:price:amount": amount,
+      "product:price:currency": currency,
+      "og:price:amount": amount,
+      "og:price:currency": currency,
+      "og:availability": availability,
+      "product:availability": availability,
     },
   };
 }
