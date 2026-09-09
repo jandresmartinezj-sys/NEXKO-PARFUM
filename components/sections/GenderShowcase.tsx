@@ -29,10 +29,10 @@ export function GenderShowcase() {
               <span className="emoji-gold text-5xl opacity-90 transition-transform duration-300 group-hover:scale-110 sm:text-6xl">
                 {theme.emoji}
               </span>
-              <h3 className="font-display text-3xl text-ink-primary sm:text-4xl">
+              <h3 className="font-display text-3xl text-white sm:text-4xl">
                 {theme.title}
               </h3>
-              <p className="max-w-xs text-sm text-ink-secondary">{theme.copy}</p>
+              <p className="max-w-xs text-sm text-white/80">{theme.copy}</p>
               <span className="mt-2 text-sm text-gold opacity-0 transition-opacity group-hover:opacity-100">
                 Ver colección →
               </span>

@@ -1,12 +1,13 @@
-import { HeroSection } from "@/components/sections/HeroSection";
-import { CategoryGrid } from "@/components/sections/CategoryGrid";
+import { HeroSlider } from "@/components/sections/HeroSlider";
 import { BrandsMarquee } from "@/components/sections/BrandsMarquee";
+import { ScentFamilies } from "@/components/sections/ScentFamilies";
+import { CategoryBannerGrid } from "@/components/sections/CategoryBannerGrid";
 import { GenderShowcase } from "@/components/sections/GenderShowcase";
 import { TrustBadges } from "@/components/sections/TrustBadges";
 import { InspiredBy } from "@/components/sections/InspiredBy";
-import { GiftSection } from "@/components/sections/GiftSection";
+import { InstagramFeed } from "@/components/sections/InstagramFeed";
 import { SectionHeading } from "@/components/sections/SectionHeading";
-import { ProductGrid } from "@/components/ui/ProductGrid";
+import { ProductScroller } from "@/components/ui/ProductScroller";
 import { getProducts } from "@/lib/shopify/queries";
 import type { Product } from "@/lib/shopify/types";
 
@@ -23,74 +24,87 @@ async function safeProducts(opts?: Parameters<typeof getProducts>[0]): Promise<P
 
 export default async function HomePage() {
   const [bestsellers, newArrivals] = await Promise.all([
-    safeProducts({ query: "tag:bestseller", first: 8 }),
-    safeProducts({ first: 8, sortKey: "CREATED_AT", reverse: true }),
+    safeProducts({ query: "tag:bestseller", first: 10 }),
+    safeProducts({ first: 10, sortKey: "CREATED_AT", reverse: true }),
   ]);
 
   const topRow = bestsellers.length ? bestsellers : newArrivals;
 
   return (
     <>
-      <HeroSection />
+      <HeroSlider />
 
       <BrandsMarquee />
 
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <SectionHeading
-          eyebrow="Explora"
-          title="Encuentra tu universo olfativo"
-          subtitle="Cinco mundos, una sola obsesión por el aroma perfecto."
-        />
-        <div className="mt-10">
-          <CategoryGrid />
+      {/* Familias olfativas */}
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+        <SectionHeading eyebrow="Descubre por aroma" title="Familias olfativas" />
+        <div className="mt-8">
+          <ScentFamilies />
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-        <SectionHeading
-          eyebrow="Para ellos y ellas"
-          title="Elige tu mundo"
-          subtitle="Fragancias pensadas para cada personalidad."
-        />
-        <div className="mt-10">
-          <GenderShowcase />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-        <SectionHeading
-          eyebrow="Los más deseados"
-          title="Best Sellers"
-          subtitle="Las fragancias que están enamorando a toda Colombia."
-        />
-        <div className="mt-10">
-          <ProductGrid products={topRow} />
-        </div>
-      </section>
-
-      {newArrivals.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      {/* Más vendidos */}
+      <section className="bg-cream py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
-            eyebrow="Recién llegados"
-            title="Novedades"
-            subtitle="Las últimas incorporaciones a nuestro catálogo."
+            eyebrow="Los más deseados"
+            title="Nuestros más vendidos"
+            subtitle="Las fragancias que están enamorando a toda Colombia."
           />
-          <div className="mt-10">
-            <ProductGrid products={newArrivals} />
+          <div className="mt-8">
+            <ProductScroller products={topRow} />
+          </div>
+        </div>
+      </section>
+
+      {/* Banners por género */}
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+        <GenderShowcase />
+      </section>
+
+      {/* Novedades */}
+      {newArrivals.length > 0 && (
+        <section className="bg-cream py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6">
+            <SectionHeading
+              eyebrow="Recién llegados"
+              title="Novedades"
+              subtitle="Las últimas incorporaciones a nuestro catálogo."
+            />
+            <div className="mt-8">
+              <ProductScroller products={newArrivals} />
+            </div>
           </div>
         </section>
       )}
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      {/* Rejilla de categorías */}
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+        <SectionHeading eyebrow="Explora" title="Nuestras categorías" />
+        <div className="mt-8">
+          <CategoryBannerGrid />
+        </div>
+      </section>
+
+      {/* Inspirado en */}
+      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
         <InspiredBy />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <TrustBadges />
+      {/* Confianza */}
+      <section className="border-y border-subtle bg-cream">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+          <TrustBadges />
+        </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <GiftSection />
+      {/* Instagram */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <SectionHeading eyebrow="Comunidad" title="Síguenos en Instagram" />
+        <div className="mt-8">
+          <InstagramFeed />
+        </div>
       </section>
     </>
   );

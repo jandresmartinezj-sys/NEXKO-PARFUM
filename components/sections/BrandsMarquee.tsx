@@ -89,7 +89,7 @@ export function BrandsMarquee() {
   const logos = resolveLogos();
 
   return (
-    <section className="border-y border-subtle bg-dark/40 py-10">
+    <section className="border-y border-subtle bg-cream py-10">
       <p className="mb-7 text-center text-xs uppercase tracking-[0.3em] text-gold">
         Inspirado en las mejores casas del mundo
       </p>

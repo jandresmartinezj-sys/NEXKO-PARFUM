@@ -51,7 +51,7 @@ export default function RootLayout({
       lang="es-CO"
       className={`${playfair.variable} ${cormorant.variable} ${inter.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-void text-ink-primary">
+      <body className="min-h-full flex flex-col bg-paper text-ink-primary">
         <CartHydrator />
         <ScrollProgress />
         <CustomCursor />

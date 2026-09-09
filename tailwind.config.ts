@@ -9,26 +9,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        void: "#050508",
-        dark: "#0A0A12",
-        surface: "#12121E",
+        // Tema CLARO (estilo Perfumarte). `void` se mantiene oscuro porque
+        // se usa como texto sobre acentos dorados (text-void), no como fondo.
+        void: "#14110C",
+        dark: "#23282B", // slate oscuro para footer / barra de nav
+        surface: "#F5F1E8", // tarjetas/paneles cálidos claros
+        paper: "#FFFFFF", // fondo base blanco
         gold: {
           DEFAULT: "#C9A84C",
           primary: "#C9A84C",
           light: "#E8C97A",
-          glow: "#FFE0A0",
+          glow: "#B8942F",
         },
-        rose: { scent: "#E8A0B0" },
+        rose: { scent: "#C56A7C" },
         oud: { deep: "#4A2020" },
         musk: { neutral: "#C8B8A2" },
-        fresh: { aqua: "#7EC8C8" },
+        fresh: { aqua: "#4FA3A3" },
         spice: { amber: "#D4803C" },
         ink: {
-          primary: "#F5F0E8",
-          secondary: "#A09080",
+          primary: "#1A1A1A", // texto principal oscuro
+          secondary: "#6B655C", // texto secundario gris cálido
         },
         cream: {
-          DEFAULT: "#F5F1E8",
+          DEFAULT: "#F8F6F1",
           tile: "#FFFFFF",
           ink: "#1A160F",
           muted: "#94804F",
@@ -41,16 +44,15 @@ const config: Config = {
         arabic: ["var(--font-cormorant)", "serif"],
       },
       boxShadow: {
-        gold: "0 0 30px -8px rgba(201,168,76,0.45)",
-        "gold-lg": "0 0 60px -12px rgba(201,168,76,0.55)",
-        card: "0 10px 28px -12px rgba(201,168,76,0.40)",
-        "card-hover": "0 18px 42px -12px rgba(201,168,76,0.58)",
+        gold: "0 6px 20px -8px rgba(201,168,76,0.35)",
+        "gold-lg": "0 12px 40px -12px rgba(201,168,76,0.35)",
+        card: "0 8px 24px -12px rgba(0,0,0,0.18)",
+        "card-hover": "0 16px 40px -14px rgba(0,0,0,0.25)",
       },
       backgroundImage: {
         "gold-gradient":
           "linear-gradient(135deg, #E8C97A 0%, #C9A84C 45%, #8a6f2e 100%)",
-        "void-radial":
-          "radial-gradient(circle at 50% 30%, #12121E 0%, #0A0A12 45%, #050508 100%)",
+        "void-radial": "none",
       },
       keyframes: {
         "pulse-gold": {

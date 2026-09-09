@@ -41,7 +41,7 @@ export function InspiredBy() {
           >
             <Link
               href={`/tienda?q=${encodeURIComponent(icon.q)}`}
-              className="inline-flex items-center gap-1 rounded-full border border-subtle bg-void/40 px-4 py-2 text-sm text-ink-primary transition-colors hover:border-gold hover:text-gold"
+              className="inline-flex items-center gap-1 rounded-full border border-subtle bg-paper px-4 py-2 text-sm text-ink-primary shadow-sm transition-colors hover:border-gold hover:text-gold"
             >
               {icon.label}
               <span className="text-gold">→</span>
