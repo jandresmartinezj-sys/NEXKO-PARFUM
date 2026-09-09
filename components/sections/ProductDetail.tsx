@@ -213,16 +213,38 @@ export function ProductDetail({ product }: { product: Product }) {
         {/* Garantías */}
         <div className="mt-8 grid grid-cols-3 gap-3">
           {[
-            { icon: "🚚", label: "Envío a toda Colombia" },
-            { icon: "✅", label: "Calidad garantizada" },
-            { icon: "💰", label: "Mejor precio" },
+            {
+              label: "Envío a toda Colombia",
+              icon: (
+                <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 7h11v9H3z" /><path d="M14 10h4l3 3v3h-7z" />
+                  <circle cx="7" cy="18" r="1.6" /><circle cx="17.5" cy="18" r="1.6" />
+                </svg>
+              ),
+            },
+            {
+              label: "Calidad garantizada",
+              icon: (
+                <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z" /><path d="M9 12l2 2 4-4" />
+                </svg>
+              ),
+            },
+            {
+              label: "Mejor precio",
+              icon: (
+                <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 12l-8 8-8-8V4h8z" /><circle cx="8.5" cy="8.5" r="1.3" />
+                </svg>
+              ),
+            },
           ].map((g) => (
             <div
               key={g.label}
-              className="flex flex-col items-center gap-1.5 rounded-2xl border border-gold/15 bg-surface/50 px-2 py-4 text-center"
+              className="flex flex-col items-center gap-2 rounded-2xl border border-subtle bg-cream/60 px-2 py-5 text-center"
             >
-              <span className="text-2xl">{g.icon}</span>
-              <p className="text-[11px] leading-tight text-ink-secondary">{g.label}</p>
+              <span className="text-gold">{g.icon}</span>
+              <p className="text-[11px] font-medium leading-tight text-ink-secondary">{g.label}</p>
             </div>
           ))}
         </div>
