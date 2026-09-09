@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import Link from "next/link";
 
 /**
  * Cinta de marcas en movimiento continuo (marquee infinito).
@@ -66,19 +67,25 @@ function Row({ logos }: { logos: Record<string, string | null> }) {
     <ul className="flex shrink-0 items-center gap-x-14 pr-14">
       {BRANDS.map((b) => (
         <li key={b} className="flex items-center">
-          {logos[b] ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={logos[b] as string}
-              alt={b}
-              className="h-7 w-auto max-w-[150px] object-contain opacity-70 transition-opacity duration-300 hover:opacity-100 sm:h-9"
-              loading="lazy"
-            />
-          ) : (
-            <span className="whitespace-nowrap font-display text-xl uppercase tracking-[0.18em] text-ink-secondary/75 transition-colors hover:text-gold sm:text-2xl">
-              {b}
-            </span>
-          )}
+          <Link
+            href={`/tienda?q=${encodeURIComponent(b)}`}
+            aria-label={`Ver perfumes de ${b}`}
+            className="flex items-center"
+          >
+            {logos[b] ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={logos[b] as string}
+                alt={b}
+                className="h-7 w-auto max-w-[150px] object-contain opacity-70 transition-opacity duration-300 hover:opacity-100 sm:h-9"
+                loading="lazy"
+              />
+            ) : (
+              <span className="whitespace-nowrap font-display text-xl uppercase tracking-[0.18em] text-ink-secondary/75 transition-colors hover:text-gold sm:text-2xl">
+                {b}
+              </span>
+            )}
+          </Link>
         </li>
       ))}
     </ul>
