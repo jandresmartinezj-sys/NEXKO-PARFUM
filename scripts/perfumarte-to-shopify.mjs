@@ -45,6 +45,40 @@ function stripHtml(html) {
     .trim();
 }
 
+// Etiquetas de la ficha olfativa de Perfumarte, en orden.
+const SPEC_LABELS = [
+  "Género", "Marca", "Categoría olfativa", "Concentración", "Clima",
+  "Notas de salida", "Notas de corazón", "Notas de fondo",
+];
+const NEXT = "(?:Género|Marca|Categoría olfativa|Concentración|Clima|Notas de salida|Notas de corazón|Notas de fondo|Garantía|$)";
+
+/** Extrae los campos de la ficha desde el texto plano de la descripción. */
+function parseSpec(p) {
+  const txt = stripHtml(p.short_description || p.description || "");
+  const out = {};
+  for (const label of SPEC_LABELS) {
+    const re = new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*:?\\s*(.+?)\\s*" + NEXT, "i");
+    const m = txt.match(re);
+    if (m && m[1]) out[label] = m[1].trim().replace(/\s+/g, " ").slice(0, 300);
+  }
+  return out;
+}
+
+/** Marca para el campo Vendor. */
+function vendorOf(spec) {
+  return (spec["Marca"] || "").slice(0, 60);
+}
+
+/** Reconstruye una descripción HTML limpia (sin imágenes ni refs a Perfumarte). */
+function buildBody(spec) {
+  const items = SPEC_LABELS
+    .filter((l) => spec[l])
+    .map((l) => `<li><strong>${l}:</strong> ${spec[l]}</li>`)
+    .join("");
+  if (!items) return "";
+  return `<p><strong>Descripción olfativa</strong></p><ul>${items}</ul><p>Producto original garantizado contra defectos de fábrica.</p>`;
+}
+
 /** Precio de la Store API: prices.price en unidades menores. */
 function priceOf(p) {
   const pr = p.prices || {};
@@ -122,14 +156,16 @@ function run() {
 
     const handle = slugify(p.slug || p.name || p.id);
     const title = p.name || "";
-    const body = stripHtml(p.description || p.short_description || "");
+    const spec = parseSpec(p);
+    const body = buildBody(spec);
+    const vendor = vendorOf(spec);
     const tags = (p.categories || []).map((c) => c.name).filter(Boolean).join(", ");
     const sku = p.sku || "";
     const images = (p.images || []).map((im) => im.src).filter(Boolean);
     const firstImg = images[0] || "";
 
     rows.push([
-      handle, title, body, "", "Perfume", tags, "TRUE",
+      handle, title, body, vendor, "Perfume", tags, "TRUE",
       "Title", "Default Title", sku, "0",
       "continue", "manual", price,
       compareAtOf(p), "TRUE", "TRUE",
