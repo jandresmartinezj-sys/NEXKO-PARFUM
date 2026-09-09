@@ -24,7 +24,7 @@ export function SectionHeading({
       {eyebrow && (
         <p className="mb-2 text-xs uppercase tracking-[0.3em] text-gold">{eyebrow}</p>
       )}
-      <h2 className="font-display text-3xl sm:text-4xl text-ink-primary">{title}</h2>
+      <h2 className="font-display text-2xl uppercase tracking-wide sm:text-3xl text-ink-primary">{title}</h2>
       {subtitle && (
         <p
           className={`mt-3 text-ink-secondary ${align === "center" ? "mx-auto max-w-2xl" : ""}`}

@@ -38,10 +38,11 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-playfair)", "serif"],
-        serif: ["var(--font-cormorant)", "serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        arabic: ["var(--font-cormorant)", "serif"],
+        // Tipografía estilo Perfumarte: Karla (cuerpo) + Montserrat (títulos/menú).
+        display: ["Montserrat", "Helvetica", "Arial", "sans-serif"],
+        serif: ["Karla", "system-ui", "sans-serif"],
+        sans: ["Karla", "system-ui", "sans-serif"],
+        arabic: ["Montserrat", "Helvetica", "Arial", "sans-serif"],
       },
       boxShadow: {
         gold: "0 6px 20px -8px rgba(201,168,76,0.35)",

@@ -21,7 +21,16 @@ const SHOP_LINKS = [
   { href: "/armar-kit", label: "Arma tu kit" },
 ];
 
-const PAYMENTS = ["Bancolombia", "Nequi", "Daviplata", "Addi", "Wompi", "Contraentrega"];
+// Métodos de pago. `color` = color de marca para el wordmark.
+// Para logos oficiales: sube /public/pagos/<slug>.png y añade `logo` aquí.
+const PAYMENTS: { name: string; color: string; logo?: string }[] = [
+  { name: "Bancolombia", color: "#2b2b2b" },
+  { name: "Nequi", color: "#20003b" },
+  { name: "Daviplata", color: "#ED1C27" },
+  { name: "Addi", color: "#1b1b4b" },
+  { name: "Wompi", color: "#3c1a78" },
+  { name: "Sistecrédito", color: "#E30613" },
+];
 
 export function Footer() {
   return (
@@ -127,10 +136,20 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             {PAYMENTS.map((p) => (
               <span
-                key={p}
-                className="rounded-md border border-white/15 bg-white/[0.06] px-3 py-1.5 text-xs font-medium text-white/80"
+                key={p.name}
+                className="flex h-10 min-w-[104px] items-center justify-center rounded-md bg-white px-4 shadow-sm"
               >
-                {p}
+                {p.logo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={p.logo} alt={p.name} className="h-6 w-auto object-contain" />
+                ) : (
+                  <span
+                    className="text-sm font-bold tracking-tight"
+                    style={{ color: p.color }}
+                  >
+                    {p.name}
+                  </span>
+                )}
               </span>
             ))}
           </div>

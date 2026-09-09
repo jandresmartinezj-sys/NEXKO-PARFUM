@@ -1,17 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /**
- * Carrusel de familias olfativas (estilo Perfumarte).
- * Tarjetas con degradado + emoji; enlazan a la búsqueda de la tienda.
- * Para usar imágenes reales: añade `image` y renderiza <img> de fondo.
+ * Familias olfativas — tarjetas editoriales (estilo Perfumarte):
+ * imagen de fondo + degradado + título abajo-izquierda con subrayado dorado.
+ *
+ * Para usar tus fotos reales: súbelas a /public/familias/<archivo>.webp y pon
+ * la ruta en `image`. Sin imagen, se muestra un fondo premium con degradado
+ * de marca (no genérico).
  */
-const FAMILIES = [
-  { label: "Cítricos", emoji: "🍋", q: "citrico", gradient: "from-lime-200 to-yellow-100" },
-  { label: "Dulces", emoji: "🍯", q: "dulce", gradient: "from-amber-200 to-orange-100" },
-  { label: "Florales", emoji: "🌸", q: "floral", gradient: "from-rose-200 to-pink-100" },
-  { label: "Amaderados", emoji: "🌳", q: "amaderado", gradient: "from-amber-300 to-stone-200" },
-  { label: "Frutales", emoji: "🍑", q: "frutal", gradient: "from-red-200 to-rose-100" },
-  { label: "Frescos", emoji: "🌊", q: "fresco", gradient: "from-sky-200 to-cyan-100" },
+interface Family {
+  label: string;
+  q: string;
+  image?: string; // p. ej. "/familias/citricos.webp"
+  gradient: string;
+}
+
+const FAMILIES: Family[] = [
+  { label: "Cítricos", q: "citrico", gradient: "from-[#3a4a12] via-[#6b7a1f] to-[#c9b447]" },
+  { label: "Dulces", q: "dulce", gradient: "from-[#3a1f0c] via-[#7a4a1f] to-[#d9a45c]" },
+  { label: "Florales", q: "floral", gradient: "from-[#3a1226] via-[#7a2f52] to-[#d98cae]" },
+  { label: "Amaderados", q: "amaderado", gradient: "from-[#2a1c0c] via-[#4a3418] to-[#8a6f3e]" },
+  { label: "Frutales", q: "frutal", gradient: "from-[#3a0c14] via-[#7a1f2f] to-[#d95c6e]" },
+  { label: "Frescos", q: "fresco", gradient: "from-[#0c2a3a] via-[#1f5a7a] to-[#5cbcd9]" },
 ];
 
 export function ScentFamilies() {
@@ -21,16 +32,31 @@ export function ScentFamilies() {
         <Link
           key={f.q}
           href={`/tienda?q=${encodeURIComponent(f.q)}`}
-          className="group flex shrink-0 snap-start basis-40 flex-col items-center sm:basis-48"
+          className="group relative flex aspect-[3/4] shrink-0 basis-52 snap-start overflow-hidden rounded-2xl shadow-card sm:basis-56"
         >
-          <div
-            className={`flex aspect-square w-full items-center justify-center rounded-2xl border border-subtle bg-gradient-to-br ${f.gradient} shadow-card transition-transform duration-300 group-hover:scale-[1.03]`}
-          >
-            <span className="text-5xl">{f.emoji}</span>
+          {/* Fondo: imagen real si existe, si no degradado premium */}
+          {f.image ? (
+            <Image
+              src={f.image}
+              alt={f.label}
+              fill
+              sizes="224px"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className={`absolute inset-0 bg-gradient-to-br ${f.gradient} transition-transform duration-500 group-hover:scale-105`} />
+          )}
+
+          {/* Scrim para legibilidad del texto */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+          {/* Título abajo-izquierda + subrayado dorado */}
+          <div className="relative mt-auto p-5">
+            <h3 className="font-display text-xl uppercase tracking-wide text-white sm:text-2xl">
+              {f.label}
+            </h3>
+            <span className="mt-2 block h-0.5 w-10 bg-gold transition-all duration-300 group-hover:w-16" />
           </div>
-          <span className="mt-3 text-sm font-semibold uppercase tracking-wide text-ink-primary group-hover:text-gold">
-            {f.label}
-          </span>
         </Link>
       ))}
     </div>
