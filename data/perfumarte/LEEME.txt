@@ -1,0 +1,13 @@
+SUBE AQUÍ los archivos JSON del catálogo de Perfumarte.
+
+Cómo obtenerlos (en tu navegador):
+1) Abre esta dirección:
+   https://perfumartevip.com/wp-json/wc/store/products?per_page=100&page=1
+2) Si sale texto largo tipo JSON -> Guardar como... -> pagina-1.json
+3) Repite cambiando page=2, page=3, ... hasta que una página salga vacía ( [] ).
+   Guarda cada una: pagina-2.json, pagina-3.json, etc.
+4) Sube todos esos archivos a esta carpeta (data/perfumarte/) en GitHub.
+5) Avísame y yo genero el CSV de importación para Shopify.
+
+Nota: si la dirección sale vacía o con error, esta vía no está disponible
+y habría que pedirle el catálogo (CSV/feed) directamente a Perfumarte.
