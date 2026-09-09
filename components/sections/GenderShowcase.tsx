@@ -1,34 +1,38 @@
 import Link from "next/link";
-import Image from "next/image";
+import { ImageOrGradient } from "@/components/ui/ImageOrGradient";
 
 /**
- * Banners por categoría (estilo Perfumarte): imagen editorial + degradado +
+ * Banners por categoría (estilo Perfumarte): foto editorial + degradado +
  * título abajo-izquierda con subrayado dorado.
  *
- * Para usar tus fotos reales: súbelas a /public/banners/<archivo>.webp y pon la
- * ruta en `image`. Sin imagen se usa un degradado premium (no genérico).
+ * Cada banner busca su foto en /public/banners/<slug>.webp. Mientras no exista,
+ * usa un degradado premium. Sube tus fotos con estos nombres:
+ *   /public/banners/masculinos.webp, femeninos.webp, arabes.webp
  */
 interface Banner {
   label: string;
   href: string;
+  slug: string;
   gradient: string;
-  image?: string; // p. ej. "/banners/masculinos.webp"
 }
 
 const BANNERS: Banner[] = [
   {
     label: "Perfumes Masculinos",
     href: "/colecciones/masculinos",
+    slug: "masculinos",
     gradient: "from-[#0f1620] via-[#243447] to-[#4a637d]",
   },
   {
     label: "Perfumes Femeninos",
     href: "/colecciones/femeninos",
+    slug: "femeninos",
     gradient: "from-[#2a1220] via-[#5a2340] to-[#a8557d]",
   },
   {
     label: "Árabes & Orientales",
     href: "/colecciones/arabes",
+    slug: "arabes",
     gradient: "from-[#231607] via-[#4a3012] to-[#8a6a2e]",
   },
 ];
@@ -42,17 +46,7 @@ export function GenderShowcase() {
           href={b.href}
           className="group relative flex aspect-[3/4] overflow-hidden rounded-2xl shadow-card"
         >
-          {b.image ? (
-            <Image
-              src={b.image}
-              alt={b.label}
-              fill
-              sizes="(max-width:640px) 100vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          ) : (
-            <div className={`absolute inset-0 bg-gradient-to-br ${b.gradient} transition-transform duration-500 group-hover:scale-105`} />
-          )}
+          <ImageOrGradient base={`/banners/${b.slug}`} alt={b.label} gradient={b.gradient} />
 
           {/* Scrim */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />

@@ -1,0 +1,11 @@
+Sube aquí las fotos de las familias olfativas con estos nombres exactos
+(sirve .webp, .jpg o .png):
+
+  citricos.webp    -> tarjeta CÍTRICOS
+  dulces.webp      -> tarjeta DULCES
+  florales.webp    -> tarjeta FLORALES
+  amaderados.webp  -> tarjeta AMADERADOS
+  frutales.webp    -> tarjeta FRUTALES
+  frescos.webp     -> tarjeta FRESCOS
+
+Formato vertical (3:4) recomendado. Aparecen solas al subirlas.

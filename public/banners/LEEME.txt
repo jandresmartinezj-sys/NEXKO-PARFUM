@@ -1,0 +1,7 @@
+Sube aquí las fotos de los banners de categoría (sirve .webp, .jpg o .png):
+
+  masculinos.webp  -> banner PERFUMES MASCULINOS
+  femeninos.webp   -> banner PERFUMES FEMENINOS
+  arabes.webp      -> banner ÁRABES & ORIENTALES
+
+Formato vertical (3:4) recomendado.
