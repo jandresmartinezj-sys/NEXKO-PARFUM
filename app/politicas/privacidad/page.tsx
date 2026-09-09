@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <LegalLayout title="Política de privacidad y tratamiento de datos" updated="Julio de 2026">
       <p>
-        En <strong>NEXKO PARFUM</strong> (marca de <strong>NEXKO GROUP S.A.S.</strong>) protegemos
+        En <strong>NEXKO PARFUM</strong> protegemos
         tu información personal. Esta política explica qué datos recolectamos, con qué fines, con
         quién los compartimos y cómo puedes ejercer tus derechos, en cumplimiento de la{" "}
         <strong>Ley 1581 de 2012</strong>, el <strong>Decreto 1377 de 2013</strong> y demás normas
@@ -21,11 +21,9 @@ export default function Page() {
 
       <h2>1. Responsable del tratamiento</h2>
       <p>
-        <strong>NEXKO GROUP S.A.S.</strong>
+        <strong>NEXKO PARFUM</strong>
         <br />
-        NIT: 902.034.652-0
-        <br />
-        Domicilio: Montería, Córdoba, Colombia
+        Domicilio: Colombia
         <br />
         Correo: servicioalcliente@nexkogroup.com
         <br />

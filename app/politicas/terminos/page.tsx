@@ -17,9 +17,8 @@ export default function Page() {
 
       <h2>1. Identificación</h2>
       <p>
-        El Sitio es operado por <strong>NEXKO GROUP S.A.S.</strong> (NIT 902.034.652-0),
-        titular de la marca NEXKO PARFUM, con domicilio en <strong>Montería, Córdoba,
-        Colombia</strong>. Representante legal: José Andrés Martínez Jiménez (C.C. 1.062.427.484).
+        El Sitio es operado por <strong>NEXKO PARFUM</strong>, con domicilio en{" "}
+        <strong>Colombia</strong>.
       </p>
 
       <h2>2. Productos y disponibilidad</h2>

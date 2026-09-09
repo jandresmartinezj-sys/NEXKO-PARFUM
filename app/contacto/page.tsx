@@ -42,13 +42,12 @@ export default function Page() {
 
       <h2>Ubicación</h2>
       <p>
-        Tienda 100% en línea. Despachamos desde <strong>Montería, Córdoba</strong> hacia toda
-        Colombia.
+        Tienda 100% en línea. Despachamos hacia toda Colombia.
       </p>
 
       <h2>Datos de la empresa</h2>
       <p>
-        <strong>NEXKO GROUP S.A.S.</strong> — NIT 902.034.652-0. Consulta nuestro{" "}
+        <strong>NEXKO PARFUM</strong>. Consulta nuestro{" "}
         <a href="/politicas/aviso-legal">Aviso legal</a>.
       </p>
     </LegalLayout>
