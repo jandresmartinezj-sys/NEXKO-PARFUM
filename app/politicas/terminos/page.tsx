@@ -23,7 +23,7 @@ export default function Page() {
 
       <h2>2. Productos y disponibilidad</h2>
       <p>
-        Ofrecemos perfumería de inspiración premium y alternativas de autor. Las imágenes son
+        Ofrecemos perfumería original y garantizada. Las imágenes son
         de referencia y pueden variar levemente del producto físico. La disponibilidad está
         sujeta a existencias; si un producto se agota tras tu compra, te contactaremos para
         reponer o reembolsar.

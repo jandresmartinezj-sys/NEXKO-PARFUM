@@ -47,8 +47,7 @@ export function Footer() {
               className="h-24 w-auto"
             />
             <p className="mt-4 text-sm leading-relaxed text-white/70">
-              Perfumería premium y alternativas de autor. Fragancias originales y
-              garantizadas, con envío a toda Colombia.
+              Perfumería 100% original y garantizada, con envío a toda Colombia.
             </p>
           </div>
 
@@ -171,8 +170,8 @@ export function Footer() {
             ))}
           </nav>
           <p>
-            Productos de inspiración. NEXKO PARFUM no es distribuidor oficial de las marcas
-            mencionadas; las marcas son propiedad de sus respectivos dueños.
+            Perfumería original y garantizada. Todas las marcas son propiedad de sus respectivos
+            titulares.
           </p>
           <p className="mt-2">© {new Date().getFullYear()} NEXKO PARFUM. Todos los derechos reservados.</p>
         </div>

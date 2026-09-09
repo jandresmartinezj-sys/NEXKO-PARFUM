@@ -4,7 +4,6 @@ import { ScentFamilies } from "@/components/sections/ScentFamilies";
 import { CategoryBannerGrid } from "@/components/sections/CategoryBannerGrid";
 import { GenderShowcase } from "@/components/sections/GenderShowcase";
 import { TrustBadges } from "@/components/sections/TrustBadges";
-import { InspiredBy } from "@/components/sections/InspiredBy";
 import { InstagramFeed } from "@/components/sections/InstagramFeed";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ProductScroller } from "@/components/ui/ProductScroller";
@@ -85,11 +84,6 @@ export default async function HomePage() {
         <div className="mt-8">
           <CategoryBannerGrid />
         </div>
-      </section>
-
-      {/* Inspirado en */}
-      <section className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-        <InspiredBy />
       </section>
 
       {/* Confianza */}

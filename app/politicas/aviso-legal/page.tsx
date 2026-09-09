@@ -23,13 +23,11 @@ export default function Page() {
 
       <h2>Naturaleza de los productos</h2>
       <p>
-        NEXKO PARFUM comercializa <strong>fragancias de inspiración premium y alternativas de
-        autor</strong>. <strong>No somos distribuidores oficiales</strong> de las marcas de
-        diseñador mencionadas en el sitio. Las marcas, nombres comerciales y logotipos de
-        terceros (Dior, Paco Rabanne, Carolina Herrera, Chanel, Lattafa, entre otros) son
-        propiedad de sus respectivos dueños y se citan únicamente con fines descriptivos y de
-        referencia olfativa. Su mención no implica afiliación, patrocinio ni respaldo por parte
-        de dichas marcas.
+        NEXKO PARFUM comercializa <strong>perfumería original y garantizada</strong>. Las marcas,
+        nombres comerciales y logotipos de terceros (Dior, Paco Rabanne, Carolina Herrera, Chanel,
+        Lattafa, entre otros) son propiedad de sus respectivos dueños. NEXKO PARFUM no tiene
+        afiliación, patrocinio ni respaldo oficial de dichas marcas; su mención corresponde
+        únicamente a la identificación del producto original comercializado.
       </p>
 
       <h2>Propiedad intelectual del sitio</h2>

@@ -6,7 +6,7 @@ import Link from "next/link";
  * Para banners reales: añade `image` y renderiza <img> de fondo.
  */
 const TILES = [
-  { label: "Alternativas de autor", href: "/colecciones/arabes", gradient: "from-[#2a1a0c] to-[#4a2d12]", emoji: "🕌" },
+  { label: "Sets & Kits", href: "/colecciones/sets-regalo", gradient: "from-[#14211d] to-[#2a3f36]", emoji: "🎁" },
   { label: "Perfumes de diseñador", href: "/tienda", gradient: "from-[#151a24] to-[#2a3550]", emoji: "💎" },
   { label: "Perfumes tester", href: "/tienda?q=tester", gradient: "from-[#241a24] to-[#402a40]", emoji: "🧪" },
   { label: "Perfumes de nicho", href: "/tienda", gradient: "from-[#0e1a17] to-[#1d3029]", emoji: "🌿" },

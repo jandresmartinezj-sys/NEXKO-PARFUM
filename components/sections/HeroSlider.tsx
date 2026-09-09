@@ -26,7 +26,7 @@ const SLIDES: Slide[] = [
   {
     eyebrow: "Perfumería premium",
     title: "El lujo que hueles",
-    subtitle: "Fragancias originales y alternativas de autor. Envío a toda Colombia.",
+    subtitle: "Perfumería 100% original y garantizada. Envío a toda Colombia.",
     cta: "Explorar la tienda",
     href: "/tienda",
     gradient: "from-[#1a1712] via-[#2a2117] to-[#0e0b07]",

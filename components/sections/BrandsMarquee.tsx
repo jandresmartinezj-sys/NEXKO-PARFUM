@@ -91,7 +91,7 @@ export function BrandsMarquee() {
   return (
     <section className="border-y border-subtle bg-cream py-10">
       <p className="mb-7 text-center text-xs uppercase tracking-[0.3em] text-gold">
-        Inspirado en las mejores casas del mundo
+        Las mejores marcas del mundo, 100% originales
       </p>
       <div
         className="relative overflow-hidden"

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | NEXKO PARFUM",
   },
   description:
-    "Perfumería premium y alternativas de autor: árabes, orientales, masculinos, femeninos, body sprays y sets. Envío a toda Colombia.",
+    "Perfumería 100% original y garantizada: árabes, diseñador, masculinos, femeninos, nicho y sets. Envío a toda Colombia.",
   keywords: [
     "perfumes",
     "perfumería",
