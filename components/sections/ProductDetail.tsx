@@ -160,9 +160,10 @@ export function ProductDetail({ product }: { product: Product }) {
           </p>
         )}
 
-        {product.description && (
-          <p className="mt-6 leading-relaxed text-ink-secondary">{product.description}</p>
-        )}
+        {product.description &&
+          !/Notas de|Descripci[óo]n olfativa/i.test(product.description) && (
+            <p className="mt-6 leading-relaxed text-ink-secondary">{product.description}</p>
+          )}
 
         {/* Cantidad */}
         <div className="mt-8 flex items-center gap-4">

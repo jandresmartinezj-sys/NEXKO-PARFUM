@@ -2,9 +2,12 @@ import type { Product } from "@/lib/shopify/types";
 import { SCENT_BY_HANDLE } from "@/lib/data/catalog";
 
 /**
- * Ficha "Descripción olfativa" (estilo Perfumarte): lista de atributos con
- * iconos. Usa los metadatos de aroma (SCENT_BY_HANDLE) cuando existen y, si no,
- * muestra lo que se pueda derivar del producto. Cada fila se omite si no hay dato.
+ * Ficha "Descripción olfativa" (estilo Perfumarte): atributos con iconos.
+ * Toma los datos de dos fuentes, en orden:
+ *   1) metadatos internos (SCENT_BY_HANDLE) para el catálogo semilla NEXKO;
+ *   2) la propia descripción del producto (catálogo importado), parseando
+ *      los campos "Género:", "Marca:", "Notas de salida:", etc.
+ * Cada fila se omite si no hay dato.
  */
 
 const FAMILY_LABEL: Record<string, string> = {
@@ -16,13 +19,11 @@ const FAMILY_LABEL: Record<string, string> = {
   gourmand: "Gourmand / Dulce",
   especiado: "Especiado",
 };
-
 const GENDER_LABEL: Record<string, string> = {
   dama: "Femenino",
   caballero: "Masculino",
   unisex: "Unisex",
 };
-
 const INTENSITY_LABEL: Record<string, string> = {
   light: "Ligera",
   moderate: "Moderada",
@@ -30,88 +31,114 @@ const INTENSITY_LABEL: Record<string, string> = {
   extreme: "Extrema",
 };
 
-function genderFromTags(tags: string[]): string | undefined {
-  const t = tags.map((x) => x.toLowerCase());
-  if (t.includes("unisex")) return "Unisex";
-  if (t.includes("masculino")) return "Masculino";
-  if (t.includes("femenino")) return "Femenino";
-  return undefined;
+// Etiquetas que aparecen en la descripción de los productos importados.
+const TEXT_LABELS = [
+  "Género",
+  "Marca",
+  "Categoría olfativa",
+  "Concentración",
+  "Clima",
+  "Notas de salida",
+  "Notas de corazón",
+  "Notas de fondo",
+] as const;
+const NEXT =
+  "(?:Género|Marca|Categoría olfativa|Concentración|Clima|Notas de salida|Notas de corazón|Notas de fondo|Garantía|Producto original|Producto garantizado|$)";
+
+/** Extrae los campos de la ficha desde el texto de la descripción. */
+function parseFromText(text: string): Record<string, string> {
+  const out: Record<string, string> = {};
+  if (!text) return out;
+  const clean = text.replace(/\s+/g, " ").trim();
+  for (const label of TEXT_LABELS) {
+    const re = new RegExp(
+      label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*:?\\s*(.+?)\\s*" + NEXT,
+      "i",
+    );
+    const m = clean.match(re);
+    if (m && m[1]) out[label] = m[1].trim().replace(/[.;]+$/, "").slice(0, 400);
+  }
+  return out;
 }
 
-function concentration(tags: string[], presentation?: string): string {
-  const t = tags.map((x) => x.toLowerCase()).join(" ");
-  if (presentation === "spray" || t.includes("body spray") || t.includes("body mist"))
-    return "Body Spray";
-  if (t.includes("eau de toilette") || t.includes("edt")) return "Eau de Toilette";
-  if (t.includes("extrait") || t.includes("parfum intense")) return "Extrait de Parfum";
-  return "Eau de Parfum";
+/** Devuelve las filas {label, value} de la ficha para un producto. */
+export function specRows(product: Product): { label: string; value: string; icon: string }[] {
+  const local = SCENT_BY_HANDLE[product.handle];
+  let f: Record<string, string> = {};
+
+  if (local) {
+    f = {
+      Género: GENDER_LABEL[local.gender],
+      Marca: product.vendor || local.vendor,
+      "Categoría olfativa": FAMILY_LABEL[local.family],
+      Intensidad: INTENSITY_LABEL[local.intensity],
+      "Notas de salida": local.accords.top?.join(", "),
+      "Notas de corazón": local.accords.heart?.join(", "),
+      "Notas de fondo": local.accords.base?.join(", "),
+    };
+  } else {
+    f = parseFromText(product.description || "");
+    if (!f["Marca"] && product.vendor) f["Marca"] = product.vendor;
+  }
+
+  const order: [string, string][] = [
+    ["Género", "genero"],
+    ["Marca", "marca"],
+    ["Categoría olfativa", "familia"],
+    ["Concentración", "concentracion"],
+    ["Intensidad", "intensidad"],
+    ["Clima", "clima"],
+    ["Notas de salida", "notas"],
+    ["Notas de corazón", "notas"],
+    ["Notas de fondo", "notas"],
+  ];
+
+  return order
+    .filter(([k]) => f[k])
+    .map(([k, icon]) => ({ label: k, value: f[k], icon }));
 }
 
-/* Iconos (círculo dorado + trazo) */
-function IconWrap({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
-      {children}
-    </span>
-  );
-}
-const stroke = { className: "h-4 w-4 fill-none stroke-current", strokeWidth: 1.8 } as const;
-
+/* Iconos dorados, nítidos y reconocibles (sin círculo de fondo). */
+const S = { className: "h-7 w-7", fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 const ICONS: Record<string, React.ReactNode> = {
+  // Símbolo de género (Venus + Marte entrelazados)
   genero: (
-    <svg viewBox="0 0 24 24" {...stroke}>
-      <circle cx="12" cy="9" r="5" />
-      <path d="M12 14v7M9 18h6" />
-    </svg>
+    <svg viewBox="0 0 24 24" {...S}><circle cx="11" cy="13" r="5" /><path d="M14.5 9.5L20 4m0 0h-4m4 0v4" /></svg>
   ),
+  // Estrella (marca)
   marca: (
-    <svg viewBox="0 0 24 24" {...stroke}>
-      <path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" />
-    </svg>
+    <svg viewBox="0 0 24 24" {...S}><path d="M12 3.2l2.5 5.3 5.8.8-4.2 4 1 5.7L12 16.9 6.9 19l1-5.7-4.2-4 5.8-.8z" /></svg>
   ),
+  // Frasco de perfume (categoría olfativa)
   familia: (
-    <svg viewBox="0 0 24 24" {...stroke}>
-      <path d="M10 3h4v3a3 3 0 013 3v9a3 3 0 01-3 3H10a3 3 0 01-3-3V9a3 3 0 013-3z" />
-      <path d="M9 12h6" />
-    </svg>
+    <svg viewBox="0 0 24 24" {...S}><path d="M10 2h4v3h-4z" /><path d="M9 5h6a1 1 0 011 1v1H8V6a1 1 0 011-1z" /><path d="M8 7h8v12a2 2 0 01-2 2h-4a2 2 0 01-2-2z" /><path d="M9 12h6" /></svg>
   ),
+  // Gotero (concentración)
   concentracion: (
-    <svg viewBox="0 0 24 24" {...stroke}>
-      <path d="M12 3v4M9 7h6l-1 4a4 4 0 01-8 0z" />
-      <path d="M8 21h8" />
-    </svg>
+    <svg viewBox="0 0 24 24" {...S}><path d="M12 3s5 5.5 5 9a5 5 0 01-10 0c0-3.5 5-9 5-9z" /></svg>
   ),
   intensidad: (
-    <svg viewBox="0 0 24 24" {...stroke}>
-      <path d="M12 3s5 4 5 9a5 5 0 01-10 0c0-2 1-3 2-4" />
-    </svg>
+    <svg viewBox="0 0 24 24" {...S}><path d="M13 2L4 14h6l-1 8 9-12h-6z" /></svg>
   ),
+  // Sol tras nube (clima)
+  clima: (
+    <svg viewBox="0 0 24 24" {...S}><circle cx="8" cy="8" r="3" /><path d="M8 1v2M2.5 8H1M3.8 3.8l-1 -1M13 4.5l1-1" /><path d="M17.5 13a3.5 3.5 0 00-6.9-.8A3 3 0 106 18h10.5a2.5 2.5 0 001-4.8z" /></svg>
+  ),
+  // Pirámide olfativa (notas)
   notas: (
-    <svg viewBox="0 0 24 24" {...stroke}>
-      <path d="M12 4l8 15H4z" />
-    </svg>
+    <svg viewBox="0 0 24 24" {...S}><path d="M12 3l9 16H3z" /><path d="M8.5 12h7M6.5 15.5h11" /></svg>
   ),
+  // Medalla / garantía
   garantia: (
-    <svg viewBox="0 0 24 24" {...stroke}>
-      <path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z" />
-      <path d="M9 12l2 2 4-4" />
-    </svg>
+    <svg viewBox="0 0 24 24" {...S}><circle cx="12" cy="9" r="6" /><path d="M9 14l-1.5 7L12 19l4.5 2L15 14" /><path d="M9.5 9l1.7 1.7L14.5 7.5" /></svg>
   ),
 };
 
-function Row({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) {
+function Row({ icon, label, value }: { icon: string; label: string; value: string }) {
   return (
-    <li className="flex gap-3">
-      <IconWrap>{icon}</IconWrap>
-      <p className="text-sm leading-relaxed text-ink-secondary">
+    <li className="flex items-start gap-3.5">
+      <span className="mt-0.5 shrink-0 text-gold">{ICONS[icon]}</span>
+      <p className="text-[15px] leading-relaxed text-ink-secondary">
         <span className="font-semibold text-ink-primary">{label}:</span> {value}
       </p>
     </li>
@@ -119,40 +146,23 @@ function Row({
 }
 
 export function ProductSpecs({ product }: { product: Product }) {
-  const scent = SCENT_BY_HANDLE[product.handle];
-
-  const genero = scent ? GENDER_LABEL[scent.gender] : genderFromTags(product.tags);
-  const familia = scent ? FAMILY_LABEL[scent.family] : undefined;
-  const intensidad = scent ? INTENSITY_LABEL[scent.intensity] : undefined;
-  const conc = concentration(product.tags, scent?.presentation);
+  const rows = specRows(product);
+  if (!rows.length) return null;
 
   return (
-    <div className="mt-10 border-t border-subtle pt-8">
+    <div className="mt-10 rounded-2xl border border-subtle bg-cream/60 p-6 sm:p-7">
       <h2 className="font-display text-lg uppercase tracking-wide text-ink-primary">
         Descripción olfativa
       </h2>
-
-      <ul className="mt-5 space-y-4">
-        {genero && <Row icon={ICONS.genero} label="Género" value={genero} />}
-        <Row icon={ICONS.marca} label="Marca" value={product.vendor || "—"} />
-        {familia && <Row icon={ICONS.familia} label="Familia olfativa" value={familia} />}
-        <Row icon={ICONS.concentracion} label="Concentración" value={conc} />
-        {intensidad && <Row icon={ICONS.intensidad} label="Intensidad" value={intensidad} />}
-
-        {scent?.accords.top?.length ? (
-          <Row icon={ICONS.notas} label="Notas de salida" value={scent.accords.top.join(", ")} />
-        ) : null}
-        {scent?.accords.heart?.length ? (
-          <Row icon={ICONS.notas} label="Notas de corazón" value={scent.accords.heart.join(", ")} />
-        ) : null}
-        {scent?.accords.base?.length ? (
-          <Row icon={ICONS.notas} label="Notas de fondo" value={scent.accords.base.join(", ")} />
-        ) : null}
-
+      <div className="mb-5 mt-3 h-px w-full bg-subtle" />
+      <ul className="space-y-4">
+        {rows.map((r) => (
+          <Row key={r.label} icon={r.icon} label={r.label} value={r.value} />
+        ))}
         <Row
-          icon={ICONS.garantia}
+          icon="garantia"
           label="Garantía"
-          value="Producto garantizado contra defectos de fábrica."
+          value="Producto original garantizado contra defectos de fábrica."
         />
       </ul>
     </div>
