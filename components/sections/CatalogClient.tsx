@@ -15,28 +15,62 @@ interface Meta {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
-  arabes: "Árabes",
-  masculinos: "Masculinos",
-  femeninos: "Femeninos",
-  "body-sprays": "Body Sprays",
+  femeninos: "Perfumes para ellas",
+  masculinos: "Perfumes para ellos",
+  unisex: "Unisex",
+  arabes: "Perfumería árabe",
   "sets-regalo": "Sets & Kits",
+  tester: "Testers",
+  promociones: "Promociones",
 };
+
+/** Subcadenas de tag (en minúsculas) que definen cada categoría. */
+const CATEGORY_MATCH: Record<string, string[]> = {
+  femeninos: ["para ellas", "mujer", "femenin"],
+  masculinos: ["para ellos", "hombre", "masculin"],
+  unisex: ["unisex"],
+  arabes: ["árabe", "arabe"],
+  "sets-regalo": ["set"],
+  tester: ["tester"],
+  promociones: ["promocion", "oferta"],
+  "body-sprays": ["body spray", "body mist", "splash"],
+};
+
+/** ¿El producto pertenece a la categoría? (match por tag, permite solapes) */
+export function hasCategory(p: Product, cat: string): boolean {
+  if (cat === "todas") return true;
+  const local = SCENT_BY_HANDLE[p.handle];
+  if (local && local.category === cat) return true;
+  const subs = CATEGORY_MATCH[cat];
+  if (!subs) return false;
+  const hay = p.tags.join(" ").toLowerCase();
+  return subs.some((s) => hay.includes(s));
+}
+
+const FAMILY_MATCH: Record<string, string[]> = {
+  floral: ["floral"],
+  oriental: ["oriental", "árabe", "arabe", "ambar", "ámbar"],
+  amaderado: ["amaderado", "madera"],
+  fresco: ["fresco", "cítric", "citric", "acuát", "acuat", "marino"],
+  acuatico: ["acuát", "acuat", "marino"],
+  gourmand: ["dulce", "gourmand", "vainilla", "avainillado"],
+  especiado: ["especia"],
+};
+
+/** ¿El producto pertenece a la familia olfativa? */
+export function hasFamily(p: Product, fam: string): boolean {
+  const local = SCENT_BY_HANDLE[p.handle];
+  if (local?.family === fam) return true;
+  const subs = FAMILY_MATCH[fam];
+  if (!subs) return false;
+  const hay = p.tags.join(" ").toLowerCase();
+  return subs.some((s) => hay.includes(s));
+}
 
 function metaFor(p: Product): Meta {
   const local = SCENT_BY_HANDLE[p.handle];
   if (local) return { category: local.category, gender: local.gender, family: local.family };
-  const tags = p.tags.map((t) => t.toLowerCase());
-  let category = "arabes";
-  if (tags.includes("set")) category = "sets-regalo";
-  else if (tags.includes("body-spray")) category = "body-sprays";
-  else if (tags.includes("masculino")) category = "masculinos";
-  else if (tags.includes("femenino")) category = "femeninos";
-  const gender = tags.includes("caballero")
-    ? "caballero"
-    : tags.includes("dama")
-      ? "dama"
-      : "unisex";
-  return { category, gender, family: null };
+  return { category: "", gender: "unisex", family: null };
 }
 
 const priceOf = (p: Product) =>
@@ -45,12 +79,14 @@ const priceOf = (p: Product) =>
 export function CatalogClient({
   products,
   initialSearch = "",
+  initialCategory = "todas",
 }: {
   products: Product[];
   initialSearch?: string;
+  initialCategory?: string;
 }) {
   const [search, setSearch] = useState(initialSearch);
-  const [category, setCategory] = useState<string>("todas");
+  const [category, setCategory] = useState<string>(initialCategory);
   const [gender, setGender] = useState<string>("todos");
   const [brands, setBrands] = useState<string[]>([]);
   const [families, setFamilies] = useState<ScentFamily[]>([]);
@@ -73,10 +109,10 @@ export function CatalogClient({
   const filtered = useMemo(() => {
     const result = products.filter((p) => {
       const meta = metaFor(p);
-      if (category !== "todas" && meta.category !== category) return false;
+      if (category !== "todas" && !hasCategory(p, category)) return false;
       if (gender !== "todos" && meta.gender !== gender && meta.gender !== "unisex") return false;
       if (brands.length && !brands.includes(p.vendor)) return false;
-      if (families.length && (!meta.family || !families.includes(meta.family))) return false;
+      if (families.length && !families.some((f) => hasFamily(p, f))) return false;
       if (priceOf(p) > effectiveMax) return false;
       if (search && !`${p.title} ${p.vendor}`.toLowerCase().includes(search.toLowerCase()))
         return false;
@@ -121,21 +157,6 @@ export function CatalogClient({
           {["todas", ...Object.keys(CATEGORY_LABELS)].map((c) => (
             <Pill key={c} active={category === c} onClick={() => setCategory(c)}>
               {c === "todas" ? "Todas" : CATEGORY_LABELS[c]}
-            </Pill>
-          ))}
-        </div>
-      </FilterGroup>
-
-      <FilterGroup label="Género">
-        <div className="flex flex-wrap gap-2">
-          {[
-            ["todos", "Todos"],
-            ["dama", "Dama"],
-            ["caballero", "Caballero"],
-            ["unisex", "Unisex"],
-          ].map(([v, l]) => (
-            <Pill key={v} active={gender === v} onClick={() => setGender(v)}>
-              {l}
             </Pill>
           ))}
         </div>

@@ -14,14 +14,21 @@ export const metadata: Metadata = {
 export default async function TiendaPage({
   searchParams,
 }: {
-  searchParams?: { q?: string };
+  searchParams?: { q?: string; cat?: string };
 }) {
   let products: Product[] = [];
   try {
-    products = await getProducts({ first: 1000 });
+    products = await getProducts({ first: 2500 });
   } catch (e) {
     console.error("Error cargando catálogo:", e);
   }
 
-  return <CatalogClient products={products} initialSearch={searchParams?.q ?? ""} />;
+  return (
+    <CatalogClient
+      key={`${searchParams?.cat ?? ""}-${searchParams?.q ?? ""}`}
+      products={products}
+      initialSearch={searchParams?.q ?? ""}
+      initialCategory={searchParams?.cat ?? "todas"}
+    />
+  );
 }

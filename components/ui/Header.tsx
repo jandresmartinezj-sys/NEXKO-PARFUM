@@ -16,18 +16,19 @@ interface NavItem {
 }
 
 const NAV: NavItem[] = [
-  { href: "/tienda", label: "Tienda" },
   {
     href: "/tienda",
     label: "Perfumería",
     children: [
-      { href: "/colecciones/arabes", label: "Árabes & Orientales" },
-      { href: "/colecciones/masculinos", label: "Masculinos" },
-      { href: "/colecciones/femeninos", label: "Femeninos" },
-      { href: "/colecciones/body-sprays", label: "Body Sprays" },
+      { href: "/tienda?cat=femeninos", label: "Perfumes para ellas" },
+      { href: "/tienda?cat=masculinos", label: "Perfumes para ellos" },
+      { href: "/tienda?cat=unisex", label: "Perfumes unisex" },
+      { href: "/tienda?cat=sets-regalo", label: "Set de perfumes" },
     ],
   },
-  { href: "/colecciones/sets-regalo", label: "Sets & Kits" },
+  { href: "/tienda?cat=arabes", label: "Perfumería árabe" },
+  { href: "/tienda?cat=promociones", label: "Promociones" },
+  { href: "/tienda?cat=tester", label: "Perfumes tester" },
   { href: "/armar-kit", label: "Arma tu kit" },
   { href: "/contacto", label: "Contacto" },
 ];
