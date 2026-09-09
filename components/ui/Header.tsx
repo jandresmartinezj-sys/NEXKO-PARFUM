@@ -174,7 +174,7 @@ export function Header() {
                     <li key={c.href}>
                       <Link
                         href={c.href}
-                        className="block px-5 py-2.5 text-sm text-ink-primary transition-colors hover:bg-surface hover:text-gold"
+                        className="block px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-ink-primary transition-colors hover:bg-surface hover:text-gold"
                       >
                         {c.label}
                       </Link>
@@ -226,7 +226,7 @@ export function Header() {
                             <Link
                               href={c.href}
                               onClick={() => setMenuOpen(false)}
-                              className="block py-2 text-sm text-white/60 hover:text-gold"
+                              className="block py-2 text-xs font-semibold uppercase tracking-[0.08em] text-white/60 hover:text-gold"
                             >
                               {c.label}
                             </Link>
