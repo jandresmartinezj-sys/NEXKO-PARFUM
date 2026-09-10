@@ -132,7 +132,7 @@ export function Footer() {
           <p className="mb-4 text-center text-xs uppercase tracking-[0.2em] text-white/50">
             Métodos de pago
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
             {PAYMENTS.map((p) => (
               <PaymentLogo key={p.slug} name={p.name} slug={p.slug} color={p.color} />
             ))}

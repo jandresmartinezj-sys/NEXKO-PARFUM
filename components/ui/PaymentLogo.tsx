@@ -22,19 +22,18 @@ export function PaymentLogo({
   const exhausted = idx >= exts.length;
 
   return (
-    <span className="flex h-10 min-w-[104px] items-center justify-center rounded-md bg-white px-4 shadow-sm">
+    <span className="flex items-center justify-center">
       {!exhausted ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={`/pagos/${slug}.${exts[idx]}`}
           alt={name}
-          className="h-6 w-auto object-contain"
+          // Monocromo blanco para verse uniforme sobre el footer oscuro, sin caja.
+          className="h-7 w-auto max-w-[160px] object-contain opacity-80 brightness-0 invert transition-opacity duration-200 hover:opacity-100"
           onError={() => setIdx((i) => i + 1)}
         />
       ) : (
-        <span className="text-sm font-bold tracking-tight" style={{ color }}>
-          {name}
-        </span>
+        <span className="text-base font-bold tracking-tight text-white/80">{name}</span>
       )}
     </span>
   );
