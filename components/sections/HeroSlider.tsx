@@ -38,7 +38,6 @@ const SLIDES: Slide[] = [
     href: "/tienda",
     gradient: "from-[#1a1712] via-[#2a2117] to-[#0e0b07]",
     base: "/banners/hero-tienda",
-    position: "center top",
   },
   {
     eyebrow: "Árabes & Orientales",
