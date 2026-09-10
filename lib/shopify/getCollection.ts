@@ -5,7 +5,6 @@ const TAG_FOR: Record<string, string> = {
   arabes: "arabe",
   masculinos: "masculino",
   femeninos: "femenino",
-  "body-sprays": "body-spray",
   "sets-regalo": "set",
 };
 

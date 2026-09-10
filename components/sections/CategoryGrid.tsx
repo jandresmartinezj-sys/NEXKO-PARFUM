@@ -26,13 +26,6 @@ const CATEGORIES = [
     emoji: "⚜️",
   },
   {
-    href: "/colecciones/body-sprays",
-    title: "Body Sprays",
-    copy: "Frescura todo el día",
-    gradient: "from-fresh-aqua/30 to-blue-400/20",
-    emoji: "🌀",
-  },
-  {
     href: "/colecciones/sets-regalo",
     title: "Sets & Kits",
     copy: "El regalo perfecto",

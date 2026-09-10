@@ -8,7 +8,7 @@ export const revalidate = 900;
 export const metadata: Metadata = {
   title: "Arma tu kit de regalo",
   description:
-    "Combina tu fragancia favorita con un body spray y crea el regalo perfecto. Envío a toda Colombia.",
+    "Combina tu fragancia favorita con un perfume tester y crea el regalo perfecto. Envío a toda Colombia.",
 };
 
 async function safe(query: string): Promise<Product[]> {
@@ -21,9 +21,9 @@ async function safe(query: string): Promise<Product[]> {
 }
 
 export default async function ArmarKitPage() {
-  const [perfumes, sprays] = await Promise.all([
+  const [perfumes, testers] = await Promise.all([
     safe("tag:arabe OR tag:masculino OR tag:femenino"),
-    safe("tag:body-spray"),
+    safe("tag:tester"),
   ]);
 
   return (
@@ -32,11 +32,11 @@ export default async function ArmarKitPage() {
         <p className="text-xs uppercase tracking-[0.3em] text-gold">Personalízalo</p>
         <h1 className="font-display text-4xl text-ink-primary">Arma tu kit de regalo</h1>
         <p className="mx-auto mt-3 max-w-xl text-ink-secondary">
-          Elige una fragancia y un body spray para crear un set único. Perfecto para
+          Elige una fragancia y un perfume tester para crear un set único. Perfecto para
           regalar… o para consentirte.
         </p>
       </div>
-      <GiftKitBuilder perfumes={perfumes} sprays={sprays} />
+      <GiftKitBuilder perfumes={perfumes} testers={testers} />
     </div>
   );
 }

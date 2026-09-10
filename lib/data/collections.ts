@@ -28,13 +28,6 @@ export const COLLECTION_THEMES: Record<string, CollectionTheme> = {
     accent: "from-rose-scent/25 via-gold/10 to-void",
     emoji: "⚜️",
   },
-  "body-sprays": {
-    title: "Body Sprays",
-    copy: "Frescura todo el día, precio que enamora.",
-    brands: "Orientica · Lattafa · Armaf · Al Haramain",
-    accent: "from-fresh-aqua/25 via-blue-500/10 to-void",
-    emoji: "🌀",
-  },
   "sets-regalo": {
     title: "Sets & Kits Regalo",
     copy: "El regalo perfecto ya está listo.",

@@ -33,7 +33,6 @@ const CATEGORY_MATCH: Record<string, string[]> = {
   "sets-regalo": ["set"],
   tester: ["tester"],
   promociones: ["promocion", "oferta"],
-  "body-sprays": ["body spray", "body mist", "splash"],
 };
 
 /** ¿El producto pertenece a la categoría? (match por tag, permite solapes) */

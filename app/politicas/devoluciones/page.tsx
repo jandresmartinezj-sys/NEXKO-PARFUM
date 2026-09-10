@@ -79,7 +79,7 @@ export default function Page() {
 
       <h2>Productos que no admiten devolución</h2>
       <ul>
-        <li>Perfumes, body sprays o sets con el sello de seguridad abierto o usados.</li>
+        <li>Perfumes o sets con el sello de seguridad abierto o usados.</li>
         <li>Productos en promoción expresamente marcados como “venta final”.</li>
       </ul>
 

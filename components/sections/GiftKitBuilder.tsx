@@ -72,23 +72,23 @@ function Slot({
 
 export function GiftKitBuilder({
   perfumes,
-  sprays,
+  testers,
 }: {
   perfumes: Product[];
-  sprays: Product[];
+  testers: Product[];
 }) {
   const [perfume, setPerfume] = useState("");
-  const [spray, setSpray] = useState("");
+  const [tester, setTester] = useState("");
   const addItem = useCart((s) => s.addItem);
   const loading = useCart((s) => s.loading);
 
   const chosenPerfume = perfumes.find((p) => p.handle === perfume);
-  const chosenSpray = sprays.find((p) => p.handle === spray);
-  const total = priceOf(chosenPerfume) + priceOf(chosenSpray);
-  const ready = Boolean(chosenPerfume || chosenSpray);
+  const chosenTester = testers.find((p) => p.handle === tester);
+  const total = priceOf(chosenPerfume) + priceOf(chosenTester);
+  const ready = Boolean(chosenPerfume || chosenTester);
 
   const addKit = async () => {
-    for (const p of [chosenPerfume, chosenSpray]) {
+    for (const p of [chosenPerfume, chosenTester]) {
       const variant = p?.variants[0];
       if (variant) await addItem(variant.id, 1);
     }
@@ -98,7 +98,7 @@ export function GiftKitBuilder({
     <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
       <div className="space-y-4">
         <Slot label="Fragancia" options={perfumes} value={perfume} onChange={setPerfume} />
-        <Slot label="Body Spray" options={sprays} value={spray} onChange={setSpray} />
+        <Slot label="Perfume tester" options={testers} value={tester} onChange={setTester} />
       </div>
 
       <aside className="h-fit rounded-2xl border border-subtle bg-surface/40 p-6">
@@ -114,10 +114,10 @@ export function GiftKitBuilder({
           </li>
           <li className="flex justify-between gap-2">
             <span className="truncate text-ink-secondary">
-              {chosenSpray?.title ?? "Body Spray"}
+              {chosenTester?.title ?? "Perfume tester"}
             </span>
             <span className="shrink-0 text-ink-primary">
-              {chosenSpray ? formatCOP(priceOf(chosenSpray)) : "—"}
+              {chosenTester ? formatCOP(priceOf(chosenTester)) : "—"}
             </span>
           </li>
         </ul>

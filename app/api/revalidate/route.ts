@@ -23,7 +23,6 @@ export async function POST(req: Request) {
     "/colecciones/arabes",
     "/colecciones/masculinos",
     "/colecciones/femeninos",
-    "/colecciones/body-sprays",
     "/colecciones/sets-regalo",
   ]) {
     revalidatePath(path);

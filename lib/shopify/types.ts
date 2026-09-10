@@ -84,5 +84,4 @@ export type CategoryTag =
   | "arabes"
   | "masculinos"
   | "femeninos"
-  | "body-spray"
   | "sets";

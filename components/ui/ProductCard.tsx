@@ -18,8 +18,6 @@ function badgeFor(product: Product): { label: string; className: string } {
   const tags = product.tags.map((t) => t.toLowerCase());
   if (tags.includes("set"))
     return { label: "Set", className: "bg-emerald-600/15 text-emerald-700" };
-  if (tags.includes("body-spray"))
-    return { label: "Body Spray", className: "bg-teal-600/15 text-teal-700" };
   if (tags.includes("arabe"))
     return { label: "Árabe", className: "bg-gold/25 text-[#8a6f2e]" };
   if (tags.includes("masculino"))

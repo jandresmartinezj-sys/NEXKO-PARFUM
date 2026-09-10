@@ -1,7 +1,7 @@
 import { getProductRecommendations, getProducts } from "./queries";
 import type { Product } from "./types";
 
-const CATEGORY_TAGS = ["arabe", "masculino", "femenino", "body-spray", "set"];
+const CATEGORY_TAGS = ["arabe", "masculino", "femenino", "set"];
 
 function primaryTag(product: Product): string | null {
   const tags = product.tags.map((t) => t.toLowerCase());

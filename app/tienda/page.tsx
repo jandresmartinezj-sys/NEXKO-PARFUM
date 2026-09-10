@@ -8,7 +8,7 @@ export const revalidate = 120;
 export const metadata: Metadata = {
   title: "Tienda — Todas las fragancias",
   description:
-    "Explora más de 500 fragancias premium: árabes, masculinos, femeninos, body sprays y sets. Filtra por marca, género, familia olfativa y precio.",
+    "Explora nuestra perfumería original: árabes, masculinos, femeninos, testers y sets. Filtra por marca, género, familia olfativa y precio.",
 };
 
 export default async function TiendaPage({

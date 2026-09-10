@@ -35,7 +35,7 @@ export interface CatalogItem {
   title: string;
   vendor: string;
   /** Handle de la colección a la que pertenece. */
-  category: "arabes" | "masculinos" | "femeninos" | "body-sprays" | "sets-regalo";
+  category: "arabes" | "masculinos" | "femeninos" | "sets-regalo";
   gender: Gender;
   presentation: Presentation;
   /** Precio de venta en COP (pesos, sin decimales). Solo para el seed. */
@@ -480,65 +480,6 @@ const FEATURED: CatalogItem[] = [
     },
   },
 
-  /* ───────────── BODY SPRAYS ───────────── */
-  {
-    handle: "orientica-royal-amber-body-spray",
-    title: "Orientica Royal Amber Body Spray 200 ML",
-    vendor: "Orientica",
-    category: "body-sprays",
-    gender: "unisex",
-    presentation: "spray",
-    priceVenta: 62000,
-    family: "oriental",
-    intensity: "moderate",
-    tags: ["body-spray", "orientica", "oriental", "unisex"],
-    description:
-      "Frescura ambarada y oriental para todo el día. Formato generoso de 200 ml ideal para reaplicar cuando quieras.",
-    accords: {
-      top: ["Bergamota", "Azafrán"],
-      heart: ["Ámbar", "Flores"],
-      base: ["Maderas", "Almizcle"],
-    },
-  },
-  {
-    handle: "club-de-nuit-intense-body-spray",
-    title: "Club de Nuit Intense Man Body Spray 200 ML",
-    vendor: "Armaf",
-    category: "body-sprays",
-    gender: "caballero",
-    presentation: "spray",
-    priceVenta: 62000,
-    family: "amaderado",
-    intensity: "moderate",
-    tags: ["body-spray", "armaf", "amaderado", "caballero"],
-    description:
-      "El icónico Club de Nuit en formato body spray. Piña y abedul sobre vainilla y almizcle: fresco, masculino y rendidor.",
-    accords: {
-      top: ["Piña", "Limón", "Bergamota"],
-      heart: ["Abedul", "Jazmín", "Rosa"],
-      base: ["Vainilla", "Almizcle", "Ámbar"],
-    },
-  },
-  {
-    handle: "yara-body-spray",
-    title: "Yara Body Spray 200 ML",
-    vendor: "Lattafa",
-    category: "body-sprays",
-    gender: "dama",
-    presentation: "spray",
-    priceVenta: 58000,
-    family: "floral",
-    intensity: "light",
-    tags: ["body-spray", "lattafa", "floral", "dama"],
-    description:
-      "La estela cremosa de Yara en spray corporal. Orquídea y vainilla suaves para refrescar tu día con un toque dulce.",
-    accords: {
-      top: ["Orquídea"],
-      heart: ["Heliotropo", "Gardenia"],
-      base: ["Sándalo", "Vainilla", "Almizcle"],
-    },
-  },
-
   /* ───────────── SETS Y KITS ───────────── */
   {
     handle: "set-mini-khamrah-30ml",
@@ -609,7 +550,6 @@ const CATEGORY_TAG: Record<CatalogItem["category"], string> = {
   arabes: "arabe",
   masculinos: "masculino",
   femeninos: "femenino",
-  "body-sprays": "body-spray",
   "sets-regalo": "set",
 };
 
@@ -817,27 +757,6 @@ const EXTRA_RAW: RawItem[] = [
   { t: "Cloud Pink Ariana Grande 100 ML", v: "Ariana Grande", c: "femeninos", g: "dama", p: "caja", price: 126000, f: "gourmand" },
   { t: "Thank U Next Ariana Grande 100 ML", v: "Ariana Grande", c: "femeninos", g: "dama", p: "caja", price: 126000, f: "gourmand" },
 
-  /* ── Body Sprays (200 ml) ── */
-  { t: "Orientica Rouge Body Spray 200 ML", v: "Orientica", c: "body-sprays", g: "unisex", p: "spray", price: 62000, f: "oriental" },
-  { t: "Orientica Velvet Body Spray 200 ML", v: "Orientica", c: "body-sprays", g: "unisex", p: "spray", price: 62000, f: "oriental" },
-  { t: "Azure Fantasy Body Spray 200 ML", v: "Armaf", c: "body-sprays", g: "caballero", p: "spray", price: 62000, f: "fresco" },
-  { t: "Oud Saffron Body Spray 200 ML", v: "Armaf", c: "body-sprays", g: "caballero", p: "spray", price: 62000, f: "oriental" },
-  { t: "Lattafa Sublime Body Spray 200 ML", v: "Lattafa", c: "body-sprays", g: "unisex", p: "spray", price: 62000, f: "oriental" },
-  { t: "Lattafa Amethysta Body Spray 200 ML", v: "Lattafa", c: "body-sprays", g: "unisex", p: "spray", price: 62000, f: "oriental" },
-  { t: "Lattafa Oud For Glory Body Spray 200 ML", v: "Lattafa", c: "body-sprays", g: "caballero", p: "spray", price: 62000, f: "amaderado" },
-  { t: "Lattafa Noble Blush Body Spray 200 ML", v: "Lattafa", c: "body-sprays", g: "dama", p: "spray", price: 58000, f: "floral" },
-  { t: "Lattafa Honor & Glory Body Spray 200 ML", v: "Lattafa", c: "body-sprays", g: "unisex", p: "spray", price: 62000, f: "amaderado" },
-  { t: "Jean Paul Divine Body Spray 200 ML", v: "Jean Paul Gaultier", c: "body-sprays", g: "dama", p: "spray", price: 58000, f: "floral" },
-  { t: "Ultra Violet Body Spray 200 ML", v: "Al Haramain", c: "body-sprays", g: "dama", p: "spray", price: 58000, f: "floral" },
-  { t: "Mandarin Sky Body Spray 200 ML", v: "Armaf", c: "body-sprays", g: "unisex", p: "spray", price: 62000, f: "fresco" },
-  { t: "Odyssey Candee Body Spray 200 ML", v: "Armaf", c: "body-sprays", g: "dama", p: "spray", price: 58000, f: "gourmand" },
-  { t: "Club de Nuit Untold Body Spray 200 ML", v: "Armaf", c: "body-sprays", g: "unisex", p: "spray", price: 62000, f: "amaderado" },
-  { t: "Thank U Next Body Spray 200 ML", v: "Ariana Grande", c: "body-sprays", g: "dama", p: "spray", price: 58000, f: "gourmand" },
-  { t: "Cloud Body Spray 200 ML", v: "Ariana Grande", c: "body-sprays", g: "dama", p: "spray", price: 58000, f: "gourmand" },
-  { t: "Khamrah Lattafa Body Spray 200 ML", v: "Lattafa", c: "body-sprays", g: "unisex", p: "spray", price: 62000, f: "gourmand" },
-  { t: "Asad Zanzibar Body Spray 200 ML", v: "Lattafa", c: "body-sprays", g: "caballero", p: "spray", price: 62000, f: "amaderado" },
-  { t: "Yara Candy Body Spray 200 ML", v: "Lattafa", c: "body-sprays", g: "dama", p: "spray", price: 58000, f: "gourmand" },
-
   /* ── Sets y Kits Regalo ── */
   { t: "Set Mini Club de Nuit 30 ML Men", v: "Armaf", c: "sets-regalo", g: "caballero", p: "set", price: 190000, f: "amaderado" },
   { t: "Set Odyssey Mini 50 ML", v: "Armaf", c: "sets-regalo", g: "unisex", p: "set", price: 190000, f: "oriental" },
@@ -904,11 +823,6 @@ export const COLLECTIONS: {
     handle: "femeninos",
     title: "Femeninos",
     description: "Fragancias que celebran tu esencia.",
-  },
-  {
-    handle: "body-sprays",
-    title: "Body Sprays",
-    description: "Frescura todo el día, precio que enamora.",
   },
   {
     handle: "sets-regalo",

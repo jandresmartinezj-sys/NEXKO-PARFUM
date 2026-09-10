@@ -16,7 +16,6 @@ const SHOP_LINKS = [
   { href: "/colecciones/arabes", label: "Árabes & Orientales" },
   { href: "/colecciones/masculinos", label: "Masculinos" },
   { href: "/colecciones/femeninos", label: "Femeninos" },
-  { href: "/colecciones/body-sprays", label: "Body Sprays" },
   { href: "/colecciones/sets-regalo", label: "Sets & Kits" },
   { href: "/armar-kit", label: "Arma tu kit" },
 ];
