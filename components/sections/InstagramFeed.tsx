@@ -1,18 +1,25 @@
+import Script from "next/script";
 import { ImageOrGradient } from "@/components/ui/ImageOrGradient";
 
 /**
  * Sección "Síguenos en Instagram" (estilo Perfumarte).
  *
- * Cada recuadro muestra la foto en /public/instagram/post-<n>.<ext> (webp/jpg/
- * jpeg/png) y, mientras no exista, un degradado de marca. Todos enlazan a tu
- * perfil de Instagram. Sube tus fotos con estos nombres:
- *   /public/instagram/post-1.jpg ... post-4.jpg
+ * Dos modos:
+ *  1) Feed automático con LightWidget — si defines NEXT_PUBLIC_LIGHTWIDGET_ID
+ *     (el hash del iframe que da LightWidget), muestra tus últimas publicaciones
+ *     y se actualiza solo. Se puede fijar aquí en LIGHTWIDGET_ID_FALLBACK.
+ *  2) Respaldo manual — 4 recuadros con foto en /public/instagram/post-<n>
+ *     (o degradado) que enlazan a tu perfil.
  *
- * Configura tu usuario con la variable de entorno NEXT_PUBLIC_INSTAGRAM_USER
- * (por defecto: nexko_parfum).
+ * Usuario de Instagram: NEXT_PUBLIC_INSTAGRAM_USER (por defecto nexko_parfum).
  */
 const IG_USER = process.env.NEXT_PUBLIC_INSTAGRAM_USER ?? "nexko_parfum";
 const PROFILE = `https://instagram.com/${IG_USER}`;
+
+// Pega aquí el ID del widget de LightWidget (o configúralo en Vercel como
+// NEXT_PUBLIC_LIGHTWIDGET_ID). Ejemplo de ID: "abcdef1234567890abcdef1234567890".
+const LIGHTWIDGET_ID_FALLBACK = "";
+const LIGHTWIDGET_ID = process.env.NEXT_PUBLIC_LIGHTWIDGET_ID ?? LIGHTWIDGET_ID_FALLBACK;
 
 const TILES = [
   { slug: "post-1", gradient: "from-[#2a1a0c] to-[#4a2d12]" },
@@ -22,6 +29,31 @@ const TILES = [
 ];
 
 export function InstagramFeed() {
+  // Modo 1: feed automático de LightWidget
+  if (LIGHTWIDGET_ID) {
+    return (
+      <div>
+        <iframe
+          title={`Instagram de @${IG_USER}`}
+          src={`https://lightwidget.com/widgets/${LIGHTWIDGET_ID}.html`}
+          scrolling="no"
+          className="lightwidget-widget"
+          style={{ width: "100%", border: 0, overflow: "hidden" }}
+        />
+        <Script
+          src="https://cdn.lightwidget.com/widgets/lightwidget.js"
+          strategy="afterInteractive"
+        />
+        <div className="mt-6 text-center">
+          <a href={PROFILE} target="_blank" rel="noopener noreferrer" className="btn-outline-gold">
+            Ver en Instagram
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  // Modo 2: respaldo manual (fotos o degradado)
   return (
     <div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -34,10 +66,7 @@ export function InstagramFeed() {
             aria-label={`Ver a @${IG_USER} en Instagram`}
             className="group relative flex aspect-square items-center justify-center overflow-hidden rounded-xl"
           >
-            {/* Foto real (o degradado mientras no exista) */}
             <ImageOrGradient base={`/instagram/${t.slug}`} alt="" gradient={t.gradient} />
-
-            {/* Velo + icono de Instagram al pasar el mouse */}
             <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/35" />
             <svg
               viewBox="0 0 24 24"
