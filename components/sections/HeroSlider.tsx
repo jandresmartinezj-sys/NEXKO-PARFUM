@@ -3,13 +3,18 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { ImageOrGradient } from "@/components/ui/ImageOrGradient";
 
 /**
  * Slider de banners de la home (estilo Perfumarte).
  *
- * Los slides son placeholders con degradados de marca. Para usar tus banners
- * reales: sube las imágenes a /public/banners/ y añade `image: "/banners/x.webp"`
- * a cada slide; el componente la usará de fondo automáticamente.
+ * Cada slide busca su foto de fondo en /public/banners/<slug>.<ext> (prueba
+ * .webp, .jpg, .jpeg y .png). Mientras el archivo no exista, muestra un
+ * degradado de marca. Sube tus banners con estos nombres exactos y aparecerán
+ * automáticamente:
+ *   /public/banners/hero-tienda.jpg   -> "El lujo que hueles"
+ *   /public/banners/hero-arabes.jpg   -> "Historias milenarias"
+ *   /public/banners/hero-sets.jpg     -> "El regalo perfecto"
  */
 
 interface Slide {
@@ -19,7 +24,7 @@ interface Slide {
   cta: string;
   href: string;
   gradient: string;
-  image?: string;
+  base: string;
 }
 
 const SLIDES: Slide[] = [
@@ -30,6 +35,7 @@ const SLIDES: Slide[] = [
     cta: "Explorar la tienda",
     href: "/tienda",
     gradient: "from-[#1a1712] via-[#2a2117] to-[#0e0b07]",
+    base: "/banners/hero-tienda",
   },
   {
     eyebrow: "Árabes & Orientales",
@@ -38,6 +44,7 @@ const SLIDES: Slide[] = [
     cta: "Ver árabes",
     href: "/colecciones/arabes",
     gradient: "from-[#2a1a0c] via-[#3a2410] to-[#160d05]",
+    base: "/banners/hero-arabes",
   },
   {
     eyebrow: "Sets & Kits",
@@ -46,6 +53,7 @@ const SLIDES: Slide[] = [
     cta: "Ver sets",
     href: "/colecciones/sets-regalo",
     gradient: "from-[#14211d] via-[#1d3029] to-[#0a120f]",
+    base: "/banners/hero-sets",
   },
 ];
 
@@ -71,14 +79,16 @@ export function HeroSlider() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6 }}
-            className={`absolute inset-0 bg-gradient-to-br ${s.gradient}`}
-            style={
-              s.image
-                ? { backgroundImage: `url(${s.image})`, backgroundSize: "cover", backgroundPosition: "center" }
-                : undefined
-            }
+            className="group absolute inset-0"
           >
-            <div className="mx-auto flex h-full max-w-7xl flex-col items-start justify-center px-6 sm:px-10">
+            {/* Foto de fondo (o degradado si aún no se ha subido) */}
+            <ImageOrGradient base={s.base} alt={s.title} gradient={s.gradient} />
+
+            {/* Capa oscura para legibilidad del texto blanco */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
+            <div className="absolute inset-0 bg-black/20" />
+
+            <div className="relative mx-auto flex h-full max-w-7xl flex-col items-start justify-center px-6 sm:px-10">
               <motion.div
                 initial={{ y: 24, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
