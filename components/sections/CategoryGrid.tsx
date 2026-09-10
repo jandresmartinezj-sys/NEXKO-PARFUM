@@ -5,28 +5,28 @@ import { motion } from "framer-motion";
 
 const CATEGORIES = [
   {
-    href: "/colecciones/arabes",
+    href: "/tienda?cat=arabes",
     title: "Árabes & Orientales",
     copy: "Historias milenarias",
     gradient: "from-gold/30 to-spice-amber/20",
     emoji: "🕌",
   },
   {
-    href: "/colecciones/masculinos",
+    href: "/tienda?cat=masculinos",
     title: "Masculinos",
     copy: "El hombre moderno",
     gradient: "from-blue-600/30 to-slate-500/20",
     emoji: "🔱",
   },
   {
-    href: "/colecciones/femeninos",
+    href: "/tienda?cat=femeninos",
     title: "Femeninos",
     copy: "Tu esencia",
     gradient: "from-rose-scent/30 to-gold/20",
     emoji: "⚜️",
   },
   {
-    href: "/colecciones/sets-regalo",
+    href: "/tienda?cat=sets-regalo",
     title: "Sets & Kits",
     copy: "El regalo perfecto",
     gradient: "from-emerald-500/30 to-gold/20",

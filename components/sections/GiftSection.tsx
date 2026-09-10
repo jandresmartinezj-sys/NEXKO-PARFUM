@@ -21,7 +21,7 @@ export function GiftSection() {
         Sets y kits cuidadosamente curados: minis, cremas y frascos full size en
         presentaciones de lujo. Impresiona sin esfuerzo.
       </p>
-      <Link href="/colecciones/sets-regalo" className="btn-gold mt-8">
+      <Link href="/tienda?cat=sets-regalo" className="btn-gold mt-8">
         Ver sets & kits
       </Link>
     </motion.div>

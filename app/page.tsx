@@ -88,7 +88,7 @@ export default async function HomePage() {
 
       {/* Confianza */}
       <section className="border-y border-subtle bg-cream">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
           <TrustBadges />
         </div>
       </section>

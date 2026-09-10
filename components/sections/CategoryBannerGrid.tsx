@@ -15,11 +15,11 @@ import { ImageOrGradient } from "@/components/ui/ImageOrGradient";
  *   /public/categorias/arabe.jpg       -> Perfumería árabe
  */
 const TILES = [
-  { label: "Sets & Kits", href: "/colecciones/sets-regalo", slug: "sets", gradient: "from-[#14211d] to-[#2a3f36]" },
-  { label: "Perfumes de diseñador", href: "/tienda", slug: "disenador", gradient: "from-[#151a24] to-[#2a3550]" },
-  { label: "Perfumes tester", href: "/tienda?q=tester", slug: "tester", gradient: "from-[#241a24] to-[#402a40]" },
-  { label: "Perfumes de nicho", href: "/tienda", slug: "nicho", gradient: "from-[#0e1a17] to-[#1d3029]" },
-  { label: "Perfumería árabe", href: "/colecciones/arabes", slug: "arabe", gradient: "from-[#2a230c] to-[#4a3d12]" },
+  { label: "Sets & Kits", href: "/tienda?cat=sets-regalo", slug: "sets", gradient: "from-[#14211d] to-[#2a3f36]" },
+  { label: "Perfumes de diseñador", href: "/tienda?cat=disenador", slug: "disenador", gradient: "from-[#151a24] to-[#2a3550]" },
+  { label: "Perfumes tester", href: "/tienda?cat=tester", slug: "tester", gradient: "from-[#241a24] to-[#402a40]" },
+  { label: "Perfumes de nicho", href: "/tienda?cat=nicho", slug: "nicho", gradient: "from-[#0e1a17] to-[#1d3029]" },
+  { label: "Perfumería árabe", href: "/tienda?cat=arabes", slug: "arabe", gradient: "from-[#2a230c] to-[#4a3d12]" },
 ];
 
 export function CategoryBannerGrid() {

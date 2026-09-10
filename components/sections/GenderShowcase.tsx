@@ -19,19 +19,19 @@ interface Banner {
 const BANNERS: Banner[] = [
   {
     label: "Perfumes Masculinos",
-    href: "/colecciones/masculinos",
+    href: "/tienda?cat=masculinos",
     slug: "masculinos",
     gradient: "from-[#0f1620] via-[#243447] to-[#4a637d]",
   },
   {
     label: "Perfumes Femeninos",
-    href: "/colecciones/femeninos",
+    href: "/tienda?cat=femeninos",
     slug: "femeninos",
     gradient: "from-[#2a1220] via-[#5a2340] to-[#a8557d]",
   },
   {
     label: "Árabes & Orientales",
-    href: "/colecciones/arabes",
+    href: "/tienda?cat=arabes",
     slug: "arabes",
     gradient: "from-[#231607] via-[#4a3012] to-[#8a6a2e]",
   },
