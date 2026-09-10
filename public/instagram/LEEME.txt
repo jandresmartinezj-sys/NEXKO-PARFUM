@@ -1,0 +1,7 @@
+Fotos de la sección "Síguenos en Instagram" (home).
+Sube aquí 4 fotos con estos nombres exactos (.jpg, .png o .webp):
+  post-1.jpg
+  post-2.jpg
+  post-3.jpg
+  post-4.jpg
+Idealmente cuadradas (1:1). Mientras no existan, se muestra un degradado.
