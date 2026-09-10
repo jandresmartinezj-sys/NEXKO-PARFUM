@@ -5,9 +5,10 @@ import { ImageOrGradient } from "@/components/ui/ImageOrGradient";
  * Sección "Síguenos en Instagram" (estilo Perfumarte).
  *
  * Dos modos:
- *  1) Feed automático con LightWidget — si defines NEXT_PUBLIC_LIGHTWIDGET_ID
- *     (el hash del iframe que da LightWidget), muestra tus últimas publicaciones
- *     y se actualiza solo. Se puede fijar aquí en LIGHTWIDGET_ID_FALLBACK.
+ *  1) Feed automático con Behold.so — su plan GRATIS funciona en HTTPS (a
+ *     diferencia de LightWidget). Si defines NEXT_PUBLIC_BEHOLD_FEED_ID (o lo
+ *     fijas en BEHOLD_FEED_ID_FALLBACK), muestra tus últimas publicaciones y se
+ *     actualiza solo.
  *  2) Respaldo manual — 4 recuadros con foto en /public/instagram/post-<n>
  *     (o degradado) que enlazan a tu perfil.
  *
@@ -16,10 +17,10 @@ import { ImageOrGradient } from "@/components/ui/ImageOrGradient";
 const IG_USER = process.env.NEXT_PUBLIC_INSTAGRAM_USER ?? "nexko_parfum";
 const PROFILE = `https://instagram.com/${IG_USER}`;
 
-// Pega aquí el ID del widget de LightWidget (o configúralo en Vercel como
-// NEXT_PUBLIC_LIGHTWIDGET_ID). Ejemplo de ID: "abcdef1234567890abcdef1234567890".
-const LIGHTWIDGET_ID_FALLBACK = "719d3629f18c56978a35046880709ecc";
-const LIGHTWIDGET_ID = process.env.NEXT_PUBLIC_LIGHTWIDGET_ID ?? LIGHTWIDGET_ID_FALLBACK;
+// Pega aquí el Feed ID de Behold.so (o configúralo en Vercel como
+// NEXT_PUBLIC_BEHOLD_FEED_ID). Lo encuentras en tu panel de Behold.
+const BEHOLD_FEED_ID_FALLBACK = "";
+const BEHOLD_FEED_ID = process.env.NEXT_PUBLIC_BEHOLD_FEED_ID ?? BEHOLD_FEED_ID_FALLBACK;
 
 const TILES = [
   { slug: "post-1", gradient: "from-[#2a1a0c] to-[#4a2d12]" },
@@ -29,21 +30,13 @@ const TILES = [
 ];
 
 export function InstagramFeed() {
-  // Modo 1: feed automático de LightWidget
-  if (LIGHTWIDGET_ID) {
+  // Modo 1: feed automático de Behold.so (funciona en HTTPS, plan gratis)
+  if (BEHOLD_FEED_ID) {
     return (
       <div>
-        <iframe
-          title={`Instagram de @${IG_USER}`}
-          src={`https://lightwidget.com/widgets/${LIGHTWIDGET_ID}.html`}
-          scrolling="no"
-          className="lightwidget-widget"
-          style={{ width: "100%", border: 0, overflow: "hidden" }}
-        />
-        <Script
-          src="https://cdn.lightwidget.com/widgets/lightwidget.js"
-          strategy="afterInteractive"
-        />
+        {/* @ts-expect-error: web component de Behold */}
+        <behold-widget feed-id={BEHOLD_FEED_ID} />
+        <Script src="https://w.behold.so/widget.js" type="module" strategy="afterInteractive" />
         <div className="mt-6 text-center">
           <a href={PROFILE} target="_blank" rel="noopener noreferrer" className="btn-outline-gold">
             Ver en Instagram
