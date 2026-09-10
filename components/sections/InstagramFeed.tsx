@@ -18,7 +18,7 @@ const PROFILE = `https://instagram.com/${IG_USER}`;
 
 // Pega aquí el ID del widget de LightWidget (o configúralo en Vercel como
 // NEXT_PUBLIC_LIGHTWIDGET_ID). Ejemplo de ID: "abcdef1234567890abcdef1234567890".
-const LIGHTWIDGET_ID_FALLBACK = "";
+const LIGHTWIDGET_ID_FALLBACK = "719d3629f18c56978a35046880709ecc";
 const LIGHTWIDGET_ID = process.env.NEXT_PUBLIC_LIGHTWIDGET_ID ?? LIGHTWIDGET_ID_FALLBACK;
 
 const TILES = [
