@@ -6,7 +6,6 @@ import { Footer } from "@/components/ui/Footer";
 import { CartDrawer } from "@/components/ui/CartDrawer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { SocialProof } from "@/components/ui/SocialProof";
 import { ScentFinder } from "@/components/sections/ScentFinder";
 import { CartHydrator } from "@/components/providers/CartHydrator";
@@ -54,7 +53,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-paper text-ink-primary">
         <CartHydrator />
         <ScrollProgress />
-        <CustomCursor />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

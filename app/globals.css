@@ -121,12 +121,6 @@
   }
 }
 
-/* Cursor personalizado: oculta el cursor nativo cuando está activo */
-body.cursor-none,
-body.cursor-none * {
-  cursor: none !important;
-}
-
 /* Animaciones de las siluetas de frascos en el hero */
 @keyframes bottle-drift {
   0%,
