@@ -11,7 +11,6 @@ const TILES = [
   { label: "Perfumes tester", href: "/tienda?q=tester", gradient: "from-[#241a24] to-[#402a40]" },
   { label: "Perfumes de nicho", href: "/tienda", gradient: "from-[#0e1a17] to-[#1d3029]" },
   { label: "Perfumería árabe", href: "/colecciones/arabes", gradient: "from-[#2a230c] to-[#4a3d12]" },
-  { label: "Body sprays", href: "/colecciones/body-sprays", gradient: "from-[#0e1a24] to-[#1d3040]" },
 ];
 
 export function CategoryBannerGrid() {
