@@ -1,0 +1,8 @@
+Fotos de las tarjetas de categoría (home).
+Sube aquí tus imágenes con estos nombres exactos (.jpg, .png o .webp):
+  sets.jpg        -> Sets & Kits
+  disenador.jpg   -> Perfumes de diseñador
+  tester.jpg      -> Perfumes tester
+  nicho.jpg       -> Perfumes de nicho
+  arabe.jpg       -> Perfumería árabe
+Mientras no exista el archivo, la tarjeta muestra un degradado.
