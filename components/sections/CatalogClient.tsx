@@ -37,6 +37,13 @@ const CATEGORY_MATCH: Record<string, string[]> = {
   "sets-regalo": ["set"],
   tester: ["tester"],
   promociones: ["promocion", "oferta"],
+  // Familias olfativas (coinciden con los tags del catálogo importado)
+  citricos: ["cítric", "citric"],
+  dulces: ["dulce", "gourmand", "vainilla", "avainillado"],
+  florales: ["floral"],
+  amaderados: ["amaderad", "madera"],
+  frutales: ["frutal"],
+  frescos: ["fresco", "acuát", "acuat", "marino"],
 };
 
 /** ¿El producto pertenece a la categoría? (match por tag, permite solapes) */

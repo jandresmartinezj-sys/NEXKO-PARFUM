@@ -29,7 +29,7 @@ export function PaymentLogo({
           src={`/pagos/${slug}.${exts[idx]}`}
           alt={name}
           // Monocromo blanco para verse uniforme sobre el footer oscuro, sin caja.
-          className="h-7 w-auto max-w-[160px] object-contain opacity-80 brightness-0 invert transition-opacity duration-200 hover:opacity-100"
+          className="h-6 w-auto object-contain opacity-85 brightness-0 invert transition-opacity duration-200 hover:opacity-100 sm:h-7"
           onError={() => setIdx((i) => i + 1)}
         />
       ) : (

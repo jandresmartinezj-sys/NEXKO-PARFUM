@@ -33,7 +33,7 @@ export function ScentFamilies() {
       {FAMILIES.map((f) => (
         <Link
           key={f.q}
-          href={`/tienda?q=${encodeURIComponent(f.q)}`}
+          href={`/tienda?cat=${f.slug}`}
           className="group relative flex aspect-[3/4] shrink-0 basis-52 snap-start overflow-hidden rounded-2xl shadow-card sm:basis-56"
         >
           <ImageOrGradient base={`/familias/${f.slug}`} alt={f.label} gradient={f.gradient} />
