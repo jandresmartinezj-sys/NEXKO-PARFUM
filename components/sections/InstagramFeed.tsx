@@ -19,7 +19,7 @@ const PROFILE = `https://instagram.com/${IG_USER}`;
 
 // Pega aquí el Feed ID de Behold.so (o configúralo en Vercel como
 // NEXT_PUBLIC_BEHOLD_FEED_ID). Lo encuentras en tu panel de Behold.
-const BEHOLD_FEED_ID_FALLBACK = "";
+const BEHOLD_FEED_ID_FALLBACK = "VFxVJhHrfHR5iSpOvrV2";
 const BEHOLD_FEED_ID = process.env.NEXT_PUBLIC_BEHOLD_FEED_ID ?? BEHOLD_FEED_ID_FALLBACK;
 
 const TILES = [
