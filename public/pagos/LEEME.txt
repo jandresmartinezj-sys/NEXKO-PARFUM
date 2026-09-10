@@ -1,3 +1,11 @@
-Sube aquí los logos oficiales de métodos de pago (PNG con fondo transparente):
-  bancolombia.png, nequi.png, daviplata.png, addi.png, wompi.png, sistecredito.png
-Luego avísame para enlazarlos en el footer.
+Logos oficiales de los métodos de pago (footer).
+Sube aquí cada logo con estos nombres exactos (.svg preferido, o .png/.webp):
+  bancolombia.svg
+  nequi.svg
+  daviplata.svg
+  addi.svg
+  wompi.svg
+  sistecredito.svg
+Recomendación: logo horizontal, fondo transparente (PNG/SVG). La tarjeta es
+blanca, así que usa la versión a color o la oscura del logo.
+Mientras no exista el archivo, se muestra el nombre de la marca con su color.

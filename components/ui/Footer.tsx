@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { PaymentLogo } from "@/components/ui/PaymentLogo";
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "573000000000";
 const IG_USER = process.env.NEXT_PUBLIC_INSTAGRAM_USER ?? "nexko_parfum";
@@ -20,15 +21,15 @@ const SHOP_LINKS = [
   { href: "/armar-kit", label: "Arma tu kit" },
 ];
 
-// Métodos de pago. `color` = color de marca para el wordmark.
-// Para logos oficiales: sube /public/pagos/<slug>.png y añade `logo` aquí.
-const PAYMENTS: { name: string; color: string; logo?: string }[] = [
-  { name: "Bancolombia", color: "#2b2b2b" },
-  { name: "Nequi", color: "#20003b" },
-  { name: "Daviplata", color: "#ED1C27" },
-  { name: "Addi", color: "#1b1b4b" },
-  { name: "Wompi", color: "#3c1a78" },
-  { name: "Sistecrédito", color: "#E30613" },
+// Métodos de pago. Sube el logo oficial a /public/pagos/<slug>.(svg|png|webp)
+// y aparecerá automáticamente; mientras tanto se muestra el nombre con su color.
+const PAYMENTS: { name: string; slug: string; color: string }[] = [
+  { name: "Bancolombia", slug: "bancolombia", color: "#2b2b2b" },
+  { name: "Nequi", slug: "nequi", color: "#20003b" },
+  { name: "Daviplata", slug: "daviplata", color: "#ED1C27" },
+  { name: "Addi", slug: "addi", color: "#1b1b4b" },
+  { name: "Wompi", slug: "wompi", color: "#3c1a78" },
+  { name: "Sistecrédito", slug: "sistecredito", color: "#E30613" },
 ];
 
 export function Footer() {
@@ -133,22 +134,7 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {PAYMENTS.map((p) => (
-              <span
-                key={p.name}
-                className="flex h-10 min-w-[104px] items-center justify-center rounded-md bg-white px-4 shadow-sm"
-              >
-                {p.logo ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={p.logo} alt={p.name} className="h-6 w-auto object-contain" />
-                ) : (
-                  <span
-                    className="text-sm font-bold tracking-tight"
-                    style={{ color: p.color }}
-                  >
-                    {p.name}
-                  </span>
-                )}
-              </span>
+              <PaymentLogo key={p.slug} name={p.name} slug={p.slug} color={p.color} />
             ))}
           </div>
         </div>
