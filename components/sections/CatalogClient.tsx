@@ -212,7 +212,7 @@ export function CatalogClient({
     <div className="mx-auto max-w-7xl px-4 py-28 sm:px-6">
       <div className="mb-8 text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-gold">Catálogo</p>
-        <h1 className="font-display text-4xl text-ink-primary">Nuestra Tienda</h1>
+        <h1 className="font-display text-4xl uppercase tracking-wide text-ink-primary">Nuestra Tienda</h1>
       </div>
 
       {/* Barra superior */}
