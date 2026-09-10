@@ -11,7 +11,7 @@ export function PaymentLogo({
   name,
   slug,
   color,
-  exts = ["svg", "png", "webp", "jpg"],
+  exts = ["png", "webp", "svg", "jpg"],
 }: {
   name: string;
   slug: string;
