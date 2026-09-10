@@ -25,6 +25,8 @@ interface Slide {
   href: string;
   gradient: string;
   base: string;
+  /** Punto de enfoque del recorte (CSS object-position). Por defecto "center". */
+  position?: string;
 }
 
 const SLIDES: Slide[] = [
@@ -36,6 +38,7 @@ const SLIDES: Slide[] = [
     href: "/tienda",
     gradient: "from-[#1a1712] via-[#2a2117] to-[#0e0b07]",
     base: "/banners/hero-tienda",
+    position: "center top",
   },
   {
     eyebrow: "Árabes & Orientales",
@@ -82,7 +85,7 @@ export function HeroSlider() {
             className="group absolute inset-0"
           >
             {/* Foto de fondo (o degradado si aún no se ha subido) */}
-            <ImageOrGradient base={s.base} alt={s.title} gradient={s.gradient} />
+            <ImageOrGradient base={s.base} alt={s.title} gradient={s.gradient} position={s.position} />
 
             {/* Capa oscura para legibilidad del texto blanco */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />

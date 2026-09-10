@@ -12,11 +12,14 @@ export function ImageOrGradient({
   alt,
   gradient,
   exts = ["webp", "jpg", "jpeg", "png"],
+  position = "center",
 }: {
   base: string; // p. ej. "/familias/citricos" (sin extensión)
   alt: string;
   gradient: string;
   exts?: string[];
+  /** Punto de enfoque del recorte (CSS object-position). P. ej. "center top". */
+  position?: string;
 }) {
   const [idx, setIdx] = useState(0);
   const exhausted = idx >= exts.length;
@@ -31,6 +34,7 @@ export function ImageOrGradient({
           alt={alt}
           loading="lazy"
           onError={() => setIdx((i) => i + 1)}
+          style={{ objectPosition: position }}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       )}
