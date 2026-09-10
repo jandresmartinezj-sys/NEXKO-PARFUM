@@ -26,10 +26,10 @@ const SHOP_LINKS = [
 const PAYMENTS: { name: string; slug: string; color: string }[] = [
   { name: "Bancolombia", slug: "bancolombia", color: "#2b2b2b" },
   { name: "Nequi", slug: "nequi", color: "#20003b" },
-  { name: "Daviplata", slug: "daviplata", color: "#ED1C27" },
-  { name: "Addi", slug: "addi", color: "#1b1b4b" },
-  { name: "Wompi", slug: "wompi", color: "#3c1a78" },
-  { name: "Sistecrédito", slug: "sistecredito", color: "#E30613" },
+  { name: "DaviBank", slug: "davibank", color: "#ED1C27" },
+  { name: "Addi", slug: "addi", color: "#4169ff" },
+  { name: "Bold", slug: "bold", color: "#151a5c" },
+  { name: "Sistecrédito", slug: "sistecredito", color: "#0033a0" },
 ];
 
 export function Footer() {
