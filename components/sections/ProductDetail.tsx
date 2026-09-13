@@ -211,8 +211,17 @@ export function ProductDetail({ product }: { product: Product }) {
         <ProductSpecs product={product} />
 
         {/* Garantías */}
-        <div className="mt-8 grid grid-cols-3 gap-3">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
+            {
+              label: "Pago contra entrega",
+              icon: (
+                <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2.5" y="6" width="19" height="12" rx="2" /><circle cx="12" cy="12" r="2.4" />
+                  <path d="M6 9.5v.01M18 14.5v.01" />
+                </svg>
+              ),
+            },
             {
               label: "Envío a toda Colombia",
               icon: (

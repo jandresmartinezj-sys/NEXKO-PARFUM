@@ -99,7 +99,7 @@ export function Header() {
     <header className="sticky top-0 z-50">
       {/* Barra de anuncio */}
       <div className="bg-gold-gradient text-center text-[11px] font-medium uppercase tracking-[0.18em] text-void sm:text-xs">
-        <p className="py-1.5">Envío a toda Colombia · Envío gratis desde $250.000</p>
+        <p className="py-1.5">Paga contra entrega · Envío a toda Colombia · Envío gratis desde $250.000</p>
       </div>
 
       {/* Barra del logo (centrado) */}

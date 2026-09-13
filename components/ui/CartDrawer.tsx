@@ -246,11 +246,11 @@ export function CartDrawer() {
                   <span className="flex items-center gap-1.5">
                     <span className="text-gold">
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z" />
-                        <path d="M9 12l2 2 4-4" />
+                        <rect x="2.5" y="6" width="19" height="12" rx="2" />
+                        <circle cx="12" cy="12" r="2.4" />
                       </svg>
                     </span>
-                    Pago seguro
+                    Paga contra entrega
                   </span>
                   <span className="flex items-center gap-1.5">
                     <span className="text-gold">
