@@ -1,11 +1,12 @@
 import Script from "next/script";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-4KTK6LXZ1L";
-const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "1586699729783041";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
+const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "";
 
 /**
  * Carga Google Analytics 4 y Meta Pixel solo si sus IDs están definidos en
- * variables de entorno. Sin IDs, no renderiza nada.
+ * variables de entorno (NEXT_PUBLIC_GA_ID, NEXT_PUBLIC_META_PIXEL_ID).
+ * Sin IDs no renderiza nada, así no se envían datos a cuentas ajenas.
  */
 export function Analytics() {
   return (
