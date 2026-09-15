@@ -29,6 +29,22 @@ function plain(s: string, max = 5000): string {
   return t.length > max ? t.slice(0, max) : t;
 }
 
+/**
+ * id para Google Merchant: máx. 50 caracteres, único y estable.
+ * Si el handle cabe, se usa tal cual (así el id coincide con el handle).
+ * Si es más largo, se recorta y se añade un sufijo hash del handle completo
+ * para garantizar unicidad sin colisiones.
+ */
+function feedId(handle: string): string {
+  if (handle.length <= 50) return handle;
+  let h = 5381;
+  for (let i = 0; i < handle.length; i++) {
+    h = ((h << 5) + h + handle.charCodeAt(i)) >>> 0;
+  }
+  const suffix = h.toString(36);
+  return `${handle.slice(0, 49 - suffix.length)}-${suffix}`;
+}
+
 function itemXml(p: Product): string {
   const link = `${SITE_URL}/tienda/${p.handle}`;
   const price = `${Number(p.priceRange.minVariantPrice.amount).toFixed(2)} ${p.priceRange.minVariantPrice.currencyCode}`;
@@ -38,7 +54,7 @@ function itemXml(p: Product): string {
 
   return [
     "    <item>",
-    `      <g:id>${esc(p.handle)}</g:id>`,
+    `      <g:id>${esc(feedId(p.handle))}</g:id>`,
     `      <g:title><![CDATA[${p.title.replace(/\]\]>/g, "")}]]></g:title>`,
     `      <g:description><![CDATA[${desc.replace(/\]\]>/g, "")}]]></g:description>`,
     `      <g:link>${esc(link)}</g:link>`,
