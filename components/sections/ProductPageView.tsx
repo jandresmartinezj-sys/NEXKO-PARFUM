@@ -16,6 +16,17 @@ import { formatCOP } from "@/lib/utils/formatPrice";
  * como el de Addi.
  */
 
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nexkogroup.com"
+).replace(/\/+$/, "");
+
+/** Recorta un texto a máx. `max` caracteres sin cortar palabras. */
+function clip(text: string, max: number): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return clean.slice(0, clean.lastIndexOf(" ", max)).trim() + "…";
+}
+
 /** Metadata reutilizable para ambas rutas de producto. */
 export async function buildProductMetadata(handle: string): Promise<Metadata> {
   const product = await getProduct(handle).catch(() => null);
@@ -27,12 +38,27 @@ export async function buildProductMetadata(handle: string): Promise<Metadata> {
   const image = product.featuredImage?.url;
   const availability = product.availableForSale ? "instock" : "outofstock";
 
+  // Título y descripción con palabras que busca el comprador (original, precio,
+  // Colombia, envío/contraentrega) — sin exceder lo que Google muestra.
+  const title = `${product.title} — Original | NEXKO PARFUM`;
+  const extra = product.description ? " " + product.description : "";
+  const description = clip(
+    `Compra ${product.title} 100% original al mejor precio en Colombia. ` +
+      `Envío a todo el país y pago contra entrega.${extra}`,
+    160,
+  );
+
   return {
-    title: `${product.title} — ${priceLabel}`,
-    description: product.description?.slice(0, 160) || `${product.title} de ${product.vendor}.`,
+    title,
+    description,
+    // Canonical a /tienda/<handle> para que Google consolide el duplicado
+    // (misma ficha servida también en /producto/<handle>).
+    alternates: { canonical: `/tienda/${handle}` },
     openGraph: {
+      type: "website",
       title: `${product.title} | NEXKO PARFUM`,
-      description: `${product.vendor} · ${priceLabel}`,
+      description: `${product.vendor} · ${priceLabel} · Original, envío nacional y contra entrega`,
+      url: `${SITE_URL}/tienda/${handle}`,
       images: image ? [{ url: image }] : undefined,
     },
     // Meta etiquetas de producto (estilo WooCommerce/Shopify) para que
@@ -57,20 +83,30 @@ export async function ProductPageView({ handle }: { handle: string }) {
   const scent = SCENT_BY_HANDLE[handle];
   const related = await getRelated(product).catch(() => []);
 
+  const productUrl = `${SITE_URL}/tienda/${handle}`;
+  const priceValidUntil = new Date(Date.now() + 365 * 864e5)
+    .toISOString()
+    .slice(0, 10);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.title,
-    description: product.description,
+    description: product.description || `${product.title} de ${product.vendor}, 100% original.`,
     brand: { "@type": "Brand", name: product.vendor },
-    image: product.featuredImage?.url,
+    image: product.featuredImage?.url ? [product.featuredImage.url] : undefined,
+    url: productUrl,
     offers: {
       "@type": "Offer",
+      url: productUrl,
       priceCurrency: product.priceRange.minVariantPrice.currencyCode,
       price: product.priceRange.minVariantPrice.amount,
+      priceValidUntil,
+      itemCondition: "https://schema.org/NewCondition",
       availability: product.availableForSale
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
+      seller: { "@type": "Organization", name: "NEXKO PARFUM" },
     },
   };
 
