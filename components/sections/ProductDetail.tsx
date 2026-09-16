@@ -48,8 +48,6 @@ export function ProductDetail({ product }: { product: Product }) {
   };
 
   const price = Number(variant?.price.amount ?? product.priceRange.minVariantPrice.amount);
-  const compareAt = Number(variant?.compareAtPrice?.amount ?? 0);
-  const onSale = compareAt > price;
   const asItem = () => ({
     handle: product.handle,
     title: product.title,
@@ -91,11 +89,6 @@ export function ProductDetail({ product }: { product: Product }) {
             onMouseLeave={() => setZoom((z) => ({ ...z, on: false }))}
             className="relative aspect-square overflow-hidden rounded-2xl bg-cream-tile"
           >
-            {onSale && (
-              <span className="absolute left-4 top-4 z-10 rounded-full bg-rose-scent px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-sm">
-                ¡Oferta!
-              </span>
-            )}
             <span className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-ink-secondary shadow-sm backdrop-blur">
               <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="1.8">
                 <circle cx="11" cy="11" r="7" />
@@ -152,13 +145,6 @@ export function ProductDetail({ product }: { product: Product }) {
           )}
           <AddiWidget price={price} className="mt-3" />
         </div>
-
-        {onSale && (
-          <p className="mt-4 flex items-center gap-2 rounded-lg bg-rose-scent/10 px-4 py-3 text-sm font-medium text-rose-scent">
-            <span className="text-lg">🏷️</span>
-            ¡Aprovecha! Este perfume está en promoción por tiempo limitado.
-          </p>
-        )}
 
         {product.description &&
           !/Notas de|Descripci[óo]n olfativa/i.test(product.description) && (
