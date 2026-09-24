@@ -4,7 +4,6 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/lib/store/cart";
 import { formatCOP } from "@/lib/utils/formatPrice";
-import { AddiWidget, ADDI_PRICE_ANCHOR_CLASS } from "@/components/ui/AddiWidget";
 import { trackBeginCheckout } from "@/lib/analytics/events";
 
 const FREE_SHIPPING_THRESHOLD = 250000;
@@ -203,14 +202,13 @@ export function CartDrawer() {
                   <span className="text-sm uppercase tracking-[0.1em] text-ink-secondary">
                     Subtotal
                   </span>
-                  <span className={`${ADDI_PRICE_ANCHOR_CLASS} font-display text-2xl text-ink-primary`}>
+                  <span className="font-display text-2xl text-ink-primary">
                     {formatCOP(subtotal)}
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-ink-secondary">
                   Impuestos y envío calculados en el pago.
                 </p>
-                <AddiWidget price={subtotal} />
                 <a
                   href={cart?.checkoutUrl ?? "#"}
                   onClick={() => {

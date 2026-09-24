@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import type { Product } from "@/lib/shopify/types";
 import { useCart } from "@/lib/store/cart";
 import { PriceDisplay } from "@/components/ui/PriceDisplay";
-import { AddiWidget, ADDI_PRICE_ANCHOR_CLASS } from "@/components/ui/AddiWidget";
+import { ADDI_PRICE_ANCHOR_CLASS } from "@/components/ui/AddiWidget";
 import { ProductSpecs } from "@/components/sections/ProductSpecs";
 import { pricePerMl } from "@/lib/utils/formatPrice";
 import { trackViewItem, trackAddToCart, trackBeginCheckout } from "@/lib/analytics/events";
@@ -145,7 +145,6 @@ export function ProductDetail({ product }: { product: Product }) {
               {unitPrice} por ml · excelente relación precio/cantidad
             </p>
           )}
-          <AddiWidget price={price} />
         </div>
 
         {product.description &&

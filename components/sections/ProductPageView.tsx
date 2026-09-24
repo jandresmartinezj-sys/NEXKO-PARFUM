@@ -4,6 +4,7 @@ import { getProduct } from "@/lib/shopify/queries";
 import { getRelated } from "@/lib/shopify/getRelated";
 import { SCENT_BY_HANDLE } from "@/lib/data/catalog";
 import { ProductDetail } from "@/components/sections/ProductDetail";
+import { AddiWidgetScript } from "@/components/ui/AddiWidget";
 import { ScentPyramidSection } from "@/components/sections/ScentPyramidSection";
 import { RelatedCarousel } from "@/components/ui/RelatedCarousel";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -118,6 +119,10 @@ export async function ProductPageView({ handle }: { handle: string }) {
       />
 
       <ProductDetail product={product} />
+
+      {/* Script nativo del widget de Addi. Va después de <ProductDetail> para
+          que el precio (.addi-price-anchor) ya exista cuando el bundle corra. */}
+      <AddiWidgetScript />
 
       {scent && (
         <section className="mt-24">
