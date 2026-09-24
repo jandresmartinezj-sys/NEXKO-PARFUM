@@ -2,16 +2,56 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "@/lib/store/cart";
+import { useEffect, useRef, useState } from "react";
+import { useCart, getCartCedula } from "@/lib/store/cart";
+import { CedulaField, isValidCedula } from "@/components/ui/CedulaField";
 import { formatCOP } from "@/lib/utils/formatPrice";
 import { trackBeginCheckout } from "@/lib/analytics/events";
 
 const PLACEHOLDER = "https://placehold.co/200x200/0A0A12/C9A84C/png?text=NEXKO";
 
 export default function CartPage() {
-  const { cart, loading, updateLine, removeLine } = useCart();
+  const { cart, loading, updateLine, removeLine, setCedula } = useCart();
   const lines = cart?.lines ?? [];
   const subtotal = cart ? parseFloat(cart.cost.subtotalAmount.amount) : 0;
+
+  const [cedula, setCedulaValue] = useState("");
+  const [cedulaError, setCedulaError] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
+  const cedulaRef = useRef<HTMLInputElement>(null);
+
+  // Precarga la cédula ya guardada en el carrito (si el cliente vuelve).
+  useEffect(() => {
+    const saved = getCartCedula(cart);
+    if (saved) setCedulaValue(saved);
+  }, [cart?.id]);
+
+  const handleCheckout = async () => {
+    if (!cart) return;
+    if (!isValidCedula(cedula)) {
+      setCedulaError(true);
+      cedulaRef.current?.focus();
+      return;
+    }
+    setRedirecting(true);
+    try {
+      await setCedula(cedula);
+    } catch {
+      /* si falla el guardado del atributo, igual dejamos continuar el pago */
+    }
+    trackBeginCheckout(
+      lines.map((l) => ({
+        handle: l.merchandise.product.handle,
+        title: l.merchandise.product.title,
+        price: Number(l.merchandise.price.amount),
+        quantity: l.quantity,
+      })),
+      subtotal,
+      cart.totalQuantity,
+    );
+    const url = useCart.getState().cart?.checkoutUrl ?? cart.checkoutUrl;
+    window.location.href = url;
+  };
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-28 sm:px-6">
@@ -88,25 +128,29 @@ export default function CartPage() {
               <span className="text-ink-secondary">Subtotal</span>
               <span className="font-serif text-2xl text-gold">{formatCOP(subtotal)}</span>
             </div>
-            <a
-              href={cart?.checkoutUrl ?? "#"}
-              onClick={() => {
-                if (!cart) return;
-                trackBeginCheckout(
-                  lines.map((l) => ({
-                    handle: l.merchandise.product.handle,
-                    title: l.merchandise.product.title,
-                    price: Number(l.merchandise.price.amount),
-                    quantity: l.quantity,
-                  })),
-                  subtotal,
-                  cart.totalQuantity,
-                );
+
+            <CedulaField
+              ref={cedulaRef}
+              value={cedula}
+              onChange={(v) => {
+                setCedulaValue(v);
+                if (cedulaError && isValidCedula(v)) setCedulaError(false);
               }}
-              className="btn-gold w-full"
+              onBlur={() => {
+                if (cart && isValidCedula(cedula)) setCedula(cedula).catch(() => {});
+              }}
+              error={cedulaError}
+              className="mb-4"
+            />
+
+            <button
+              type="button"
+              onClick={handleCheckout}
+              disabled={redirecting || loading}
+              className="btn-gold w-full disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Finalizar compra
-            </a>
+              {redirecting ? "Redirigiendo…" : "Finalizar compra"}
+            </button>
             <p className="mt-3 text-center text-xs text-ink-secondary">
               🔒 Pago seguro · 🚚 Envío a toda Colombia
             </p>

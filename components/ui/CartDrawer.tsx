@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/lib/store/cart";
 import { formatCOP } from "@/lib/utils/formatPrice";
-import { trackBeginCheckout } from "@/lib/analytics/events";
 
 const FREE_SHIPPING_THRESHOLD = 250000;
 const PLACEHOLDER = "https://placehold.co/200x200/f6f3ee/C9A84C/png?text=NEXKO";
@@ -209,21 +209,9 @@ export function CartDrawer() {
                 <p className="mt-1 text-xs text-ink-secondary">
                   Impuestos y envío calculados en el pago.
                 </p>
-                <a
-                  href={cart?.checkoutUrl ?? "#"}
-                  onClick={() => {
-                    if (!cart) return;
-                    trackBeginCheckout(
-                      lines.map((l) => ({
-                        handle: l.merchandise.product.handle,
-                        title: l.merchandise.product.title,
-                        price: Number(l.merchandise.price.amount),
-                        quantity: l.quantity,
-                      })),
-                      subtotal,
-                      cart.totalQuantity,
-                    );
-                  }}
+                <Link
+                  href="/cart"
+                  onClick={close}
                   className="btn-gold mt-4 flex w-full items-center justify-center gap-2"
                   aria-disabled={loading}
                 >
@@ -233,7 +221,7 @@ export function CartDrawer() {
                       <path d="M5 12h14M13 6l6 6-6 6" />
                     </svg>
                   )}
-                </a>
+                </Link>
                 <button
                   onClick={close}
                   className="mt-2 w-full text-center text-xs text-ink-secondary underline-offset-2 hover:text-gold hover:underline"

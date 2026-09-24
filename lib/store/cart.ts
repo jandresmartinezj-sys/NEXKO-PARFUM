@@ -4,10 +4,14 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { Cart } from "@/lib/shopify/types";
 
+/** Clave del atributo de carrito donde guardamos la cédula del comprador. */
+export const CEDULA_ATTR_KEY = "Cédula";
+
 type CartAction =
   | { action: "add"; cartId: string | null; merchandiseId: string; quantity: number }
   | { action: "update"; cartId: string; lineId: string; quantity: number }
   | { action: "remove"; cartId: string; lineId: string }
+  | { action: "attributes"; cartId: string; attributes: { key: string; value: string }[] }
   | { action: "get"; cartId: string };
 
 async function callCartApi(payload: CartAction): Promise<Cart | null> {
@@ -35,7 +39,13 @@ interface CartState {
   addItem: (merchandiseId: string, quantity?: number) => Promise<void>;
   updateLine: (lineId: string, quantity: number) => Promise<void>;
   removeLine: (lineId: string) => Promise<void>;
+  setCedula: (value: string) => Promise<void>;
   refresh: () => Promise<void>;
+}
+
+/** Lee la cédula guardada en los atributos del carrito (si existe). */
+export function getCartCedula(cart: Cart | null): string {
+  return cart?.attributes?.find((a) => a.key === CEDULA_ATTR_KEY)?.value ?? "";
 }
 
 export const useCart = create<CartState>()(
@@ -87,6 +97,17 @@ export const useCart = create<CartState>()(
         } finally {
           set({ loading: false });
         }
+      },
+
+      setCedula: async (value) => {
+        const cartId = get().cartId;
+        if (!cartId) return;
+        const cart = await callCartApi({
+          action: "attributes",
+          cartId,
+          attributes: [{ key: CEDULA_ATTR_KEY, value }],
+        });
+        if (cart) set({ cart });
       },
 
       refresh: async () => {
