@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import type { Product } from "@/lib/shopify/types";
 import { useCart } from "@/lib/store/cart";
 import { PriceDisplay } from "@/components/ui/PriceDisplay";
-import { AddiWidget } from "@/components/ui/AddiWidget";
+import { AddiWidget, ADDI_PRICE_ANCHOR_CLASS } from "@/components/ui/AddiWidget";
 import { ProductSpecs } from "@/components/sections/ProductSpecs";
 import { pricePerMl } from "@/lib/utils/formatPrice";
 import { trackViewItem, trackAddToCart, trackBeginCheckout } from "@/lib/analytics/events";
@@ -133,17 +133,19 @@ export function ProductDetail({ product }: { product: Product }) {
         <h1 className="mt-1 font-display text-3xl text-ink-primary sm:text-4xl">{product.title}</h1>
 
         <div className="mt-4">
-          <PriceDisplay
-            price={variant?.price.amount ?? product.priceRange.minVariantPrice.amount}
-            compareAtPrice={variant?.compareAtPrice?.amount}
-            stock={stock}
-          />
+          <div className={ADDI_PRICE_ANCHOR_CLASS}>
+            <PriceDisplay
+              price={variant?.price.amount ?? product.priceRange.minVariantPrice.amount}
+              compareAtPrice={variant?.compareAtPrice?.amount}
+              stock={stock}
+            />
+          </div>
           {unitPrice && (
             <p className="mt-1 text-xs text-ink-secondary">
               {unitPrice} por ml · excelente relación precio/cantidad
             </p>
           )}
-          <AddiWidget price={price} className="mt-3" />
+          <AddiWidget price={price} />
         </div>
 
         {product.description &&

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/lib/store/cart";
 import { formatCOP } from "@/lib/utils/formatPrice";
-import { AddiWidget } from "@/components/ui/AddiWidget";
+import { AddiWidget, ADDI_PRICE_ANCHOR_CLASS } from "@/components/ui/AddiWidget";
 import { trackBeginCheckout } from "@/lib/analytics/events";
 
 const PLACEHOLDER = "https://placehold.co/200x200/0A0A12/C9A84C/png?text=NEXKO";
@@ -87,9 +87,11 @@ export default function CartPage() {
           <aside className="h-fit rounded-2xl border border-subtle bg-surface/40 p-6">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-ink-secondary">Subtotal</span>
-              <span className="font-serif text-2xl text-gold">{formatCOP(subtotal)}</span>
+              <span className={`${ADDI_PRICE_ANCHOR_CLASS} font-serif text-2xl text-gold`}>
+                {formatCOP(subtotal)}
+              </span>
             </div>
-            <AddiWidget price={subtotal} className="mb-4" />
+            <AddiWidget price={subtotal} />
             <a
               href={cart?.checkoutUrl ?? "#"}
               onClick={() => {
