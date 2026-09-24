@@ -6,7 +6,6 @@ const CART_FRAGMENT = /* GraphQL */ `
     id
     checkoutUrl
     totalQuantity
-    attributes { key value }
     cost {
       subtotalAmount { amount currencyCode }
       totalAmount { amount currencyCode }
@@ -123,28 +122,6 @@ export async function updateCartLines(
     noStore: true,
   });
   return reshapeCart(data.cartLinesUpdate.cart)!;
-}
-
-export async function updateCartAttributes(
-  cartId: string,
-  attributes: { key: string; value: string }[],
-): Promise<Cart> {
-  const data = await shopifyFetch<{
-    cartAttributesUpdate: { cart: RawCart };
-  }>({
-    query: /* GraphQL */ `
-      mutation CartAttributesUpdate($cartId: ID!, $attributes: [AttributeInput!]!) {
-        cartAttributesUpdate(cartId: $cartId, attributes: $attributes) {
-          cart { ...CartFields }
-          userErrors { message }
-        }
-      }
-      ${CART_FRAGMENT}
-    `,
-    variables: { cartId, attributes },
-    noStore: true,
-  });
-  return reshapeCart(data.cartAttributesUpdate.cart)!;
 }
 
 export async function removeCartLines(

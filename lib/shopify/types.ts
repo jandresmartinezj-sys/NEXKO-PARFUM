@@ -68,16 +68,10 @@ export interface CartLine {
   };
 }
 
-export interface CartAttribute {
-  key: string;
-  value: string | null;
-}
-
 export interface Cart {
   id: string;
   checkoutUrl: string;
   totalQuantity: number;
-  attributes: CartAttribute[];
   cost: {
     subtotalAmount: Money;
     totalAmount: Money;

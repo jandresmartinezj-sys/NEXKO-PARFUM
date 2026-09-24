@@ -4,7 +4,6 @@ import {
   getCart,
   addCartLines,
   updateCartLines,
-  updateCartAttributes,
   removeCartLines,
 } from "@/lib/shopify/mutations";
 
@@ -35,14 +34,6 @@ export async function POST(req: Request) {
       case "remove": {
         const { cartId, lineId } = body;
         const cart = await removeCartLines(cartId, [lineId]);
-        return NextResponse.json({ cart });
-      }
-      case "attributes": {
-        const { cartId, attributes } = body;
-        if (!cartId || !Array.isArray(attributes)) {
-          return NextResponse.json({ error: "Faltan datos" }, { status: 400 });
-        }
-        const cart = await updateCartAttributes(cartId, attributes);
         return NextResponse.json({ cart });
       }
       case "get": {

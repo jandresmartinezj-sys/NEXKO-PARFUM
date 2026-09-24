@@ -9,7 +9,7 @@ import { PriceDisplay } from "@/components/ui/PriceDisplay";
 import { ADDI_PRICE_ANCHOR_CLASS } from "@/components/ui/AddiWidget";
 import { ProductSpecs } from "@/components/sections/ProductSpecs";
 import { pricePerMl } from "@/lib/utils/formatPrice";
-import { trackViewItem, trackAddToCart } from "@/lib/analytics/events";
+import { trackViewItem, trackAddToCart, trackBeginCheckout } from "@/lib/analytics/events";
 
 const PLACEHOLDER = "https://placehold.co/800x800/0A0A12/C9A84C/png?text=NEXKO";
 
@@ -71,9 +71,11 @@ export function ProductDetail({ product }: { product: Product }) {
     if (!variant) return;
     trackAddToCart(asItem(), qty);
     await addItem(variant.id, qty);
-    // Enviamos al carrito (no directo al checkout) para capturar la cédula,
-    // requerida para facturación y para el pago a cuotas con Addi.
-    window.location.href = "/cart";
+    const url = useCart.getState().cart?.checkoutUrl;
+    if (url) {
+      trackBeginCheckout([{ ...asItem(), quantity: qty }], price * qty, qty);
+      window.location.href = url;
+    }
   };
 
   return (
